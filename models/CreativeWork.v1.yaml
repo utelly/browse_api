@@ -9,6 +9,8 @@ properties:
     type: string
   updated_at:
     type: string
+  _links:
+    $ref: ./HalLinks.v1.yaml    
   titles:
     type: array
     items:
@@ -77,8 +79,6 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
-  _links:
-    $ref: ./HalLinks.v1.yaml
   episodes:
     type: array
     items:
