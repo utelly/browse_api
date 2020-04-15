@@ -35,6 +35,7 @@ paths:
                     items:
                       anyOf:
                         - $ref: ../models/CreativeWork.v1.yaml
+              examples: {}
       operationId: v1.creative_work.get
       security:
         - Authorization: []
@@ -43,14 +44,20 @@ paths:
             type: array
             items:
               type: string
-            enum:
-              - genres
-              - episodes
-            example: ''
+              enum:
+                - episodes
+                - genres
+                - tags
+                - availabilities
+                - content_ratings
+                - contributors
+            minItems: 1
           in: query
           name: embed
-          style: form
+          explode: false
           description: ''
+          style: form
+      description: ''
 components:
   schemas: {}
   securitySchemes:
