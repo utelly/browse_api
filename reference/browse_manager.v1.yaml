@@ -54,7 +54,7 @@ paths:
                 - contributors
             minItems: 1
           in: query
-          name: embeds
+          name: embed
           explode: false
           description: ''
           style: form
