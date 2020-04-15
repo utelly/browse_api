@@ -57,6 +57,11 @@ paths:
           explode: false
           description: ''
           style: form
+        - schema:
+            $ref: ../models/language_field.v1.yaml   
+          in: query
+          name: languages
+          description: ''
       description: ''
 components:
   schemas: {}
