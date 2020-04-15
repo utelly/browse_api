@@ -3,7 +3,12 @@ info:
   title: browse_manager
   version: '1.0'
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'https://services.utelly.com/browse_manager/v1'
+    description: prod
+  - url: 'https://staging-services.utelly.com/browse_manager/v1'
+    description: staging
+  - url: 'https://dev-services.utelly.com/browse_manager/v1'
+    description: dev
 paths:
   '/content/creative_work/{guid}':
     parameters:
@@ -31,5 +36,25 @@ paths:
                       anyOf:
                         - $ref: ../models/CreativeWork.v1.yaml
       operationId: v1.creative_work.get
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+            enum:
+              - genres
+              - episodes
+            example: ''
+          in: query
+          name: embed
+          style: form
+          description: ''
 components:
   schemas: {}
+  securitySchemes:
+    Authorization:
+      name: Authorization
+      type: apiKey
+      in: header
