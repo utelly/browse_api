@@ -1,0 +1,17 @@
+title: metadata_field
+type: object
+properties:
+  source:
+    type: string
+  type:
+    type: string
+  country:
+    type: string
+  language:
+    type: string
+x-examples:
+  '1':
+    source: gracenote
+    type: official
+    country: gb
+    language: en

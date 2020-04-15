@@ -1,0 +1,88 @@
+title: CreativeWork
+type: object
+properties:
+  guid:
+    type: string
+  type:
+    type: string
+  created_at:
+    type: string
+  updated_at:
+    type: string
+  titles:
+    type: array
+    items:
+      type: object
+      properties:
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+        title:
+          type: string
+  descriptions:
+    type: array
+    items:
+      type: object
+      properties:
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+        description:
+          type: string
+  artworks:
+    type: array
+    items:
+      type: object
+      properties:
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+        url:
+          type: string
+        height:
+          type: string
+        width:
+          type: string
+  contributors:
+    type: array
+    items:
+      type: object
+      properties:
+        _links:
+          $ref: ./HalLinks.v1.yaml
+        job:
+          type: string
+  genres:
+    type: array
+    items:
+      type: object
+      properties:
+        _links:
+          $ref: ./HalLinks.v1.yaml
+  tags:
+    type: array
+    items:
+      type: object
+      properties:
+        _links:
+          $ref: ./HalLinks.v1.yaml
+  availabilities:
+    type: array
+    items:
+      type: object
+      properties:
+        _links:
+          $ref: ./HalLinks.v1.yaml
+  content_ratings:
+    type: array
+    items:
+      type: object
+      properties:
+        _links:
+          $ref: ./HalLinks.v1.yaml
+  _links:
+    $ref: ./HalLinks.v1.yaml
+  episodes:
+    type: array
+    items:
+      type: object
+      properties:
+        _links:
+          $ref: ./HalLinks.v1.yaml

@@ -1,0 +1,5 @@
+title: hal_link_field
+type: object
+properties:
+  href:
+    type: string
