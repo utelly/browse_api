@@ -19,7 +19,8 @@ paths:
         required: true
     get:
       summary: Get creative work
-      tags: []
+      tags:
+        - Creative work management
       responses:
         '200':
           description: OK
