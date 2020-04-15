@@ -1,5 +1,6 @@
 title: CreativeWork
 type: object
+x-examples: {}
 properties:
   guid:
     type: string
@@ -10,7 +11,7 @@ properties:
   updated_at:
     type: string
   _links:
-    $ref: ./HalLinks.v1.yaml    
+    $ref: ./HalLinks.v1.yaml
   titles:
     type: array
     items:
@@ -20,6 +21,9 @@ properties:
           $ref: ./metadata_field.v1.yaml
         title:
           type: string
+      required:
+        - metadata
+        - title
   descriptions:
     type: array
     items:
@@ -29,6 +33,9 @@ properties:
           $ref: ./metadata_field.v1.yaml
         description:
           type: string
+      required:
+        - metadata
+        - description
   artworks:
     type: array
     items:
@@ -42,6 +49,11 @@ properties:
           type: string
         width:
           type: string
+      required:
+        - metadata
+        - url
+        - height
+        - width
   contributors:
     type: array
     items:
@@ -51,6 +63,9 @@ properties:
           $ref: ./HalLinks.v1.yaml
         job:
           type: string
+      required:
+        - _links
+        - job
   genres:
     type: array
     items:
@@ -58,6 +73,8 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+      required:
+        - _links
   tags:
     type: array
     items:
@@ -65,6 +82,8 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+      required:
+        - _links
   availabilities:
     type: array
     items:
@@ -72,6 +91,8 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+      required:
+        - _links
   content_ratings:
     type: array
     items:
@@ -79,6 +100,8 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+      required:
+        - _links
   episodes:
     type: array
     items:
@@ -86,4 +109,11 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
-x-examples: {}
+      required:
+        - _links
+required:
+  - guid
+  - type
+  - created_at
+  - updated_at
+  - _links

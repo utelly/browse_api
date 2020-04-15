@@ -36,6 +36,8 @@ paths:
                     items:
                       anyOf:
                         - $ref: ../models/CreativeWork.v1.yaml
+                required:
+                  - creative_work
               examples: {}
       operationId: v1.creative_work.get
       security:
