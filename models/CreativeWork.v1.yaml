@@ -86,3 +86,4 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+x-examples: {}
