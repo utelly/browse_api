@@ -1,0 +1,11 @@
+title: picture_field
+type: object
+properties:
+  metadata:
+    $ref: ./metadata_field.v1.yaml
+  url:
+    type: string
+  width:
+    type: integer
+  height:
+    type: integer

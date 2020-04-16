@@ -1,0 +1,24 @@
+title: Tag
+type: object
+properties:
+  guid:
+    type: string
+  name:
+    type: string
+  _links:
+    $ref: ./HalLinks.v1.yaml
+  metadata:
+    $ref: ./metadata_field.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+required:
+  - guid
+  - name
+  - _links
+  - metadata
+  - created_at
+  - updated_at

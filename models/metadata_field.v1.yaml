@@ -19,4 +19,3 @@ properties:
 required:
   - source
   - type
-  - language

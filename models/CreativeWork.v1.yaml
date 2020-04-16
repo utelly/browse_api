@@ -1,15 +1,26 @@
 title: CreativeWork
 type: object
 x-examples: {}
+description: ''
 properties:
   guid:
     type: string
   type:
     type: string
+    enum:
+      - tv
+      - movie
+      - short
+      - web
+      - supplemental
+      - series
+      - article
   created_at:
     type: string
+    format: date-time
   updated_at:
     type: string
+    format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
   titles:
@@ -39,21 +50,7 @@ properties:
   artworks:
     type: array
     items:
-      type: object
-      properties:
-        metadata:
-          $ref: ./metadata_field.v1.yaml
-        url:
-          type: string
-        height:
-          type: string
-        width:
-          type: string
-      required:
-        - metadata
-        - url
-        - height
-        - width
+      $ref: ./picture_field.v1.yaml
   contributors:
     type: array
     items:
@@ -61,11 +58,11 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
-        job:
+        role:
           type: string
       required:
         - _links
-        - job
+        - role
   genres:
     type: array
     items:
@@ -102,7 +99,7 @@ properties:
           $ref: ./HalLinks.v1.yaml
       required:
         - _links
-  episodes:
+  parents:
     type: array
     items:
       type: object

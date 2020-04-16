@@ -10,7 +10,7 @@ servers:
   - url: 'https://dev-services.utelly.com/browse_manager/v1'
     description: dev
 paths:
-  '/content/creative_work/{guid}':
+  '/content/creative_works/{guid}':
     parameters:
       - schema:
           type: string
@@ -36,6 +36,10 @@ paths:
                     items:
                       anyOf:
                         - $ref: ../models/CreativeWork.v1.yaml
+                        - $ref: ../models/Genre.v1.yaml
+                        - $ref: ../models/ContentRating.v1.yaml
+                        - $ref: ../models/Availability.v1.yaml
+                        - $ref: ../models/Tag.v1.yaml
                 required:
                   - creative_work
               examples: {}
@@ -48,12 +52,13 @@ paths:
             items:
               type: string
               enum:
-                - episodes
+                - parents
                 - genres
                 - tags
                 - availabilities
                 - content_ratings
                 - contributors
+                - services
             minItems: 1
           in: query
           name: embed
@@ -267,7 +272,7 @@ paths:
                 - tags
                 - availabilities
                 - content_ratings
-                - episodes
+                - parents
             minItems: 1
           in: query
           name: fields

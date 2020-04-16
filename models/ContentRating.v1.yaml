@@ -1,0 +1,27 @@
+title: ContentRating
+type: object
+properties:
+  guid:
+    type: string
+  _links:
+    $ref: ./HalLinks.v1.yaml
+  metadata:
+    $ref: ./metadata_field.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+  value:
+    type: string
+  organization:
+    type: string
+required:
+  - guid
+  - _links
+  - metadata
+  - created_at
+  - updated_at
+  - value
+  - organization

@@ -1,0 +1,28 @@
+title: Service
+type: object
+properties:
+  guid:
+    type: string
+  icons:
+    type: array
+    items:
+      $ref: ./picture_field.v1.yaml
+  name:
+    type: string
+  metadata:
+    $ref: ./metadata_field.v1.yaml
+  _links:
+    $ref: ./HalLinks.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+required:
+  - guid
+  - name
+  - metadata
+  - _links
+  - created_at
+  - updated_at

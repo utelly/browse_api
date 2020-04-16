@@ -1,0 +1,24 @@
+title: Genre
+type: object
+properties:
+  guid:
+    type: string
+  _links:
+    $ref: ./HalLinks.v1.yaml
+  name:
+    type: string
+  metadata:
+    $ref: ./metadata_field.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+required:
+  - guid
+  - _links
+  - name
+  - metadata
+  - created_at
+  - updated_at
