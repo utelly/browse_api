@@ -147,8 +147,9 @@ paths:
           style: form
   /content/services:
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: List services
+      tags:
+        - Service management
       responses:
         '200':
           description: OK
@@ -196,8 +197,9 @@ paths:
           style: form
   /content/tags:
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: List tags
+      tags:
+        - Tag management
       responses:
         '200':
           description: OK
@@ -245,8 +247,9 @@ paths:
           style: form
   /content/genres:
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: List genres
+      tags:
+        - Genre management
       responses:
         '200':
           description: OK
@@ -294,8 +297,9 @@ paths:
           style: form
   /content/content_ratings:
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: List content ratings
+      tags:
+        - Content rating management
       responses:
         '200':
           description: OK
@@ -343,8 +347,9 @@ paths:
           style: form
   /content/contributors:
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: List contributors
+      tags:
+        - Contributors management
       responses:
         '200':
           description: OK
