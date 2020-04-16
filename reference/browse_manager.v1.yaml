@@ -70,7 +70,7 @@ paths:
         - schema:
             type: array
             items:
-              $ref: '#/components/schemas/SetLanguages'
+              $ref: '#/components/schemas/Languages'
             minItems: 1
           in: query
           name: languages
@@ -141,7 +141,7 @@ paths:
         - schema:
             type: array
             items:
-              $ref: '#/components/schemas/SetLanguages'
+              $ref: '#/components/schemas/Languages'
           in: query
           name: languages
           style: form
@@ -215,7 +215,7 @@ paths:
         - schema:
             type: array
             items:
-              $ref: '#/components/schemas/SetLanguages'
+              $ref: '#/components/schemas/Languages'
           in: query
           name: languages
           style: form
@@ -279,7 +279,7 @@ paths:
         - schema:
             type: array
             items:
-              $ref: '#/components/schemas/SetLanguages'
+              $ref: '#/components/schemas/Languages'
           in: query
           name: languages
           style: form
@@ -343,7 +343,7 @@ paths:
         - schema:
             type: array
             items:
-              $ref: '#/components/schemas/SetLanguages'
+              $ref: '#/components/schemas/Languages'
           in: query
           name: languages
           style: form
@@ -407,7 +407,7 @@ paths:
         - schema:
             type: array
             items:
-              $ref: '#/components/schemas/SetLanguages'
+              $ref: '#/components/schemas/Languages'
           in: query
           name: languages
           style: form
@@ -476,13 +476,13 @@ paths:
         - schema:
             type: array
             items:
-              $ref: '#/components/schemas/SetLanguages'
+              $ref: '#/components/schemas/Languages'
           in: query
           name: languages
           style: form
 components:
   schemas:
-    SetLanguages:
+    Languages:
       type: string
       enum:
         - ab
