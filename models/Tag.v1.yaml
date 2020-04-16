@@ -3,12 +3,17 @@ type: object
 properties:
   guid:
     type: string
-  name:
-    type: string
+  names:
+    type: array
+    items:
+      type: object
+      properties:
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+        name:
+          type: string
   _links:
     $ref: ./HalLinks.v1.yaml
-  metadata:
-    $ref: ./metadata_field.v1.yaml
   created_at:
     type: string
     format: date-time
@@ -17,8 +22,7 @@ properties:
     format: date-time
 required:
   - guid
-  - name
+  - names
   - _links
-  - metadata
   - created_at
   - updated_at

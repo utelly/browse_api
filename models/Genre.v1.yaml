@@ -5,20 +5,23 @@ properties:
     type: string
   _links:
     $ref: ./HalLinks.v1.yaml
-  name:
-    type: string
-  metadata:
-    $ref: ./metadata_field.v1.yaml
-  created_at:
+  names:
+    type: array
+    items:
+      type: object
+      properties:
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+        name:
+          type: string
+  updated_at:
     type: string
     format: date-time
-  updated_at:
+  created_at:
     type: string
     format: date-time
 required:
   - guid
   - _links
-  - name
-  - metadata
-  - created_at
+  - names
   - updated_at

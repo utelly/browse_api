@@ -60,6 +60,8 @@ properties:
           $ref: ./HalLinks.v1.yaml
         role:
           type: string
+        metadata:
+          $ref: ./metadata_field.v1.yaml
       required:
         - _links
         - role
@@ -70,6 +72,8 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+        metadata:
+          $ref: ./metadata_field.v1.yaml
       required:
         - _links
   tags:
@@ -79,6 +83,8 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+        metadata:
+          $ref: ./metadata_field.v1.yaml
       required:
         - _links
   availabilities:
@@ -88,6 +94,8 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+        metadata:
+          $ref: ./metadata_field.v1.yaml
       required:
         - _links
   content_ratings:
@@ -97,6 +105,8 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+        metadata:
+          $ref: ./metadata_field.v1.yaml
       required:
         - _links
   parents:
@@ -106,6 +116,8 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+        metadata:
+          $ref: ./metadata_field.v1.yaml
       required:
         - _links
 required:

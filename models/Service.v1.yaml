@@ -7,10 +7,15 @@ properties:
     type: array
     items:
       $ref: ./picture_field.v1.yaml
-  name:
-    type: string
-  metadata:
-    $ref: ./metadata_field.v1.yaml
+  names:
+    type: array
+    items:
+      type: object
+      properties:
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+        name:
+          type: string
   _links:
     $ref: ./HalLinks.v1.yaml
   created_at:
@@ -21,8 +26,7 @@ properties:
     format: date-time
 required:
   - guid
-  - name
-  - metadata
+  - names
   - _links
   - created_at
   - updated_at

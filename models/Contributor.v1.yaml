@@ -11,8 +11,6 @@ properties:
       $ref: ./picture_field.v1.yaml
   _links:
     $ref: ./HalLinks.v1.yaml
-  metadata:
-    $ref: ./metadata_field.v1.yaml
   created_at:
     type: string
     format: date-time
@@ -23,6 +21,5 @@ required:
   - guid
   - name
   - _links
-  - metadata
   - created_at
   - updated_at
