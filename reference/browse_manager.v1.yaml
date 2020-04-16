@@ -41,6 +41,7 @@ paths:
                         - $ref: ../models/Availability.v1.yaml
                         - $ref: ../models/Tag.v1.yaml
                         - $ref: ../models/Service.v1.yaml
+                        - $ref: ../models/Contributor.v1.yaml
                 required:
                   - creative_work
               examples: {}
@@ -112,6 +113,251 @@ paths:
                       $ref: ../models/CreativeWork.v1.yaml
       operationId: v1.content.creative_works.get_list
       description: ''
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - created_at
+                - '-created_at'
+                - updated_at
+                - '-updated_at'
+          in: query
+          name: sort
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+            minimum: 0
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/SetLanguages'
+          in: query
+          name: languages
+          style: form
+  /content/services:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  services:
+                    type: array
+                    items:
+                      $ref: ../models/Service.v1.yaml
+      operationId: v1.content.service.get_list
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - created_at
+                - '-created_at'
+                - updated_at
+                - '-updated_at'
+          in: query
+          name: sort
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+            minimum: 0
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/SetLanguages'
+          in: query
+          name: languages
+          style: form
+  /content/tags:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tags:
+                    type: array
+                    items:
+                      $ref: ../models/Tag.v1.yaml
+      operationId: v1.content.tag.get_list
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - created_at
+                - '-created_at'
+                - updated_at
+                - '-updated_at'
+          in: query
+          name: sort
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+            minimum: 0
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/SetLanguages'
+          in: query
+          name: languages
+          style: form
+  /content/genres:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  genres:
+                    type: array
+                    items:
+                      $ref: ../models/Genre.v1.yaml
+      operationId: v1.content.genre.get_list
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - created_at
+                - '-created_at'
+                - updated_at
+                - '-updated_at'
+          in: query
+          name: sort
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+            minimum: 0
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/SetLanguages'
+          in: query
+          name: languages
+          style: form
+  /content/content_ratings:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content_ratings:
+                    type: array
+                    items:
+                      $ref: ../models/ContentRating.v1.yaml
+      operationId: v1.content.content_rating.get_list
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - created_at
+                - '-created_at'
+                - updated_at
+                - '-updated_at'
+          in: query
+          name: sort
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+            minimum: 0
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/SetLanguages'
+          in: query
+          name: languages
+          style: form
+  /content/contributors:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contributors:
+                    type: array
+                    items:
+                      $ref: ../models/Contributor.v1.yaml
+      operationId: v1.content.contributors.get_list
       security:
         - Authorization: []
       parameters:
@@ -263,7 +509,7 @@ components:
         - ng
         - nb
         - nn
-        - no
+        - 'no'
         - ii
         - nr
         - oc
