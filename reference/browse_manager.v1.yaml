@@ -40,6 +40,7 @@ paths:
                         - $ref: ../models/ContentRating.v1.yaml
                         - $ref: ../models/Availability.v1.yaml
                         - $ref: ../models/Tag.v1.yaml
+                        - $ref: ../models/Service.v1.yaml
                 required:
                   - creative_work
               examples: {}
