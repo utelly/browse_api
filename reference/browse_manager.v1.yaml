@@ -175,7 +175,6 @@ paths:
                         identifiers:
                           - source: mysource
                             id: '1'
-                            url: 'https://mydomain.com/myressource.html'
                         titles:
                           - metadata:
                               source: mysource
@@ -278,6 +277,9 @@ paths:
                   value:
                     services:
                       - guid: df3a998849344e9b954b7807fc623f08
+                        identifiers:
+                          - source: mysource
+                            id: '1'
                         icons:
                           - url: 'https://mydomain.com/picture.jpg'
                             width: 100
@@ -352,6 +354,9 @@ paths:
                   value:
                     tags:
                       - guid: 8703dd1ced974ecea01116f2c0a5a282
+                        identifiers:
+                          - source: mysource
+                            id: '1'
                         names:
                           - name: Warm
                             metadata:
@@ -416,6 +421,9 @@ paths:
                   value:
                     genres:
                       - guid: 9be42f99a8ab420082719d1bafc8e649
+                        identifiers:
+                          - source: mysource
+                            id: '1'
                         names:
                           - metadata:
                               language: en
@@ -480,6 +488,9 @@ paths:
                   value:
                     content_ratings:
                       - guid: bcb27a2c9ee74a5a86720c3b5828093c
+                        identifiers:
+                          - source: mysource
+                            id: '1'
                         metadata:
                           country: gb
                         organization: MPAA
@@ -545,6 +556,9 @@ paths:
                     contributors:
                       - guid: eb4aaa3de91242ba82ad48bee0b48996
                         name: Keyser Söze
+                        identifiers:
+                          - source: mysource
+                            id: '1'
                         pictures:
                           - url: 'https://mydomain.com/picture.jpg'
                             width: 100
@@ -617,6 +631,9 @@ paths:
                   value:
                     tag:
                       guid: 8703dd1ced974ecea01116f2c0a5a282
+                      identifiers:
+                        - source: mysource
+                          id: '1'
                       names:
                         - name: Warm
                           metadata:
@@ -665,6 +682,9 @@ paths:
                   value:
                     service:
                       guid: df3a998849344e9b954b7807fc623f08
+                      identifiers:
+                        - source: mysource
+                          id: '1'
                       icons:
                         - url: 'https://mydomain.com/picture.jpg'
                           width: 100
@@ -723,6 +743,9 @@ paths:
                   value:
                     genre:
                       guid: 9be42f99a8ab420082719d1bafc8e649
+                      identifiers:
+                        - source: mysource
+                          id: '1'
                       names:
                         - metadata:
                             language: en
@@ -771,6 +794,9 @@ paths:
                   value:
                     content_rating:
                       guid: bcb27a2c9ee74a5a86720c3b5828093c
+                      identifiers:
+                        - source: mysource
+                          id: '1'
                       metadata:
                         country: gb
                       organization: MPAA
@@ -819,6 +845,9 @@ paths:
                   value:
                     contributor:
                       guid: eb4aaa3de91242ba82ad48bee0b48996
+                      identifiers:
+                        - source: mysource
+                          id: '1'
                       name: Keyser Söze
                       pictures:
                         - url: 'https://mydomain.com/picture.jpg'
@@ -878,6 +907,9 @@ paths:
                   value:
                     platforms:
                       - guid: e1d00d49612f48c791458f8f754358a9
+                        identifiers:
+                          - source: mysource
+                            id: '1'
                         icons:
                           - url: 'https://mydomain.com/picture.jpg'
                             width: 100
@@ -956,6 +988,9 @@ paths:
                   value:
                     platform:
                       guid: e1d00d49612f48c791458f8f754358a9
+                      identifiers:
+                        - source: mysource
+                          id: '1'
                       icons:
                         - url: 'https://mydomain.com/picture.jpg'
                           width: 100
@@ -1009,6 +1044,9 @@ paths:
                   value:
                     locations:
                       - guid: e1d00d49612f48c791458f8f754358a9
+                        identifiers:
+                          - source: mysource
+                            id: '1'
                         names:
                           - name: France
                             metadata:
@@ -1076,6 +1114,9 @@ paths:
                   value:
                     location:
                       guid: e1d00d49612f48c791458f8f754358a9
+                      identifiers:
+                        - source: mysource
+                          id: '1'
                       names:
                         - name: France
                           metadata:
