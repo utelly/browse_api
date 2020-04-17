@@ -87,6 +87,9 @@ paths:
                         href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
                     _embedded:
                       - guid: 9be42f99a8ab420082719d1bafc8e649
+                        identifiers:
+                          - source: mysource
+                            id: '1'
                         names:
                           - metadata:
                               language: en
