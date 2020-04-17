@@ -35,12 +35,10 @@ paths:
                     type: array
                     items:
                       anyOf:
-                        - $ref: ../models/CreativeWork.v1.yaml
                         - $ref: ../models/Genre.v1.yaml
                         - $ref: ../models/ContentRating.v1.yaml
                         - $ref: ../models/Availability.v1.yaml
                         - $ref: ../models/Tag.v1.yaml
-                        - $ref: ../models/Service.v1.yaml
                         - $ref: ../models/Contributor.v1.yaml
                 required:
                   - creative_work
@@ -108,13 +106,11 @@ paths:
             items:
               type: string
               enum:
-                - parents
                 - genres
                 - tags
                 - availabilities
                 - content_ratings
                 - contributors
-                - services
             minItems: 1
           in: query
           name: embed
