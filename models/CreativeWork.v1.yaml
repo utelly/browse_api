@@ -19,16 +19,6 @@ properties:
       $ref: ./identifier_field.v1.yaml
   metadata:
     $ref: ./metadata_field.v1.yaml
-  type:
-    type: string
-    enum:
-      - tv
-      - movie
-      - short
-      - web
-      - supplemental
-      - series
-      - article
   parent:
     $ref: ./hal_link_field.v1.yaml
   titles:
@@ -66,4 +56,3 @@ required:
   - _links
   - identifiers
   - metadata
-  - type
