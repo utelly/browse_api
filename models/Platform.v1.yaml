@@ -1,0 +1,32 @@
+title: Platform
+type: object
+properties:
+  guid:
+    type: string
+  icons:
+    type: array
+    items:
+      $ref: ./picture_field.v1.yaml
+  names:
+    type: array
+    items:
+      type: object
+      properties:
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+        name:
+          type: string
+  _links:
+    $ref: ./HalLinks.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+required:
+  - guid
+  - names
+  - _links
+  - created_at
+  - updated_at

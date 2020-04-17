@@ -324,6 +324,13 @@ properties:
     $ref: ./HalLinks.v1.yaml
   metadata:
     $ref: ./metadata_field.v1.yaml
+  platforms:
+    type: array
+    items:
+      type: object
+      properties:
+        _links:
+          $ref: ./HalLinks.v1.yaml
 required:
   - guid
   - time_from

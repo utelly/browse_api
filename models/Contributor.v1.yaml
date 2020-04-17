@@ -17,6 +17,18 @@ properties:
   updated_at:
     type: string
     format: date-time
+  biographies:
+    type: array
+    items:
+      type: object
+      properties:
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+        biography:
+          type: string
+      required:
+        - metadata
+        - biography
 required:
   - guid
   - name
