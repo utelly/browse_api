@@ -5,16 +5,6 @@ description: ''
 properties:
   guid:
     type: string
-  type:
-    type: string
-    enum:
-      - tv
-      - movie
-      - short
-      - web
-      - supplemental
-      - series
-      - article
   created_at:
     type: string
     format: date-time
@@ -26,9 +16,21 @@ properties:
   identifiers:
     type: array
     items:
-      $ref: ./identifier_field.v1.yaml    
+      $ref: ./identifier_field.v1.yaml
+  metadata:
+    $ref: ./metadata_field.v1.yaml
+  type:
+    type: string
+    enum:
+      - tv
+      - movie
+      - short
+      - web
+      - supplemental
+      - series
+      - article
   parent:
-    $ref: ./hal_link_field.v1.yaml      
+    $ref: ./hal_link_field.v1.yaml
   titles:
     type: array
     items:
@@ -57,58 +59,10 @@ properties:
     type: array
     items:
       $ref: ./picture_field.v1.yaml
-  contributors:
-    type: array
-    items:
-      type: object
-      properties:
-        _links:
-          $ref: ./HalLinks.v1.yaml
-        role:
-          type: string
-      required:
-        - _links
-        - role
-  genres:
-    type: array
-    items:
-      type: object
-      properties:
-        _links:
-          $ref: ./HalLinks.v1.yaml
-      required:
-        - _links
-  tags:
-    type: array
-    items:
-      type: object
-      properties:
-        _links:
-          $ref: ./HalLinks.v1.yaml
-      required:
-        - _links
-  availabilities:
-    type: array
-    items:
-      type: object
-      properties:
-        _links:
-          $ref: ./HalLinks.v1.yaml
-      required:
-        - _links
-  content_ratings:
-    type: array
-    items:
-      type: object
-      properties:
-        _links:
-          $ref: ./HalLinks.v1.yaml
-      required:
-        - _links
 required:
   - guid
-  - type
   - created_at
   - updated_at
   - _links
   - identifiers
+  - type

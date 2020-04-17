@@ -1,14 +1,22 @@
 title: Location
 type: object
 properties:
-  updated_at:
+  guid:
+    type: string
+  created_at:
     type: string
     format: date-time
-  created_at:
+  updated_at:
     type: string
     format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
+  identifiers:
+    type: array
+    items:
+      $ref: ./identifier_field.v1.yaml
+  metadata:
+    $ref: ./metadata_field.v1.yaml
   names:
     type: array
     items:
@@ -18,8 +26,6 @@ properties:
           type: string
         metadata:
           $ref: ./metadata_field.v1.yaml
-  guid:
-    type: string
 required:
   - updated_at
   - created_at

@@ -78,31 +78,10 @@ paths:
                           url: 'https://mydomain.com/poster.jpg'
                           width: 100
                           height: 100
-                      contributors:
-                        - _links:
-                            self:
-                              href: /content/contributors/7fd093bc626b4f458eb7a67cea0bfd53
-                          role: actor
-                      genres:
-                        - _links:
-                            self:
-                              href: /content/genres/eac7cb1192264b088ccbad0874395ce5
-                      tags:
-                        - _links:
-                            self:
-                              href: /content/tags/eac7cb1192264b088ccbad0874395ce5
-                      availabilities:
-                        - _links:
-                            self:
-                              href: /content/availabilities/eac7cb1192264b088ccbad0874395ce5
-                      content_ratings:
-                        - _links:
-                            self:
-                              href: /content/content_ratings/eac7cb1192264b088ccbad0874395ce5
-                      parents:
-                        - _links:
-                            self:
-                              href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
+                      parent:
+                        _links:
+                          self:
+                            href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
                     _embedded:
                       - guid: 9be42f99a8ab420082719d1bafc8e649
                         names:
