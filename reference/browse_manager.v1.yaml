@@ -1146,6 +1146,123 @@ paths:
           name: languages
           description: ''
           style: form
+  '/content/creative_works/{guid}/tags':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Get tags from creative work
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tags:
+                    type: array
+                    items:
+                      $ref: ../models/Tag.v1.yaml
+      operationId: v1.content.tag.get_from_creative_work
+      security:
+        - Authorization: []
+  '/content/creative_works/{guid}/genres':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  genres:
+                    type: array
+                    items:
+                      $ref: ../models/Genre.v1.yaml
+      operationId: v1.content.genre.get_from_creative_work
+  '/content/creative_works/{guid}/contributors':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contributors:
+                    type: array
+                    items:
+                      $ref: ../models/Contributor.v1.yaml
+      operationId: v1.content.contributor.get_from_creative_work
+  '/content/creative_works/{guid}/content_ratings':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content_ratings:
+                    type: array
+                    items:
+                      $ref: ../models/ContentRating.v1.yaml
+      operationId: v1.content.content_rating.get_from_creative_work
+  '/content/creative_works/{guid}/availabilities':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  availabilities:
+                    type: array
+                    items:
+                      $ref: ../models/Availability.v1.yaml
+      operationId: v1.content.availability.get_from_creative_work
 components:
   schemas:
     Languages:
