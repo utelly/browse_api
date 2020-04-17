@@ -188,6 +188,25 @@ paths:
                       properties:
                         creative_work:
                           $ref: ../models/CreativeWork.v1.yaml
+                  _embedded:
+                    type: array
+                    items:
+                      anyOf:
+                        - properties:
+                            genre:
+                              $ref: ../models/Genre.v1.yaml
+                        - properties:
+                            content_rating:
+                              $ref: ../models/ContentRating.v1.yaml
+                        - properties:
+                            tag:
+                              $ref: ../models/Tag.v1.yaml
+                        - properties:
+                            contributor:
+                              $ref: ../models/Contributor.v1.yaml
+                            role:
+                              type: string
+                      type: object
               examples:
                 '1':
                   value:
@@ -260,6 +279,21 @@ paths:
                                   href: /content/content_ratings/eac7cb1192264b088ccbad0874395ce5
                           parent:
                             href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
+                    _embedded:
+                      - genre:
+                          guid: 9be42f99a8ab420082719d1bafc8e649
+                          identifiers:
+                            - source: mysource
+                              id: '1'
+                          names:
+                            - metadata:
+                                language: en
+                              name: Action
+                          _links:
+                            self:
+                              href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                          created_at: '2020-01-01T00:00:00Z'
+                          updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.creative_works.get_list
       description: ''
       security:
