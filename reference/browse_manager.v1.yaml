@@ -163,7 +163,7 @@ paths:
                 - tags
                 - availabilities
                 - content_ratings
-                - parents
+                - parent
             minItems: 1
           in: query
           name: fields
@@ -341,7 +341,7 @@ paths:
                 - tags
                 - availabilities
                 - content_ratings
-                - parents
+                - parent
             minItems: 1
           in: query
           name: fields
