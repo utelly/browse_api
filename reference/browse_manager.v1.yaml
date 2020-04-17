@@ -616,8 +616,9 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Get a tag
+      tags:
+        - Tag management
       responses:
         '200':
           description: OK
@@ -653,8 +654,9 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Get a service
+      tags:
+        - Service management
       responses:
         '200':
           description: OK
@@ -700,8 +702,9 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Get a genre
+      tags:
+        - Genre management
       responses:
         '200':
           description: OK
@@ -737,8 +740,9 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Get a content rating
+      tags:
+        - Content rating management
       responses:
         '200':
           description: OK
@@ -774,8 +778,9 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Get a contributor
+      tags:
+        - Contributors management
       responses:
         '200':
           description: OK
