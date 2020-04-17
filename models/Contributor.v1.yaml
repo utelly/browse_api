@@ -15,8 +15,6 @@ properties:
     type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  metadata:
-    $ref: ./metadata_field.v1.yaml
   name:
     type: string
   pictures:
@@ -41,5 +39,4 @@ required:
   - updated_at
   - _links
   - identifiers
-  - metadata
   - name

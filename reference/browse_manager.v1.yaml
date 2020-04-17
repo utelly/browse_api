@@ -280,6 +280,8 @@ paths:
                         identifiers:
                           - source: mysource
                             id: '1'
+                        metadata:
+                          country: gb
                         icons:
                           - url: 'https://mydomain.com/picture.jpg'
                             width: 100
@@ -1056,7 +1058,7 @@ paths:
                             href: /content/locations/e1d00d49612f48c791458f8f754358a9
                         created_at: '2020-01-01T00:00:00Z'
                         updated_at: '2020-01-01T00:00:00Z'
-      operationId: v1.content.locations.get_list
+      operationId: v1.content.location.get_list
       security:
         - Authorization: []
       parameters:
@@ -1097,7 +1099,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
+      summary: Get a location
       tags: []
       responses:
         '200':
@@ -1126,7 +1128,7 @@ paths:
                           href: /content/locations/e1d00d49612f48c791458f8f754358a9
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
-      operationId: get-content-locations-guid
+      operationId: v1.content.location.get
       security:
         - Authorization: []
       parameters:
