@@ -16,12 +16,6 @@ properties:
     type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  service:
-    $ref: ./hal_link_field.v1.yaml
-  platform:
-    $ref: ./hal_link_field.v1.yaml
-  location:
-    $ref: ./hal_link_field.v1.yaml
   prices:
     type: array
     minItems: 1
@@ -323,6 +317,3 @@ required:
   - updated_at
   - _links
   - identifiers
-  - service
-  - platform
-  - location

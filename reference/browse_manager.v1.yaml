@@ -283,6 +283,22 @@ paths:
             minItems: 1
           in: query
           name: fields
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - genres
+                - tags
+                - availabilities
+                - content_ratings
+                - contributors
+            minItems: 1
+          in: query
+          name: embed
+          explode: false
+          description: ''
+          style: form          
   /content/services:
     get:
       summary: List services
@@ -1446,15 +1462,15 @@ paths:
                         _links:
                           self:
                             href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
+                          service:
+                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/services
+                          platform:
+                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/platform
+                          location:
+                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/location
                         identifiers:
                           - source: mysource
                             id: '1'
-                        service:
-                          href: /content/services/365cebbf5f2f456b964c6507e95d933b
-                        platform:
-                          href: /content/platforms/365cebbf5f2f456b964c6507e95d933b
-                        location:
-                          href: /content/locations/365cebbf5f2f456b964c6507e95d933b
                     _embedded:
                       - guid: df3a998849344e9b954b7807fc623f08
                         identifiers:
