@@ -16,9 +16,7 @@ properties:
     type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  metadata:
-    $ref: ./metadata_field.v1.yaml
-  services:
+  service:
     $ref: ./hal_link_field.v1.yaml
   platform:
     $ref: ./hal_link_field.v1.yaml
@@ -319,13 +317,15 @@ properties:
         - quality
         - type
         - value
+  metadata:
+    $ref: ./metadata_field.v1.yaml
 required:
   - guid
   - created_at
   - updated_at
   - _links
   - identifiers
-  - metadata
-  - services
+  - service
   - platform
   - location
+  - metadata

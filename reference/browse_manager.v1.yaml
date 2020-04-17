@@ -1155,7 +1155,8 @@ paths:
         required: true
     get:
       summary: Get tags from creative work
-      tags: []
+      tags:
+        - Creative work management
       responses:
         '200':
           description: OK
@@ -1179,8 +1180,9 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Get genres from creative work
+      tags:
+        - Creative work management
       responses:
         '200':
           description: OK
@@ -1194,6 +1196,8 @@ paths:
                     items:
                       $ref: ../models/Genre.v1.yaml
       operationId: v1.content.genre.get_from_creative_work
+      security:
+        - Authorization: []
   '/content/creative_works/{guid}/contributors':
     parameters:
       - schema:
@@ -1202,8 +1206,9 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Get contributors from creative work
+      tags:
+        - Creative work management
       responses:
         '200':
           description: OK
@@ -1217,6 +1222,8 @@ paths:
                     items:
                       $ref: ../models/Contributor.v1.yaml
       operationId: v1.content.contributor.get_from_creative_work
+      security:
+        - Authorization: []
   '/content/creative_works/{guid}/content_ratings':
     parameters:
       - schema:
@@ -1225,8 +1232,9 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Get content ratings from creative work
+      tags:
+        - Creative work management
       responses:
         '200':
           description: OK
@@ -1240,6 +1248,8 @@ paths:
                     items:
                       $ref: ../models/ContentRating.v1.yaml
       operationId: v1.content.content_rating.get_from_creative_work
+      security:
+        - Authorization: []
   '/content/creative_works/{guid}/availabilities':
     parameters:
       - schema:
@@ -1248,8 +1258,9 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Get availabilities from creative work
+      tags:
+        - Creative work management
       responses:
         '200':
           description: OK
@@ -1262,7 +1273,32 @@ paths:
                     type: array
                     items:
                       $ref: ../models/Availability.v1.yaml
+                  _embedded:
+                    type: array
+                    items:
+                      anyOf:
+                        - $ref: ../models/Service.v1.yaml
+                        - $ref: ../models/Platform.v1.yaml
+                        - $ref: ../models/Location.v1.yaml
+              examples: {}
       operationId: v1.content.availability.get_from_creative_work
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - service
+                - platform
+                - location
+            minItems: 1
+          in: query
+          name: embed
+          explode: false
+          description: ''
+          style: form
 components:
   schemas:
     Languages:
