@@ -608,6 +608,206 @@ paths:
           in: query
           name: languages
           style: form
+  '/content/tags/{guid}':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tag:
+                    $ref: ../models/Tag.v1.yaml
+              examples:
+                '1':
+                  value:
+                    tag:
+                      guid: 8703dd1ced974ecea01116f2c0a5a282
+                      names:
+                        - name: Warm
+                          metadata:
+                            language: en
+                      _links:
+                        self:
+                          href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
+                      created_at: '2020-01-01T00:00:00Z'
+                      updated_at: '2020-01-01T00:00:00Z'
+      operationId: v1.content.tag.get
+      security:
+        - Authorization: []
+  '/content/services/{guid}':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  service:
+                    $ref: ../models/Service.v1.yaml
+              examples:
+                '1':
+                  value:
+                    service:
+                      guid: df3a998849344e9b954b7807fc623f08
+                      icons:
+                        - url: 'https://mydomain.com/picture.jpg'
+                          width: 100
+                          height: 100
+                          metadata:
+                            country: gb
+                            language: en
+                            source: mysource
+                            type: icon
+                      names:
+                        - name: BBC One London
+                          metadata:
+                            language: en
+                            country: gb
+                      _links:
+                        self:
+                          href: /content/services/df3a998849344e9b954b7807fc623f08
+                      created_at: '2020-01-01T00:00:00Z'
+                      updated_at: '2020-01-01T00:00:00Z'
+      operationId: v1.content.service.get
+      security:
+        - Authorization: []
+  '/content/genres/{guid}':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  genre:
+                    $ref: ../models/Genre.v1.yaml
+              examples:
+                '1':
+                  value:
+                    genre:
+                      guid: 9be42f99a8ab420082719d1bafc8e649
+                      names:
+                        - metadata:
+                            language: en
+                          name: Action
+                      _links:
+                        self:
+                          href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                      created_at: '2020-01-01T00:00:00Z'
+                      updated_at: '2020-01-01T00:00:00Z'
+      operationId: v1.content.genre.get
+      security:
+        - Authorization: []
+  '/content/content_ratings/{guid}':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content_rating:
+                    $ref: ../models/ContentRating.v1.yaml
+              examples:
+                '1':
+                  value:
+                    content_rating:
+                      guid: bcb27a2c9ee74a5a86720c3b5828093c
+                      metadata:
+                        country: gb
+                      organization: MPAA
+                      value: '12'
+                      _links:
+                        self:
+                          href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
+                      created_at: '2020-01-01T00:00:00Z'
+                      updated_at: '2020-01-01T00:00:00Z'
+      operationId: v1.content.content_rating.get
+      security:
+        - Authorization: []
+  '/content/contributors/{guid}':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contributor:
+                    $ref: ../models/Contributor.v1.yaml
+              examples:
+                '1':
+                  value:
+                    contributor:
+                      guid: eb4aaa3de91242ba82ad48bee0b48996
+                      name: Keyser Söze
+                      pictures:
+                        - url: 'https://mydomain.com/picture.jpg'
+                          width: 100
+                          height: 100
+                          metadata:
+                            country: gb
+                            language: en
+                            type: portrait
+                      _links:
+                        self:
+                          href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
+                      created_at: '2020-01-01T00:00:00Z'
+                      updated_at: '2020-01-01T00:00:00Z'
+      operationId: v1.content.contributor.get
+      security:
+        - Authorization: []
 components:
   schemas:
     Languages:
