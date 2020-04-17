@@ -911,7 +911,7 @@ paths:
                               country: gb
                         _links:
                           self:
-                            href: /content/platform/e1d00d49612f48c791458f8f754358a9
+                            href: /content/platforms/e1d00d49612f48c791458f8f754358a9
                         created_at: '2020-01-01T00:00:00Z'
                         updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.platform.get_list
@@ -989,10 +989,120 @@ paths:
                             country: gb
                       _links:
                         self:
-                          href: /content/platform/e1d00d49612f48c791458f8f754358a9
+                          href: /content/platforms/e1d00d49612f48c791458f8f754358a9
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: get-content-platforms-guid
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Languages'
+            minItems: 1
+          in: query
+          name: languages
+          description: ''
+          style: form
+  /content/locations:
+    get:
+      summary: List locations
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  locations:
+                    type: array
+                    items:
+                      $ref: ../models/Location.v1.yaml
+              examples:
+                '1':
+                  value:
+                    locations:
+                      - guid: e1d00d49612f48c791458f8f754358a9
+                        names:
+                          - name: France
+                            metadata:
+                              country: fr
+                        _links:
+                          self:
+                            href: /content/locations/e1d00d49612f48c791458f8f754358a9
+                        created_at: '2020-01-01T00:00:00Z'
+                        updated_at: '2020-01-01T00:00:00Z'
+      operationId: v1.content.locations.get_list
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - created_at
+                - '-created_at'
+                - updated_at
+                - '-updated_at'
+          in: query
+          name: sort
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+            minimum: 0
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Languages'
+          in: query
+          name: languages
+          style: form
+  '/content/locations/{guid}':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  location:
+                    $ref: ../models/Location.v1.yaml
+              examples:
+                '1':
+                  value:
+                    location:
+                      guid: e1d00d49612f48c791458f8f754358a9
+                      names:
+                        - name: France
+                          metadata:
+                            country: fr
+                      _links:
+                        self:
+                          href: /content/locations/e1d00d49612f48c791458f8f754358a9
+                      created_at: '2020-01-01T00:00:00Z'
+                      updated_at: '2020-01-01T00:00:00Z'
+      operationId: get-content-locations-guid
       security:
         - Authorization: []
       parameters:
