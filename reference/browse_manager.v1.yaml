@@ -1472,9 +1472,32 @@ paths:
       summary: Get service by availability and creative work
       tags:
         - Service management
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  services:
+                    type: array
+                    items:
+                      $ref: ../models/Service.v1.yaml
       operationId: v1.content.service.get_by_availability_and_creative_work
       description: ''
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Languages'
+            minItems: 1
+          in: query
+          name: languages
+          description: ''
+          style: form        
   '/content/creative_works/{guid}/availabilities/{availability_id}/platforms':
     parameters:
       - schema:
@@ -1491,8 +1514,31 @@ paths:
       summary: Get platform by availability and creative work
       tags:
         - Platform management
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  platform:
+                    type: array
+                    items:
+                      $ref: ../models/Platform.v1.yaml
       operationId: v1.content.platform.get_by_availability_and_creative_work
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Languages'
+            minItems: 1
+          in: query
+          name: languages
+          description: ''
+          style: form        
   '/content/creative_works/{guid}/availabilities/{availability_id}/locations':
     parameters:
       - schema:
@@ -1509,8 +1555,30 @@ paths:
       summary: Get location by availability and creative work
       tags:
         - Location management
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  locations:
+                    $ref: ../models/Location.v1.yaml
+              examples: {}
       operationId: v1.content.location.get_by_availability_and_creative_work
+      security:
+        - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Languages'
+            minItems: 1
+          in: query
+          name: languages
+          description: ''
+          style: form        
 components:
   schemas:
     Languages:
