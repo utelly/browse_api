@@ -9,3 +9,8 @@ properties:
     type: integer
   height:
     type: integer
+required:
+  - metadata
+  - url
+  - width
+  - height

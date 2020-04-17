@@ -5,9 +5,5 @@ properties:
     type: string
   id:
     type: string
-  type:
-    type: string
-  url:
-    type: string
-  domain:
-    type: string
+required:
+  - source

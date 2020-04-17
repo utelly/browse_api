@@ -16,7 +16,7 @@ properties:
     items:
       $ref: ./identifier_field.v1.yaml
   metadata:
-    $ref: ./metadata_field.v1.yaml  
+    $ref: ./metadata_field.v1.yaml
   name:
     type: string
   pictures:
@@ -37,7 +37,9 @@ properties:
         - biography
 required:
   - guid
-  - name
-  - _links
   - created_at
   - updated_at
+  - _links
+  - identifiers
+  - metadata
+  - name

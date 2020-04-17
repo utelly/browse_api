@@ -23,9 +23,10 @@ properties:
     type: string
 required:
   - guid
-  - _links
-  - metadata
   - created_at
   - updated_at
+  - _links
+  - identifiers
+  - metadata
   - value
   - organization

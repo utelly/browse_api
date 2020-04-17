@@ -16,7 +16,7 @@ properties:
     items:
       $ref: ./identifier_field.v1.yaml
   metadata:
-    $ref: ./metadata_field.v1.yaml  
+    $ref: ./metadata_field.v1.yaml
   icons:
     type: array
     items:
@@ -30,9 +30,13 @@ properties:
           $ref: ./metadata_field.v1.yaml
         name:
           type: string
+      required:
+        - metadata
+        - name
 required:
   - guid
-  - names
-  - _links
   - created_at
   - updated_at
+  - _links
+  - identifiers
+  - metadata

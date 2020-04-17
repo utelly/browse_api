@@ -26,9 +26,13 @@ properties:
           $ref: ./metadata_field.v1.yaml
         name:
           type: string
+      required:
+        - metadata
+        - name
 required:
   - guid
-  - names
-  - _links
   - created_at
   - updated_at
+  - _links
+  - identifiers
+  - metadata
