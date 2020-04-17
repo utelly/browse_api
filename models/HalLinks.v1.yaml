@@ -12,6 +12,9 @@ x-examples:
       href: /creative_works/1
     last:
       href: /creative_works/190
+additionalProperties:
+  type: object
+  $ref: ./hal_link_field.v1.yaml  
 properties:
   self:
     $ref: ./hal_link_field.v1.yaml

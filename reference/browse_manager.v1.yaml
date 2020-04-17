@@ -173,6 +173,16 @@ paths:
                         _links:
                           self:
                             href: /content/creative_works/27c13eec19014084a0a3173061702b46
+                          availabilities:
+                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
+                          tags:
+                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
+                          genres:
+                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
+                          content_ratings:
+                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
+                          contributors:
+                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/contributors
                         identifiers:
                           - source: mysource
                             id: '1'
