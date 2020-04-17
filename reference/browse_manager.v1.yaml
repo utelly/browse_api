@@ -256,6 +256,23 @@ paths:
           in: query
           name: languages
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - titles
+                - descriptions
+                - artworks
+                - contributors
+                - genres
+                - tags
+                - availabilities
+                - content_ratings
+                - parents
+            minItems: 1
+          in: query
+          name: fields
   /content/services:
     get:
       summary: List services
@@ -608,6 +625,16 @@ paths:
           in: query
           name: languages
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - pictures
+                - biographies
+            minItems: 1
+          in: query
+          name: fields
   '/content/tags/{guid}':
     parameters:
       - schema:
@@ -1029,7 +1056,8 @@ paths:
   /content/locations:
     get:
       summary: List locations
-      tags: []
+      tags:
+        - Location management
       responses:
         '200':
           description: OK
@@ -1101,7 +1129,8 @@ paths:
         required: true
     get:
       summary: Get a location
-      tags: []
+      tags:
+        - Location management
       responses:
         '200':
           description: OK
@@ -1151,8 +1180,6 @@ paths:
         required: true
     get:
       summary: Get tags from creative work
-      tags:
-        - Creative work management
       responses:
         '200':
           description: OK
@@ -1185,6 +1212,18 @@ paths:
       operationId: v1.content.tag.get_from_creative_work
       security:
         - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Languages'
+            minItems: 1
+          in: query
+          name: languages
+          description: ''
+          style: form
+      tags:
+        - Tag management
   '/content/creative_works/{guid}/genres':
     parameters:
       - schema:
@@ -1194,8 +1233,6 @@ paths:
         required: true
     get:
       summary: Get genres from creative work
-      tags:
-        - Creative work management
       responses:
         '200':
           description: OK
@@ -1228,6 +1265,18 @@ paths:
       operationId: v1.content.genre.get_from_creative_work
       security:
         - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Languages'
+            minItems: 1
+          in: query
+          name: languages
+          description: ''
+          style: form
+      tags:
+        - Genre management
   '/content/creative_works/{guid}/contributors':
     parameters:
       - schema:
@@ -1237,8 +1286,6 @@ paths:
         required: true
     get:
       summary: Get contributors from creative work
-      tags:
-        - Creative work management
       responses:
         '200':
           description: OK
@@ -1276,6 +1323,28 @@ paths:
       operationId: v1.content.contributor.get_from_creative_work
       security:
         - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Languages'
+            minItems: 1
+          in: query
+          name: languages
+          description: ''
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - pictures
+                - biographies
+            minItems: 1
+          in: query
+          name: fields
+      tags:
+        - Contributors management
   '/content/creative_works/{guid}/content_ratings':
     parameters:
       - schema:
@@ -1285,8 +1354,6 @@ paths:
         required: true
     get:
       summary: Get content ratings from creative work
-      tags:
-        - Creative work management
       responses:
         '200':
           description: OK
@@ -1319,6 +1386,18 @@ paths:
       operationId: v1.content.content_rating.get_from_creative_work
       security:
         - Authorization: []
+      parameters:
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Languages'
+            minItems: 1
+          in: query
+          name: languages
+          description: ''
+          style: form
+      tags:
+        - Content rating management
   '/content/creative_works/{guid}/availabilities':
     parameters:
       - schema:
@@ -1328,8 +1407,6 @@ paths:
         required: true
     get:
       summary: Get availabilities from creative work
-      tags:
-        - Creative work management
       responses:
         '200':
           description: OK
@@ -1357,6 +1434,15 @@ paths:
         - schema:
             type: array
             items:
+              $ref: '#/components/schemas/Languages'
+            minItems: 1
+          in: query
+          name: languages
+          description: ''
+          style: form
+        - schema:
+            type: array
+            items:
               type: string
               enum:
                 - service
@@ -1368,6 +1454,63 @@ paths:
           explode: false
           description: ''
           style: form
+      tags:
+        - Availability management
+  '/content/creative_works/{guid}/availabilities/{availability_id}/services':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: availability_id
+        in: path
+        required: true
+    get:
+      summary: Get service by availability and creative work
+      tags:
+        - Service management
+      responses: {}
+      operationId: v1.content.service.get_by_availability_and_creative_work
+      description: ''
+  '/content/creative_works/{guid}/availabilities/{availability_id}/platforms':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: availability_id
+        in: path
+        required: true
+    get:
+      summary: Get platform by availability and creative work
+      tags:
+        - Platform management
+      responses: {}
+      operationId: v1.content.platform.get_by_availability_and_creative_work
+  '/content/creative_works/{guid}/availabilities/{availability_id}/locations':
+    parameters:
+      - schema:
+          type: string
+        name: guid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: availability_id
+        in: path
+        required: true
+    get:
+      summary: Get location by availability and creative work
+      tags:
+        - Location management
+      responses: {}
+      operationId: v1.content.location.get_by_availability_and_creative_work
 components:
   schemas:
     Languages:
