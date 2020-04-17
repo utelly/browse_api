@@ -16,6 +16,9 @@ properties:
           $ref: ./metadata_field.v1.yaml
         name:
           type: string
+      required:
+        - metadata
+        - name
   _links:
     $ref: ./HalLinks.v1.yaml
   created_at:

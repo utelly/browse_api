@@ -23,6 +23,12 @@ properties:
     format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
+  identifiers:
+    type: array
+    items:
+      $ref: ./identifier_field.v1.yaml    
+  parent:
+    $ref: ./hal_link_field.v1.yaml      
   titles:
     type: array
     items:
@@ -99,18 +105,10 @@ properties:
           $ref: ./HalLinks.v1.yaml
       required:
         - _links
-  parents:
-    type: array
-    items:
-      type: object
-      properties:
-        _links:
-          $ref: ./HalLinks.v1.yaml
-      required:
-        - _links
 required:
   - guid
   - type
   - created_at
   - updated_at
   - _links
+  - identifiers

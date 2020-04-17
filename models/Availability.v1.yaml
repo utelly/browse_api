@@ -331,6 +331,17 @@ properties:
       properties:
         _links:
           $ref: ./HalLinks.v1.yaml
+      required:
+        - _links
+  locations:
+    type: array
+    items:
+      type: object
+      properties:
+        _links:
+          $ref: ./HalLinks.v1.yaml
+      required:
+        - _links
 required:
   - guid
   - time_from
@@ -341,3 +352,5 @@ required:
   - prices
   - _links
   - metadata
+  - platforms
+  - locations
