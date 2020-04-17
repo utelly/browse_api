@@ -1426,7 +1426,49 @@ paths:
                         - $ref: ../models/Service.v1.yaml
                         - $ref: ../models/Platform.v1.yaml
                         - $ref: ../models/Location.v1.yaml
-              examples: {}
+              examples:
+                '1':
+                  value:
+                    availabilities:
+                      - guid: eb4aaa3de91242ba82ad48bee0b48996
+                        created_at: '2020-01-01T00:00:00Z'
+                        updated_at: '2020-01-01T00:00:00Z'
+                        _links:
+                          self:
+                            href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
+                        identifiers:
+                          - source: mysource
+                            id: '1'
+                        service:
+                          href: /content/services/365cebbf5f2f456b964c6507e95d933b
+                        platform:
+                          href: /content/platforms/365cebbf5f2f456b964c6507e95d933b
+                        location:
+                          href: /content/locations/365cebbf5f2f456b964c6507e95d933b
+                    _embedded:
+                      - guid: df3a998849344e9b954b7807fc623f08
+                        identifiers:
+                          - source: mysource
+                            id: '1'
+                        icons:
+                          - url: 'https://mydomain.com/picture.jpg'
+                            width: 100
+                            height: 100
+                            metadata:
+                              country: gb
+                              language: en
+                              source: mysource
+                              type: icon
+                        names:
+                          - name: BBC One London
+                            metadata:
+                              language: en
+                              country: gb
+                        _links:
+                          self:
+                            href: /content/services/df3a998849344e9b954b7807fc623f08
+                        created_at: '2020-01-01T00:00:00Z'
+                        updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.availability.get_from_creative_work
       security:
         - Authorization: []
