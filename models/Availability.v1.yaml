@@ -317,8 +317,6 @@ properties:
         - quality
         - type
         - value
-  metadata:
-    $ref: ./metadata_field.v1.yaml
 required:
   - guid
   - created_at
@@ -328,4 +326,3 @@ required:
   - service
   - platform
   - location
-  - metadata
