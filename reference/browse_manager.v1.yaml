@@ -1456,7 +1456,7 @@ paths:
           style: form
       tags:
         - Availability management
-  '/content/creative_works/{guid}/availabilities/{availability_id}/services':
+  '/content/creative_works/{guid}/availabilities/{availability_guid}/services':
     parameters:
       - schema:
           type: string
@@ -1465,7 +1465,7 @@ paths:
         required: true
       - schema:
           type: string
-        name: availability_id
+        name: availability_guid
         in: path
         required: true
     get:
@@ -1497,8 +1497,8 @@ paths:
           in: query
           name: languages
           description: ''
-          style: form        
-  '/content/creative_works/{guid}/availabilities/{availability_id}/platforms':
+          style: form
+  '/content/creative_works/{guid}/availabilities/{availability_guid}/platforms':
     parameters:
       - schema:
           type: string
@@ -1507,7 +1507,7 @@ paths:
         required: true
       - schema:
           type: string
-        name: availability_id
+        name: availability_guid
         in: path
         required: true
     get:
@@ -1538,8 +1538,8 @@ paths:
           in: query
           name: languages
           description: ''
-          style: form        
-  '/content/creative_works/{guid}/availabilities/{availability_id}/locations':
+          style: form
+  '/content/creative_works/{guid}/availabilities/{availability_guid}/locations':
     parameters:
       - schema:
           type: string
@@ -1548,7 +1548,7 @@ paths:
         required: true
       - schema:
           type: string
-        name: availability_id
+        name: availability_guid
         in: path
         required: true
     get:
@@ -1578,7 +1578,7 @@ paths:
           in: query
           name: languages
           description: ''
-          style: form        
+          style: form
 components:
   schemas:
     Languages:
