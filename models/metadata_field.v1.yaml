@@ -15,4 +15,4 @@ properties:
   country:
     $ref: ./country_field.v1.yaml
   language:
-    type: string
+    $ref: ./languages_field.v1.yaml
