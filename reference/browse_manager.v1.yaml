@@ -288,20 +288,20 @@ paths:
                             href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
                     _embedded:
                       genres:
-                        genre:
-                          guid: 9be42f99a8ab420082719d1bafc8e649
-                          identifiers:
-                            - source: mysource
-                              id: '1'
-                          names:
-                            - metadata:
-                                language: en
-                              name: Action
-                          _links:
-                            self:
-                              href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                          created_at: '2020-01-01T00:00:00Z'
-                          updated_at: '2020-01-01T00:00:00Z'
+                        - genre:
+                            guid: 9be42f99a8ab420082719d1bafc8e649
+                            identifiers:
+                              - source: mysource
+                                id: '1'
+                            names:
+                              - metadata:
+                                  language: en
+                                name: Action
+                            _links:
+                              self:
+                                href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                            created_at: '2020-01-01T00:00:00Z'
+                            updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.creative_works.get_list
       description: ''
       security:
