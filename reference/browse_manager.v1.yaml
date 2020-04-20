@@ -1562,7 +1562,8 @@ paths:
                 '1':
                   value:
                     contributors:
-                      - contributor:
+                      - role: actor
+                        contributor:
                           guid: eb4aaa3de91242ba82ad48bee0b48996
                           name: Keyser Söze
                           identifiers:
