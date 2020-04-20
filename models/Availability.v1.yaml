@@ -1,6 +1,7 @@
 title: Availability
 type: object
 description: ''
+additionalProperties: false
 properties:
   guid:
     type: string
@@ -46,10 +47,15 @@ properties:
         - quality
         - type
         - value
+  date_from:
+    type: string
+    format: date-time
+  date_to:
+    type: string
+    format: date-time
 required:
   - guid
   - created_at
   - updated_at
   - _links
   - identifiers
-additionalProperties: false

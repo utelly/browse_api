@@ -41,6 +41,8 @@ paths:
                           properties:
                             genre:
                               $ref: ../models/Genre.v1.yaml
+                          required:
+                            - genre
                       content_ratings:
                         type: object
                         properties:
@@ -51,6 +53,8 @@ paths:
                               properties:
                                 content_rating:
                                   $ref: ../models/ContentRating.v1.yaml
+                              required:
+                                - content_rating
                       tags:
                         type: array
                         items:
@@ -58,6 +62,8 @@ paths:
                           properties:
                             tag:
                               $ref: ../models/Tag.v1.yaml
+                          required:
+                            - tag
                       contributors:
                         type: array
                         items:
@@ -77,6 +83,9 @@ paths:
                                 - executive producer
                             character_name:
                               type: string
+                          required:
+                            - contributor
+                            - role
                 required:
                   - creative_work
               examples:
@@ -149,6 +158,15 @@ paths:
         - schema:
             type: array
             items:
+              $ref: ../models/languages_field.v1.yaml
+            minItems: 1
+          in: query
+          name: languages
+          description: ''
+          style: form
+        - schema:
+            type: array
+            items:
               type: string
               enum:
                 - genres
@@ -160,15 +178,6 @@ paths:
           in: query
           name: embed
           explode: false
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
           description: ''
           style: form
         - schema:
@@ -204,44 +213,13 @@ paths:
                       properties:
                         creative_work:
                           $ref: ../models/CreativeWork.v1.yaml
-                  _embedded:
-                    type: object
-                    properties:
-                      genres:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            genre:
-                              $ref: ../models/Genre.v1.yaml
-                      content_ratings:
-                        type: object
-                        properties:
-                          content_rating:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                content_rating:
-                                  $ref: ../models/ContentRating.v1.yaml
-                      tags:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            tag:
-                              $ref: ../models/Tag.v1.yaml
-                      contributors:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            contributor:
-                              $ref: ../models/Contributor.v1.yaml
-                            role:
-                              type: string
-                            character_name:
-                              type: string
+                      required:
+                        - creative_work
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - creative_works
+                  - _links
               examples:
                 '1':
                   value:
@@ -292,22 +270,17 @@ paths:
                               height: 100
                           parent:
                             href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
-                    _embedded:
-                      genres:
-                        - genre:
-                            guid: 9be42f99a8ab420082719d1bafc8e649
-                            identifiers:
-                              - source: mysource
-                                id: '1'
-                            names:
-                              - metadata:
-                                  language: en
-                                name: Action
-                            _links:
-                              self:
-                                href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                            created_at: '2020-01-01T00:00:00Z'
-                            updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/creative_works?offset=50&limit=50'
+                      next:
+                        href: '/content/creative_works?offset=100&limit=50'
+                      prev:
+                        href: /content/creative_works
+                      first:
+                        href: /content/creative_works
+                      last:
+                        href: '/content/creative_works?offset=2300&limit=50'
       operationId: v1.content.creative_works.get_list
       description: ''
       parameters:
@@ -357,22 +330,6 @@ paths:
             minItems: 1
           in: query
           name: fields
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - genres
-                - tags
-                - availabilities
-                - content_ratings
-                - contributors
-            minItems: 1
-          in: query
-          name: embed
-          explode: false
-          description: ''
-          style: form
   /content/services:
     get:
       summary: List services
@@ -393,6 +350,13 @@ paths:
                       properties:
                         service:
                           $ref: ../models/Service.v1.yaml
+                      required:
+                        - service
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - services
+                  - _links
               examples:
                 '1':
                   value:
@@ -421,6 +385,17 @@ paths:
                               href: /content/services/df3a998849344e9b954b7807fc623f08
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/services?offset=50&limit=50'
+                      next:
+                        href: '/content/services?offset=100&limit=50'
+                      prev:
+                        href: /content/services
+                      first:
+                        href: /content/services
+                      last:
+                        href: '/content/services?offset=2300&limit=50'
       operationId: v1.content.service.get_list
       parameters:
         - schema:
@@ -472,6 +447,13 @@ paths:
                       properties:
                         tag:
                           $ref: ../models/Tag.v1.yaml
+                      required:
+                        - tag
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - tags
+                  - _links
               examples:
                 '1':
                   value:
@@ -490,6 +472,17 @@ paths:
                               href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/tags?offset=50&limit=50'
+                      next:
+                        href: '/content/tags?offset=100&limit=50'
+                      prev:
+                        href: /content/tags
+                      first:
+                        href: /content/tags
+                      last:
+                        href: '/content/tags?offset=2300&limit=50'
       operationId: v1.content.tag.get_list
       parameters:
         - schema:
@@ -541,6 +534,13 @@ paths:
                       properties:
                         genre:
                           $ref: ../models/Genre.v1.yaml
+                      required:
+                        - genre
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - genres
+                  - _links
               examples:
                 '1':
                   value:
@@ -559,6 +559,17 @@ paths:
                               href: /content/genres/9be42f99a8ab420082719d1bafc8e649
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/genres?offset=50&limit=50'
+                      next:
+                        href: '/content/genres?offset=100&limit=50'
+                      prev:
+                        href: /content/genres
+                      first:
+                        href: /content/genres
+                      last:
+                        href: '/content/genres?offset=2300&limit=50'
       operationId: v1.content.genre.get_list
       parameters:
         - schema:
@@ -610,6 +621,13 @@ paths:
                       properties:
                         content_rating:
                           $ref: ../models/ContentRating.v1.yaml
+                      required:
+                        - content_rating
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - content_ratings
+                  - _links
               examples:
                 '1':
                   value:
@@ -628,6 +646,17 @@ paths:
                             href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
                         created_at: '2020-01-01T00:00:00Z'
                         updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/content_ratings?offset=50&limit=50'
+                      next:
+                        href: '/content/content_ratings?offset=100&limit=50'
+                      prev:
+                        href: /content/content_ratings
+                      first:
+                        href: /content/content_ratings
+                      last:
+                        href: '/content/content_ratings?offset=2300&limit=50'
       operationId: v1.content.content_rating.get_list
       parameters:
         - schema:
@@ -679,6 +708,8 @@ paths:
                       properties:
                         contributor:
                           $ref: ../models/Contributor.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -702,6 +733,17 @@ paths:
                               href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/contributors?offset=50&limit=50'
+                      next:
+                        href: '/content/contributors?offset=100&limit=50'
+                      prev:
+                        href: /content/contributors
+                      first:
+                        href: /content/contributors
+                      last:
+                        href: '/content/contributors?offset=2300&limit=50'
       operationId: v1.content.contributors.get_list
       parameters:
         - schema:
@@ -1034,6 +1076,8 @@ paths:
                       properties:
                         platform:
                           $ref: ../models/Platform.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -1062,6 +1106,17 @@ paths:
                               href: /content/platforms/e1d00d49612f48c791458f8f754358a9
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/platforms?offset=50&limit=50'
+                      next:
+                        href: '/content/platforms?offset=100&limit=50'
+                      prev:
+                        href: /content/platforms
+                      first:
+                        href: /content/platforms
+                      last:
+                        href: '/content/platforms?offset=2300&limit=50'
       operationId: v1.content.platform.get_list
       parameters:
         - schema:
@@ -1172,6 +1227,8 @@ paths:
                       properties:
                         location:
                           $ref: ../models/Location.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -1190,6 +1247,17 @@ paths:
                               href: /content/locations/e1d00d49612f48c791458f8f754358a9
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/locations?offset=50&limit=50'
+                      next:
+                        href: '/content/locations?offset=100&limit=50'
+                      prev:
+                        href: /content/locations
+                      first:
+                        href: /content/locations
+                      last:
+                        href: '/content/locations?offset=2300&limit=50'
       operationId: v1.content.location.get_list
       parameters:
         - schema:
@@ -1294,6 +1362,8 @@ paths:
                       properties:
                         tag:
                           $ref: ../models/Tag.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -1312,6 +1382,17 @@ paths:
                               href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=50&limit=50'
+                      next:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=100&limit=50'
+                      prev:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags
+                      first:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags
+                      last:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=2300&limit=50'
       operationId: v1.content.tag.get_from_creative_work
       parameters:
         - schema:
@@ -1349,6 +1430,8 @@ paths:
                       properties:
                         genre:
                           $ref: ../models/Genre.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -1367,6 +1450,17 @@ paths:
                               href: /content/genres/9be42f99a8ab420082719d1bafc8e649
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=50&limit=50'
+                      next:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=100&limit=50'
+                      prev:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres
+                      first:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres
+                      last:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=2300&limit=50'
       operationId: v1.content.genre.get_from_creative_work
       parameters:
         - schema:
@@ -1414,6 +1508,8 @@ paths:
                             - producer
                             - writer
                             - executive producer
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -1437,6 +1533,17 @@ paths:
                               href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=50&limit=50'
+                      next:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=100&limit=50'
+                      prev:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors
+                      first:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors
+                      last:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=2300&limit=50'
       operationId: v1.content.contributor.get_from_creative_work
       parameters:
         - schema:
@@ -1484,6 +1591,8 @@ paths:
                       properties:
                         content_rating:
                           $ref: ../models/ContentRating.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -1503,6 +1612,17 @@ paths:
                               href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=50&limit=50'
+                      next:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=100&limit=50'
+                      prev:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings
+                      first:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings
+                      last:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=2300&limit=50'
       operationId: v1.content.content_rating.get_from_creative_work
       parameters:
         - schema:
@@ -1540,30 +1660,8 @@ paths:
                       properties:
                         availability:
                           $ref: ../models/Availability.v1.yaml
-                  _embedded:
-                    type: object
-                    properties:
-                      services:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            service:
-                              $ref: ../models/Service.v1.yaml
-                      locations:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            location:
-                              $ref: ../models/Location.v1.yaml
-                      platforms:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            platform:
-                              $ref: ../models/Platform.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -1572,6 +1670,8 @@ paths:
                           guid: eb4aaa3de91242ba82ad48bee0b48996
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                          date_from: '2020-01-01T00:00:00Z'
+                          date_to: '2020-01-01T00:00:00Z'
                           _links:
                             self:
                               href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
@@ -1584,32 +1684,17 @@ paths:
                           identifiers:
                             - source: mysource
                               id: '1'
-                    _embedded:
-                      services:
-                        - service:
-                            guid: df3a998849344e9b954b7807fc623f08
-                            identifiers:
-                              - source: mysource
-                                id: '1'
-                            icons:
-                              - url: 'https://mydomain.com/picture.jpg'
-                                width: 100
-                                height: 100
-                                metadata:
-                                  country: GB
-                                  language: en
-                                  source: mysource
-                                  type: icon
-                            names:
-                              - name: BBC One London
-                                metadata:
-                                  language: en
-                                  country: GB
-                            _links:
-                              self:
-                                href: /content/services/df3a998849344e9b954b7807fc623f08
-                            created_at: '2020-01-01T00:00:00Z'
-                            updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=50&limit=50'
+                      next:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=100&limit=50'
+                      prev:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities
+                      first:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities
+                      last:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=2300&limit=50'
       operationId: v1.content.availability.get_from_creative_work
       parameters:
         - schema:
@@ -1619,20 +1704,6 @@ paths:
             minItems: 1
           in: query
           name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - services
-                - platforms
-                - locations
-            minItems: 1
-          in: query
-          name: embed
-          explode: false
           description: ''
           style: form
       tags:
@@ -1650,7 +1721,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Get service by availability and creative work
+      summary: Get services by availability and creative work
       tags:
         - Service management
       responses:
@@ -1668,6 +1739,8 @@ paths:
                       properties:
                         service:
                           $ref: ../models/Service.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -1696,6 +1769,17 @@ paths:
                               href: /content/services/df3a998849344e9b954b7807fc623f08
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/services?offset=50&limit=50'
+                      next:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/services?offset=100&limit=50'
+                      prev:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/services
+                      first:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/services
+                      last:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/services?offset=2300&limit=50'
       operationId: v1.content.service.get_by_availability_and_creative_work
       description: ''
       parameters:
@@ -1721,7 +1805,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Get platform by availability and creative work
+      summary: Get platforms by availability and creative work
       tags:
         - Platform management
       responses:
@@ -1739,6 +1823,8 @@ paths:
                       properties:
                         platform:
                           $ref: ../models/Platform.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -1767,6 +1853,17 @@ paths:
                               href: /content/platforms/e1d00d49612f48c791458f8f754358a9
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/platforms?offset=50&limit=50'
+                      next:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/platforms?offset=100&limit=50'
+                      prev:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/platforms
+                      first:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/platforms
+                      last:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/platforms?offset=2300&limit=50'
       operationId: v1.content.platform.get_by_availability_and_creative_work
       parameters:
         - schema:
@@ -1791,7 +1888,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Get location by availability and creative work
+      summary: Get locations by availability and creative work
       tags:
         - Location management
       responses:
@@ -1809,6 +1906,8 @@ paths:
                       properties:
                         location:
                           $ref: ../models/Location.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
               examples:
                 '1':
                   value:
@@ -1827,6 +1926,17 @@ paths:
                               href: /content/locations/e1d00d49612f48c791458f8f754358a9
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/locations?offset=50&limit=50'
+                      next:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/locations?offset=100&limit=50'
+                      prev:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/locations
+                      first:
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/locations
+                      last:
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities/df3a998849344e9b954b7807fc623f08/locations?offset=2300&limit=50'
       operationId: v1.content.location.get_by_availability_and_creative_work
       parameters:
         - schema:
