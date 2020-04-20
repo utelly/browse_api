@@ -1563,9 +1563,10 @@ paths:
                   value:
                     contributors:
                       - role: actor
+                        character_name: Keyser Söze
                         contributor:
                           guid: eb4aaa3de91242ba82ad48bee0b48996
-                          name: Keyser Söze
+                          name: Kevin Spacey
                           identifiers:
                             - source: mysource
                               id: '1'
