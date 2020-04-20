@@ -1560,11 +1560,11 @@ paths:
                           _links:
                             self:
                               href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
-                            service:
+                            services:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/services
-                            platform:
+                            platforms:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/platforms
-                            location:
+                            locations:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/locations
                           identifiers:
                             - source: mysource
