@@ -156,11 +156,6 @@ paths:
                 - titles
                 - descriptions
                 - artworks
-                - contributors
-                - genres
-                - tags
-                - availabilities
-                - content_ratings
                 - parent
             minItems: 1
           in: query
