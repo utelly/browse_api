@@ -20,6 +20,18 @@ properties:
       $ref: ./identifier_field.v1.yaml
   parent:
     $ref: ./hal_link_field.v1.yaml
+  type:
+    type: string
+    enum:
+      - movie
+      - series
+      - short
+      - tv
+      - web
+      - article
+      - supplemental
+      - season
+      - episode    
   titles:
     type: array
     items:
@@ -50,18 +62,6 @@ properties:
     type: array
     items:
       $ref: ./picture_field.v1.yaml
-  type:
-    type: string
-    enum:
-      - movie
-      - series
-      - short
-      - tv
-      - web
-      - article
-      - supplemental
-      - season
-      - episode
 required:
   - guid
   - created_at
