@@ -199,24 +199,43 @@ paths:
                         creative_work:
                           $ref: ../models/CreativeWork.v1.yaml
                   _embedded:
-                    type: array
-                    items:
-                      anyOf:
-                        - properties:
+                    type: object
+                    properties:
+                      genres:
+                        type: array
+                        items:
+                          type: object
+                          properties:
                             genre:
                               $ref: ../models/Genre.v1.yaml
-                        - properties:
-                            content_rating:
-                              $ref: ../models/ContentRating.v1.yaml
-                        - properties:
+                      content_ratings:
+                        type: object
+                        properties:
+                          content_rating:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                content_rating:
+                                  $ref: ../models/ContentRating.v1.yaml
+                      tags:
+                        type: array
+                        items:
+                          type: object
+                          properties:
                             tag:
                               $ref: ../models/Tag.v1.yaml
-                        - properties:
+                      contributors:
+                        type: array
+                        items:
+                          type: object
+                          properties:
                             contributor:
                               $ref: ../models/Contributor.v1.yaml
                             role:
                               type: string
-                      type: object
+                            character_name:
+                              type: string
               examples:
                 '1':
                   value:
@@ -268,7 +287,8 @@ paths:
                           parent:
                             href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
                     _embedded:
-                      - genre:
+                      genres:
+                        genre:
                           guid: 9be42f99a8ab420082719d1bafc8e649
                           identifiers:
                             - source: mysource
