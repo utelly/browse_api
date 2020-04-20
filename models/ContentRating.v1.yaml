@@ -15,18 +15,24 @@ properties:
     type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  metadata:
-    $ref: ./metadata_field.v1.yaml
-  value:
-    type: string
-  organization:
-    type: string
+  values:
+    type: array
+    items:
+      type: object
+      properties:
+        metatada:
+          $ref: ./metadata_field.v1.yaml
+        value:
+          type: string
+        organization:
+          type: string
+      required:
+        - value
+        - organization
 required:
   - guid
   - created_at
   - updated_at
   - _links
   - identifiers
-  - metadata
-  - value
-  - organization
+  - values

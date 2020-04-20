@@ -17,8 +17,6 @@ properties:
     type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  metadata:
-    $ref: ./metadata_field.v1.yaml
   parent:
     $ref: ./hal_link_field.v1.yaml
   titles:
@@ -55,4 +53,3 @@ required:
   - updated_at
   - _links
   - identifiers
-  - metadata
