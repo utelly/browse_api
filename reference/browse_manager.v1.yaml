@@ -79,7 +79,6 @@ paths:
                       identifiers:
                         - source: mysource
                           id: '1'
-                          url: 'https://mydomain.com/myressource.html'
                       titles:
                         - metadata:
                             source: mysource
