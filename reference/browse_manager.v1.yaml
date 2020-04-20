@@ -213,8 +213,7 @@ paths:
                     creative_works:
                       - creative_work:
                           guid: 27c13eec19014084a0a3173061702b46
-                          metadata:
-                            type: movie
+                          type: movie
                           created_at: '2020-01-01T00:00:10Z'
                           updated_at: '2020-01-01T00:00:10Z'
                           _links:
