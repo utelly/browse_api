@@ -1612,9 +1612,9 @@ paths:
             items:
               type: string
               enum:
-                - service
-                - platform
-                - location
+                - services
+                - platforms
+                - locations
             minItems: 1
           in: query
           name: embed
