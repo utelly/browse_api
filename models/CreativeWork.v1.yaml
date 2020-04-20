@@ -2,6 +2,7 @@ title: CreativeWork
 type: object
 x-examples: {}
 description: ''
+additionalProperties: false
 properties:
   guid:
     type: string
@@ -49,10 +50,22 @@ properties:
     type: array
     items:
       $ref: ./picture_field.v1.yaml
+  type:
+    type: string
+    enum:
+      - movie
+      - series
+      - short
+      - tv
+      - web
+      - article
+      - supplemental
+      - season
+      - episode
 required:
   - guid
   - created_at
   - updated_at
   - _links
   - identifiers
-additionalProperties: false
+  - type
