@@ -23,6 +23,7 @@ properties:
     type: array
     items:
       type: object
+      additionalProperties: false
       properties:
         metadata:
           $ref: ./metadata_field.v1.yaml
@@ -35,6 +36,7 @@ properties:
     type: array
     items:
       type: object
+      additionalProperties: false
       properties:
         metadata:
           $ref: ./metadata_field.v1.yaml

@@ -19,6 +19,7 @@ properties:
     type: array
     items:
       type: object
+      additionalProperties: false
       properties:
         metatada:
           $ref: ./metadata_field.v1.yaml

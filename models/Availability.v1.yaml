@@ -21,6 +21,7 @@ properties:
     minItems: 1
     items:
       type: object
+      additionalProperties: false
       properties:
         metadata:
           $ref: ./metadata_field.v1.yaml
