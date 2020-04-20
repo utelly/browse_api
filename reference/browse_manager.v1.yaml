@@ -10,11 +10,11 @@ servers:
   - url: 'https://dev-services.utelly.com/browse_manager/v1'
     description: dev
 paths:
-  '/content/creative_works/{guid}':
+  '/content/creative_works/{creative_work_guid}':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: creative_work_guid
         in: path
         required: true
     get:
@@ -743,11 +743,11 @@ paths:
             minItems: 1
           in: query
           name: fields
-  '/content/tags/{guid}':
+  '/content/tags/{tag_guid}':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: tag_guid
         in: path
         required: true
     get:
@@ -794,11 +794,11 @@ paths:
           name: languages
           description: ''
           style: form
-  '/content/services/{guid}':
+  '/content/services/{service_guid}':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: service_guid
         in: path
         required: true
     get:
@@ -855,11 +855,11 @@ paths:
           name: languages
           description: ''
           style: form
-  '/content/genres/{guid}':
+  '/content/genres/{genre_guid}':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: genre_guid
         in: path
         required: true
     get:
@@ -906,11 +906,11 @@ paths:
           name: languages
           description: ''
           style: form
-  '/content/content_ratings/{guid}':
+  '/content/content_ratings/{rating_guid}':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: rating_guid
         in: path
         required: true
     get:
@@ -958,11 +958,11 @@ paths:
           name: languages
           description: ''
           style: form
-  '/content/contributors/{guid}':
+  '/content/contributors/{contributor_guid}':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: contributor_guid
         in: path
         required: true
     get:
@@ -1105,11 +1105,11 @@ paths:
           in: query
           name: languages
           style: form
-  '/content/platforms/{guid}':
+  '/content/platforms/{platform_guid}':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: platform_guid
         in: path
         required: true
     get:
@@ -1237,11 +1237,11 @@ paths:
           in: query
           name: languages
           style: form
-  '/content/locations/{guid}':
+  '/content/locations/{location_guid}':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: location_guid
         in: path
         required: true
     get:
@@ -1288,11 +1288,11 @@ paths:
           name: languages
           description: ''
           style: form
-  '/content/creative_works/{guid}/tags':
+  '/content/creative_works/{creative_work_guid}/tags':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: creative_work_guid
         in: path
         required: true
     get:
@@ -1345,11 +1345,11 @@ paths:
           style: form
       tags:
         - Tag management
-  '/content/creative_works/{guid}/genres':
+  '/content/creative_works/{creative_work_guid}/genres':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: creative_work_guid
         in: path
         required: true
     get:
@@ -1402,11 +1402,11 @@ paths:
           style: form
       tags:
         - Genre management
-  '/content/creative_works/{guid}/contributors':
+  '/content/creative_works/{creative_work_guid}/contributors':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: creative_work_guid
         in: path
         required: true
     get:
@@ -1484,11 +1484,11 @@ paths:
           name: fields
       tags:
         - Contributors management
-  '/content/creative_works/{guid}/content_ratings':
+  '/content/creative_works/{creative_work_guid}/content_ratings':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: creative_work_guid
         in: path
         required: true
     get:
@@ -1542,11 +1542,11 @@ paths:
           style: form
       tags:
         - Content rating management
-  '/content/creative_works/{guid}/availabilities':
+  '/content/creative_works/{creative_work_guid}/availabilities':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: creative_work_guid
         in: path
         required: true
     get:
@@ -1654,16 +1654,16 @@ paths:
           style: form
       tags:
         - Availability management
-  '/content/creative_works/{guid}/availabilities/{availability_guid}/services':
+  '/content/creative_works/{creative_work_guid}/availabilities/{availability_guid}/services':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: availability_guid
         in: path
         required: true
       - schema:
           type: string
-        name: availability_guid
+        name: creative_work_guid
         in: path
         required: true
     get:
@@ -1729,16 +1729,16 @@ paths:
           name: languages
           description: ''
           style: form
-  '/content/creative_works/{guid}/availabilities/{availability_guid}/platforms':
+  '/content/creative_works/{creative_work_guid}/availabilities/{availability_guid}/platforms':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: availability_guid
         in: path
         required: true
       - schema:
           type: string
-        name: availability_guid
+        name: creative_work_guid
         in: path
         required: true
     get:
@@ -1801,16 +1801,16 @@ paths:
           name: languages
           description: ''
           style: form
-  '/content/creative_works/{guid}/availabilities/{availability_guid}/locations':
+  '/content/creative_works/{creative_work_guid}/availabilities/{availability_guid}/locations':
     parameters:
       - schema:
           type: string
-        name: guid
+        name: availability_guid
         in: path
         required: true
       - schema:
           type: string
-        name: availability_guid
+        name: creative_work_guid
         in: path
         required: true
     get:
