@@ -18,13 +18,5 @@ additionalProperties:
 properties:
   self:
     $ref: ./hal_link_field.v1.yaml
-  prev:
-    $ref: ./hal_link_field.v1.yaml
-  next:
-    $ref: ./hal_link_field.v1.yaml
-  first:
-    $ref: ./hal_link_field.v1.yaml
-  last:
-    $ref: ./hal_link_field.v1.yaml
 required:
   - self
