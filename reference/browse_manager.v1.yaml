@@ -67,6 +67,14 @@ paths:
                               $ref: ../models/Contributor.v1.yaml
                             role:
                               type: string
+                              enum:
+                                - actor
+                                - creator
+                                - director
+                                - editor
+                                - producer
+                                - writer
+                                - executive producer
                             character_name:
                               type: string
                 required:
@@ -137,8 +145,6 @@ paths:
                             created_at: '2020-01-01T00:00:00Z'
                             updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.creative_works.get
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -304,8 +310,6 @@ paths:
                             updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.creative_works.get_list
       description: ''
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -418,8 +422,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.service.get_list
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -489,8 +491,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.tag.get_list
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -560,8 +560,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.genre.get_list
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -631,8 +629,6 @@ paths:
                         created_at: '2020-01-01T00:00:00Z'
                         updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.content_rating.get_list
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -707,8 +703,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.contributors.get_list
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -788,8 +782,6 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.tag.get
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -849,8 +841,6 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.service.get
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -900,8 +890,6 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.genre.get
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -952,8 +940,6 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.content_rating.get
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1008,8 +994,6 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.contributor.get
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1079,8 +1063,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.platform.get_list
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1160,8 +1142,6 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: get-content-platforms-guid
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1211,8 +1191,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.location.get_list
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1282,8 +1260,6 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.location.get
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1337,8 +1313,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.tag.get_from_creative_work
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1394,8 +1368,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.genre.get_from_creative_work
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1466,8 +1438,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.contributor.get_from_creative_work
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1534,8 +1504,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.content_rating.get_from_creative_work
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1643,8 +1611,6 @@ paths:
                             created_at: '2020-01-01T00:00:00Z'
                             updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.availability.get_from_creative_work
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1732,8 +1698,6 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.service.get_by_availability_and_creative_work
       description: ''
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1804,8 +1768,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.platform.get_by_availability_and_creative_work
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1866,8 +1828,6 @@ paths:
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.location.get_by_availability_and_creative_work
-      security:
-        - Authorization: []
       parameters:
         - schema:
             type: array
@@ -1886,3 +1846,5 @@ components:
       type: apiKey
       in: header
       x-apikeyInfoFunc: security.check_token
+security:
+  - Authorization: []
