@@ -632,20 +632,21 @@ paths:
                 '1':
                   value:
                     content_ratings:
-                      - guid: bcb27a2c9ee74a5a86720c3b5828093c
-                        identifiers:
-                          - source: mysource
-                            id: '1'
-                        values:
-                          - metadata:
-                              country: GB
-                            value: '12'
-                            organization: MPAA
-                        _links:
-                          self:
-                            href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                        created_at: '2020-01-01T00:00:00Z'
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - content_rating:
+                          guid: bcb27a2c9ee74a5a86720c3b5828093c
+                          identifiers:
+                            - source: mysource
+                              id: '1'
+                          values:
+                            - metadata:
+                                country: GB
+                              value: '12'
+                              organization: MPAA
+                          _links:
+                            self:
+                              href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
+                          created_at: '2020-01-01T00:00:00Z'
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       self:
                         href: '/content/content_ratings?offset=50&limit=50'
