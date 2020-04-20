@@ -366,8 +366,6 @@ paths:
                           identifiers:
                             - source: mysource
                               id: '1'
-                          metadata:
-                            country: GB
                           icons:
                             - url: 'https://mydomain.com/picture.jpg'
                               width: 100
