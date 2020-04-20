@@ -53,9 +53,15 @@ properties:
   date_to:
     type: string
     format: date-time
+  recipe:
+    type: object
+    properties:
+      href:
+        type: string
 required:
   - guid
   - created_at
   - updated_at
   - _links
   - identifiers
+  - recipe

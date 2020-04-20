@@ -709,8 +709,13 @@ paths:
                       properties:
                         contributor:
                           $ref: ../models/Contributor.v1.yaml
+                      required:
+                        - contributor
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - contributors
+                  - _links
               examples:
                 '1':
                   value:
@@ -807,6 +812,8 @@ paths:
                 properties:
                   tag:
                     $ref: ../models/Tag.v1.yaml
+                required:
+                  - tag
               examples:
                 '1':
                   value:
@@ -856,6 +863,8 @@ paths:
                 properties:
                   service:
                     $ref: ../models/Service.v1.yaml
+                required:
+                  - service
               examples:
                 '1':
                   value:
@@ -915,6 +924,8 @@ paths:
                 properties:
                   genre:
                     $ref: ../models/Genre.v1.yaml
+                required:
+                  - genre
               examples:
                 '1':
                   value:
@@ -964,6 +975,8 @@ paths:
                 properties:
                   content_rating:
                     $ref: ../models/ContentRating.v1.yaml
+                required:
+                  - content_rating
               examples:
                 '1':
                   value:
@@ -1014,6 +1027,8 @@ paths:
                 properties:
                   contributor:
                     $ref: ../models/Contributor.v1.yaml
+                required:
+                  - contributor
               examples:
                 '1':
                   value:
@@ -1077,8 +1092,13 @@ paths:
                       properties:
                         platform:
                           $ref: ../models/Platform.v1.yaml
+                      required:
+                        - platform
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - platforms
+                  - _links
               examples:
                 '1':
                   value:
@@ -1170,6 +1190,8 @@ paths:
                 properties:
                   platform:
                     $ref: ../models/Platform.v1.yaml
+                required:
+                  - platform
               examples:
                 '1':
                   value:
@@ -1228,8 +1250,13 @@ paths:
                       properties:
                         location:
                           $ref: ../models/Location.v1.yaml
+                      required:
+                        - location
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - locations
+                  - _links
               examples:
                 '1':
                   value:
@@ -1311,6 +1338,8 @@ paths:
                 properties:
                   location:
                     $ref: ../models/Location.v1.yaml
+                required:
+                  - location
               examples:
                 '1':
                   value:
@@ -1363,8 +1392,13 @@ paths:
                       properties:
                         tag:
                           $ref: ../models/Tag.v1.yaml
+                      required:
+                        - tag
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - tags
+                  - _links
               examples:
                 '1':
                   value:
@@ -1431,8 +1465,13 @@ paths:
                       properties:
                         genre:
                           $ref: ../models/Genre.v1.yaml
+                      required:
+                        - genre
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - genres
+                  - _links
               examples:
                 '1':
                   value:
@@ -1509,8 +1548,16 @@ paths:
                             - producer
                             - writer
                             - executive producer
+                        character_name:
+                          type: string
+                      required:
+                        - contributor
+                        - role
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - contributors
+                  - _links
               examples:
                 '1':
                   value:
@@ -1592,8 +1639,13 @@ paths:
                       properties:
                         content_rating:
                           $ref: ../models/ContentRating.v1.yaml
+                      required:
+                        - content_rating
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - content_ratings
+                  - _links
               examples:
                 '1':
                   value:
@@ -1661,8 +1713,13 @@ paths:
                       properties:
                         availability:
                           $ref: ../models/Availability.v1.yaml
+                      required:
+                        - availability
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - availabilities
+                  - _links
               examples:
                 '1':
                   value:
@@ -1673,15 +1730,17 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
                           date_from: '2020-01-01T00:00:00Z'
                           date_to: '2020-01-01T00:00:00Z'
+                          recipe:
+                            href: 'https://mydomain.com/link_to_asset.html'
                           _links:
                             self:
                               href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
-                            services:
-                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/services
-                            platforms:
-                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/platforms
-                            locations:
-                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/locations
+                            service:
+                              href: /content/services/27c13eec19014084a0a3173061702b46
+                            platform:
+                              href: /content/platforms/27c13eec19014084a0a3173061702b46
+                            location:
+                              href: /content/locations/27c13eec19014084a0a3173061702b46
                           identifiers:
                             - source: mysource
                               id: '1'
@@ -1740,8 +1799,13 @@ paths:
                       properties:
                         service:
                           $ref: ../models/Service.v1.yaml
+                      required:
+                        - service
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - services
+                  - _links
               examples:
                 '1':
                   value:
@@ -1824,8 +1888,13 @@ paths:
                       properties:
                         platform:
                           $ref: ../models/Platform.v1.yaml
+                      required:
+                        - platform
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - platforms
+                  - _links
               examples:
                 '1':
                   value:
@@ -1907,8 +1976,13 @@ paths:
                       properties:
                         location:
                           $ref: ../models/Location.v1.yaml
+                      required:
+                        - location
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - locations
+                  - _links
               examples:
                 '1':
                   value:
