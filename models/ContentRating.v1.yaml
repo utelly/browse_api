@@ -1,5 +1,6 @@
 title: ContentRating
 type: object
+additionalProperties: false
 properties:
   guid:
     type: string
@@ -21,7 +22,7 @@ properties:
       type: object
       additionalProperties: false
       properties:
-        metatada:
+        metadada:
           $ref: ./metadata_field.v1.yaml
         value:
           type: string
@@ -37,4 +38,3 @@ required:
   - _links
   - identifiers
   - values
-additionalProperties: false
