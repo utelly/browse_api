@@ -85,21 +85,21 @@ paths:
                         - metadata:
                             source: mysource
                             type: official
-                            country: gb
+                            country: GB
                             language: en
                           title: The Usual Suspects
                       descriptions:
                         - metadata:
                             source: mysource
                             type: full
-                            country: gb
+                            country: GB
                             language: en
                           description: 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.'
                       artworks:
                         - metadata:
                             source: mysource
                             type: poster
-                            country: gb
+                            country: GB
                             language: en
                           url: 'https://mydomain.com/poster.jpg'
                           width: 100
@@ -237,21 +237,21 @@ paths:
                             - metadata:
                                 source: mysource
                                 type: official
-                                country: gb
+                                country: GB
                                 language: en
                               title: The Usual Suspects
                           descriptions:
                             - metadata:
                                 source: mysource
                                 type: full
-                                country: gb
+                                country: GB
                                 language: en
                               description: 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.'
                           artworks:
                             - metadata:
                                 source: mysource
                                 type: poster
-                                country: gb
+                                country: GB
                                 language: en
                               url: 'https://mydomain.com/poster.jpg'
                               width: 100
@@ -391,13 +391,13 @@ paths:
                             - source: mysource
                               id: '1'
                           metadata:
-                            country: gb
+                            country: GB
                           icons:
                             - url: 'https://mydomain.com/picture.jpg'
                               width: 100
                               height: 100
                               metadata:
-                                country: gb
+                                country: GB
                                 language: en
                                 source: mysource
                                 type: icon
@@ -405,7 +405,7 @@ paths:
                             - name: BBC One London
                               metadata:
                                 language: en
-                                country: gb
+                                country: GB
                           _links:
                             self:
                               href: /content/services/df3a998849344e9b954b7807fc623f08
@@ -616,7 +616,7 @@ paths:
                             id: '1'
                         values:
                           - metadata:
-                              country: gb
+                              country: GB
                             value: '12'
                             organization: MPAA
                         _links:
@@ -692,7 +692,7 @@ paths:
                               width: 100
                               height: 100
                               metadata:
-                                country: gb
+                                country: GB
                                 language: en
                                 type: portrait
                           _links:
@@ -828,7 +828,7 @@ paths:
                           width: 100
                           height: 100
                           metadata:
-                            country: gb
+                            country: GB
                             language: en
                             source: mysource
                             type: icon
@@ -836,7 +836,7 @@ paths:
                         - name: BBC One London
                           metadata:
                             language: en
-                            country: gb
+                            country: GB
                       _links:
                         self:
                           href: /content/services/df3a998849344e9b954b7807fc623f08
@@ -937,7 +937,7 @@ paths:
                           id: '1'
                       values:
                         - metadata:
-                            country: gb
+                            country: GB
                           value: '12'
                           organization: MPAA
                       _links:
@@ -993,7 +993,7 @@ paths:
                           width: 100
                           height: 100
                           metadata:
-                            country: gb
+                            country: GB
                             language: en
                             type: portrait
                       _links:
@@ -1058,7 +1058,7 @@ paths:
                               width: 100
                               height: 100
                               metadata:
-                                country: gb
+                                country: GB
                                 language: en
                                 source: mysource
                                 type: icon
@@ -1066,7 +1066,7 @@ paths:
                             - name: IOS
                               metadata:
                                 language: en
-                                country: gb
+                                country: GB
                           _links:
                             self:
                               href: /content/platforms/e1d00d49612f48c791458f8f754358a9
@@ -1139,7 +1139,7 @@ paths:
                           width: 100
                           height: 100
                           metadata:
-                            country: gb
+                            country: GB
                             language: en
                             source: mysource
                             type: icon
@@ -1147,7 +1147,7 @@ paths:
                         - name: IOS
                           metadata:
                             language: en
-                            country: gb
+                            country: GB
                       _links:
                         self:
                           href: /content/platforms/e1d00d49612f48c791458f8f754358a9
@@ -1198,7 +1198,7 @@ paths:
                           names:
                             - name: France
                               metadata:
-                                country: fr
+                                country: FR
                           _links:
                             self:
                               href: /content/locations/e1d00d49612f48c791458f8f754358a9
@@ -1269,7 +1269,7 @@ paths:
                       names:
                         - name: France
                           metadata:
-                            country: fr
+                            country: FR
                       _links:
                         self:
                           href: /content/locations/e1d00d49612f48c791458f8f754358a9
@@ -1451,7 +1451,7 @@ paths:
                               width: 100
                               height: 100
                               metadata:
-                                country: gb
+                                country: GB
                                 language: en
                                 type: portrait
                           _links:
@@ -1519,7 +1519,7 @@ paths:
                               id: '1'
                           values:
                             - metadata:
-                                country: gb
+                                country: GB
                               organization: MPAA
                               value: '12'
                           _links:
@@ -1611,7 +1611,7 @@ paths:
                               width: 100
                               height: 100
                               metadata:
-                                country: gb
+                                country: GB
                                 language: en
                                 source: mysource
                                 type: icon
@@ -1619,7 +1619,7 @@ paths:
                             - name: BBC One London
                               metadata:
                                 language: en
-                                country: gb
+                                country: GB
                           _links:
                             self:
                               href: /content/services/df3a998849344e9b954b7807fc623f08
@@ -1695,13 +1695,13 @@ paths:
                             - source: mysource
                               id: '1'
                           metadata:
-                            country: gb
+                            country: GB
                           icons:
                             - url: 'https://mydomain.com/picture.jpg'
                               width: 100
                               height: 100
                               metadata:
-                                country: gb
+                                country: GB
                                 language: en
                                 source: mysource
                                 type: icon
@@ -1709,7 +1709,7 @@ paths:
                             - name: BBC One London
                               metadata:
                                 language: en
-                                country: gb
+                                country: GB
                           _links:
                             self:
                               href: /content/services/df3a998849344e9b954b7807fc623f08
@@ -1774,7 +1774,7 @@ paths:
                               width: 100
                               height: 100
                               metadata:
-                                country: gb
+                                country: GB
                                 language: en
                                 source: mysource
                                 type: icon
@@ -1782,7 +1782,7 @@ paths:
                             - name: IOS
                               metadata:
                                 language: en
-                                country: gb
+                                country: GB
                           _links:
                             self:
                               href: /content/platforms/e1d00d49612f48c791458f8f754358a9
@@ -1844,7 +1844,7 @@ paths:
                           names:
                             - name: France
                               metadata:
-                                country: fr
+                                country: FR
                           _links:
                             self:
                               href: /content/locations/e1d00d49612f48c791458f8f754358a9
