@@ -1563,9 +1563,9 @@ paths:
                             service:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/services
                             platform:
-                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/platform
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/platforms
                             location:
-                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/location
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities/eb4aaa3de91242ba82ad48bee0b48996/locations
                           identifiers:
                             - source: mysource
                               id: '1'
