@@ -36,3 +36,4 @@ required:
   - _links
   - identifiers
   - values
+additionalProperties: false

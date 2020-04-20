@@ -37,3 +37,4 @@ required:
   - updated_at
   - _links
   - identifiers
+additionalProperties: false

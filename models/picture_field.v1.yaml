@@ -14,3 +14,4 @@ required:
   - url
   - width
   - height
+additionalProperties: false

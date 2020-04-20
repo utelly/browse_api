@@ -16,3 +16,4 @@ properties:
     $ref: ./country_field.v1.yaml
   language:
     $ref: ./languages_field.v1.yaml
+additionalProperties: false

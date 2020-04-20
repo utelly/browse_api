@@ -40,3 +40,4 @@ required:
   - _links
   - identifiers
   - name
+additionalProperties: false
