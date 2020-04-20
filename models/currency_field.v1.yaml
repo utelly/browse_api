@@ -1,4 +1,4 @@
-title: languages_field
+title: currency_field
 type: string
 enum:
   - AFN
