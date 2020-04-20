@@ -184,12 +184,6 @@ paths:
             type: array
             items:
               type: string
-              enum:
-                - titles
-                - descriptions
-                - artworks
-                - parent
-            minItems: 1
           in: query
           name: fields
       description: ''
@@ -295,7 +289,7 @@ paths:
                 - '-updated_at'
           in: query
           name: sort
-          style: form
+          style: form      
         - schema:
             type: integer
             maximum: 50
@@ -317,17 +311,6 @@ paths:
             type: array
             items:
               type: string
-              enum:
-                - titles
-                - descriptions
-                - artworks
-                - contributors
-                - genres
-                - tags
-                - availabilities
-                - content_ratings
-                - parent
-            minItems: 1
           in: query
           name: fields
   /content/services:
@@ -416,6 +399,12 @@ paths:
             minimum: 0
           in: query
           name: limit
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
         - schema:
             type: integer
           in: query
@@ -510,6 +499,12 @@ paths:
         - schema:
             type: array
             items:
+              type: string
+          in: query
+          name: fields          
+        - schema:
+            type: array
+            items:
               $ref: ../models/languages_field.v1.yaml
           in: query
           name: languages
@@ -584,6 +579,12 @@ paths:
           in: query
           name: sort
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
         - schema:
             type: integer
             maximum: 50
@@ -679,6 +680,12 @@ paths:
           in: query
           name: limit
         - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
+        - schema:
             type: integer
           in: query
           name: offset
@@ -769,7 +776,7 @@ paths:
             maximum: 50
             minimum: 0
           in: query
-          name: limit
+          name: limit          
         - schema:
             type: integer
           in: query
@@ -785,10 +792,6 @@ paths:
             type: array
             items:
               type: string
-              enum:
-                - pictures
-                - biographies
-            minItems: 1
           in: query
           name: fields
   '/content/tags/{tag_guid}':
@@ -833,6 +836,12 @@ paths:
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.tag.get
       parameters:
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields        
         - schema:
             type: array
             items:
@@ -897,6 +906,12 @@ paths:
         - schema:
             type: array
             items:
+              type: string
+          in: query
+          name: fields        
+        - schema:
+            type: array
+            items:
               $ref: ../models/languages_field.v1.yaml
             minItems: 1
           in: query
@@ -954,6 +969,12 @@ paths:
           name: languages
           description: ''
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
   '/content/content_ratings/{rating_guid}':
     parameters:
       - schema:
@@ -1006,6 +1027,12 @@ paths:
           name: languages
           description: ''
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
   '/content/contributors/{contributor_guid}':
     parameters:
       - schema:
@@ -1066,10 +1093,6 @@ paths:
             type: array
             items:
               type: string
-              enum:
-                - pictures
-                - biographies
-            minItems: 1
           in: query
           name: fields
   /content/platforms:
@@ -1169,6 +1192,12 @@ paths:
           in: query
           name: languages
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
   '/content/platforms/{platform_guid}':
     parameters:
       - schema:
@@ -1230,6 +1259,12 @@ paths:
           name: languages
           description: ''
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
   /content/locations:
     get:
       summary: List locations
@@ -1317,6 +1352,12 @@ paths:
           in: query
           name: languages
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
   '/content/locations/{location_guid}':
     parameters:
       - schema:
@@ -1368,6 +1409,12 @@ paths:
           name: languages
           description: ''
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
   '/content/creative_works/{creative_work_guid}/tags':
     parameters:
       - schema:
@@ -1439,6 +1486,12 @@ paths:
           name: languages
           description: ''
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
       tags:
         - Tag management
   '/content/creative_works/{creative_work_guid}/genres':
@@ -1512,6 +1565,12 @@ paths:
           name: languages
           description: ''
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
       tags:
         - Genre management
   '/content/creative_works/{creative_work_guid}/contributors':
@@ -1609,10 +1668,6 @@ paths:
             type: array
             items:
               type: string
-              enum:
-                - pictures
-                - biographies
-            minItems: 1
           in: query
           name: fields
       tags:
@@ -1689,6 +1744,12 @@ paths:
           name: languages
           description: ''
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
       tags:
         - Content rating management
   '/content/creative_works/{creative_work_guid}/availabilities':
@@ -1768,6 +1829,12 @@ paths:
           name: languages
           description: ''
           style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields          
       tags:
         - Availability management
 components:
