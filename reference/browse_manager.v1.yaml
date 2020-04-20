@@ -35,29 +35,40 @@ paths:
                     type: object
                     properties:
                       genres:
-                        type: object
-                        properties:
-                          genre:
-                            $ref: ../models/Genre.v1.yaml
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            genre:
+                              $ref: ../models/Genre.v1.yaml
                       content_ratings:
                         type: object
                         properties:
                           content_rating:
-                            $ref: ../models/ContentRating.v1.yaml
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                content_rating:
+                                  $ref: ../models/ContentRating.v1.yaml
                       tags:
-                        type: object
-                        properties:
-                          tag:
-                            $ref: ../models/Tag.v1.yaml
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            tag:
+                              $ref: ../models/Tag.v1.yaml
                       contributors:
-                        type: object
-                        properties:
-                          contributor:
-                            $ref: ../models/Contributor.v1.yaml
-                          character_name:
-                            type: string
-                          role:
-                            type: string
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            contributor:
+                              $ref: ../models/Contributor.v1.yaml
+                            role:
+                              type: string
+                            character_name:
+                              type: string
                 required:
                   - creative_work
               examples:
