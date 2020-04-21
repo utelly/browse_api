@@ -1825,8 +1825,8 @@ paths:
                           guid: eb4aaa3de91242ba82ad48bee0b48996
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
-                          date_from: '2020-01-01T00:00:00Z'
-                          date_to: '2020-01-01T00:00:00Z'
+                          datetime_from: '2020-01-01T00:00:00Z'
+                          datetime_to: '2020-01-01T00:00:00Z'
                           recipe:
                             href: 'https://mydomain.com/link_to_asset.html'
                           _links:
