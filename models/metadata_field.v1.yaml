@@ -1,19 +1,19 @@
-title: metadata_field
-type: object
-x-examples:
-  '1':
-    source: gracenote
-    type: official
-    country: gb
-    language: en
+additionalProperties: false
 description: ''
 properties:
-  source:
-    type: string
-  type:
-    type: string
   country:
     $ref: ./country_field.v1.yaml
   language:
     $ref: ./languages_field.v1.yaml
-additionalProperties: false
+  source:
+    type: string
+  type:
+    type: string
+title: metadata_field
+type: object
+x-examples:
+  '1':
+    country: gb
+    language: en
+    source: gracenote
+    type: official

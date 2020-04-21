@@ -1,68 +1,68 @@
-title: Availability
-type: object
-description: ''
 additionalProperties: false
+description: ''
 properties:
-  guid:
-    type: string
-  created_at:
-    type: string
-    format: date-time
-  updated_at:
-    type: string
-    format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
+  created_at:
+    format: date-time
+    type: string
+  datetime_from:
+    format: date-time
+    type: string
+  datetime_to:
+    format: date-time
+    type: string
+  guid:
+    type: string
   identifiers:
-    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  prices:
     type: array
-    minItems: 1
+  prices:
     items:
-      type: object
       additionalProperties: false
       properties:
-        metadata:
-          $ref: ./metadata_field.v1.yaml
         currency:
           $ref: ./currency_field.v1.yaml
+        metadata:
+          $ref: ./metadata_field.v1.yaml
         quality:
-          type: string
           enum:
-            - HD
-            - SD
-            - UHD
+          - HD
+          - SD
+          - UHD
+          type: string
         type:
-          type: string
           enum:
-            - Rent
-            - Buy
+          - Rent
+          - Buy
+          type: string
         value:
           type: number
       required:
-        - metadata
-        - currency
-        - quality
-        - type
-        - value
-  datetime_from:
-    type: string
-    format: date-time
-  datetime_to:
-    type: string
-    format: date-time
+      - metadata
+      - currency
+      - quality
+      - type
+      - value
+      type: object
+    minItems: 1
+    type: array
   recipe:
-    type: object
     additionalProperties: false
     properties:
       href:
         type: string
+    type: object
+  updated_at:
+    format: date-time
+    type: string
 required:
-  - guid
-  - created_at
-  - updated_at
-  - _links
-  - identifiers
-  - recipe
+- guid
+- created_at
+- updated_at
+- _links
+- identifiers
+- recipe
+title: Availability
+type: object

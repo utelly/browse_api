@@ -1,17 +1,17 @@
-title: picture_field
-type: object
+additionalProperties: false
 properties:
+  height:
+    type: integer
   metadata:
     $ref: ./metadata_field.v1.yaml
   url:
     type: string
   width:
     type: integer
-  height:
-    type: integer
 required:
-  - metadata
-  - url
-  - width
-  - height
-additionalProperties: false
+- metadata
+- url
+- width
+- height
+title: picture_field
+type: object
