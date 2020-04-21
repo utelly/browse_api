@@ -1623,7 +1623,7 @@ paths:
                     persons:
                       - role: actor
                         character_name: Keyser Söze
-                        persons:
+                        person:
                           guid: eb4aaa3de91242ba82ad48bee0b48996
                           name: Kevin Spacey
                           identifiers:
