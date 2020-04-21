@@ -44,17 +44,12 @@ paths:
                           required:
                             - genre
                       content_ratings:
-                        type: object
-                        properties:
-                          content_rating:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                content_rating:
-                                  $ref: ../models/ContentRating.v1.yaml
-                              required:
-                                - content_rating
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            content_rating:
+                              $ref: ../models/ContentRating.v1.yaml
                       tags:
                         type: array
                         items:
@@ -86,6 +81,17 @@ paths:
                           required:
                             - contributor
                             - role
+                      availabilities:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            availability:
+                              $ref: ../models/Availability.v1.yaml
+                          required:
+                            - availability
+                    required:
+                      - availabilities
                 required:
                   - creative_work
               examples:
@@ -289,7 +295,7 @@ paths:
                 - '-updated_at'
           in: query
           name: sort
-          style: form      
+          style: form
         - schema:
             type: integer
             maximum: 50
@@ -404,7 +410,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
         - schema:
             type: integer
           in: query
@@ -501,7 +507,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
         - schema:
             type: array
             items:
@@ -584,7 +590,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
         - schema:
             type: integer
             maximum: 50
@@ -684,7 +690,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
         - schema:
             type: integer
           in: query
@@ -776,7 +782,7 @@ paths:
             maximum: 50
             minimum: 0
           in: query
-          name: limit          
+          name: limit
         - schema:
             type: integer
           in: query
@@ -841,7 +847,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields        
+          name: fields
         - schema:
             type: array
             items:
@@ -908,7 +914,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields        
+          name: fields
         - schema:
             type: array
             items:
@@ -974,7 +980,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
   '/content/content_ratings/{rating_guid}':
     parameters:
       - schema:
@@ -1032,7 +1038,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
   '/content/contributors/{contributor_guid}':
     parameters:
       - schema:
@@ -1197,7 +1203,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
   '/content/platforms/{platform_guid}':
     parameters:
       - schema:
@@ -1264,7 +1270,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
   /content/locations:
     get:
       summary: List locations
@@ -1357,7 +1363,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
   '/content/locations/{location_guid}':
     parameters:
       - schema:
@@ -1414,7 +1420,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
   '/content/creative_works/{creative_work_guid}/tags':
     parameters:
       - schema:
@@ -1491,7 +1497,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
       tags:
         - Tag management
   '/content/creative_works/{creative_work_guid}/genres':
@@ -1570,7 +1576,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
       tags:
         - Genre management
   '/content/creative_works/{creative_work_guid}/contributors':
@@ -1749,7 +1755,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
       tags:
         - Content rating management
   '/content/creative_works/{creative_work_guid}/availabilities':
@@ -1834,7 +1840,7 @@ paths:
             items:
               type: string
           in: query
-          name: fields          
+          name: fields
       tags:
         - Availability management
 components:
