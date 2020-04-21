@@ -176,14 +176,14 @@ paths:
                     type: string
                 embed:
                   type: array
-                  enum:
-                    - genres
-                    - tags
-                    - availabilities
-                    - content_ratings
-                    - contributors
                   items:
                     type: string
+                    enum:
+                      - genres
+                      - tags
+                      - availabilities
+                      - content_ratings
+                      - contributors                    
   /content/creative_works:
     get:
       summary: List creative works
