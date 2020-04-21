@@ -90,8 +90,6 @@ paths:
                               $ref: ../models/Availability.v1.yaml
                           required:
                             - availability
-                    required:
-                      - availabilities
                 required:
                   - creative_work
               examples:
