@@ -1,25 +1,18 @@
-title: Tag
-type: object
 additionalProperties: false
 properties:
-  guid:
-    type: string
-  created_at:
-    type: string
-    format: date-time
-  updated_at:
-    type: string
-    format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
+  created_at:
+    format: date-time
+    type: string
+  guid:
+    type: string
   identifiers:
-    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  names:
     type: array
+  names:
     items:
-      type: object
       additionalProperties: false
       properties:
         metadata:
@@ -27,14 +20,21 @@ properties:
         name:
           type: string
       required:
-        - metadata
-        - name
+      - metadata
+      - name
+      type: object
+    type: array
   relationships:
     $ref: ./Relationships.v1.yaml
+  updated_at:
+    format: date-time
+    type: string
 required:
-  - guid
-  - created_at
-  - updated_at
-  - _links
-  - identifiers
-  - relationships
+- guid
+- created_at
+- updated_at
+- _links
+- identifiers
+- relationships
+title: Tag
+type: object

@@ -1,8 +1,8 @@
-title: hal_link_field
-type: object
+additionalProperties: false
 properties:
   href:
     type: string
 required:
-  - href
-additionalProperties: false
+- href
+title: hal_link_field
+type: object

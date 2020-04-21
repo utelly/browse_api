@@ -1,40 +1,40 @@
-title: ContentRating
-type: object
 additionalProperties: false
 properties:
-  guid:
-    type: string
-  created_at:
-    type: string
-    format: date-time
-  updated_at:
-    type: string
-    format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
+  created_at:
+    format: date-time
+    type: string
+  guid:
+    type: string
   identifiers:
-    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  values:
     type: array
+  updated_at:
+    format: date-time
+    type: string
+  values:
     items:
-      type: object
       additionalProperties: false
       properties:
         metadata:
           $ref: ./metadata_field.v1.yaml
-        value:
-          type: string
         organization:
           type: string
+        value:
+          type: string
       required:
-        - value
-        - organization
+      - value
+      - organization
+      type: object
+    type: array
 required:
-  - guid
-  - created_at
-  - updated_at
-  - _links
-  - identifiers
-  - values
+- guid
+- created_at
+- updated_at
+- _links
+- identifiers
+- values
+title: ContentRating
+type: object

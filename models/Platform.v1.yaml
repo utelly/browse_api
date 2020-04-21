@@ -1,29 +1,22 @@
-title: Platform
-type: object
 additionalProperties: false
 properties:
-  guid:
-    type: string
-  created_at:
-    type: string
-    format: date-time
-  updated_at:
-    type: string
-    format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
-  identifiers:
-    type: array
-    items:
-      $ref: ./identifier_field.v1.yaml
   artworks:
-    type: array
     items:
       $ref: ./picture_field.v1.yaml
-  names:
     type: array
+  created_at:
+    format: date-time
+    type: string
+  guid:
+    type: string
+  identifiers:
     items:
-      type: object
+      $ref: ./identifier_field.v1.yaml
+    type: array
+  names:
+    items:
       additionalProperties: false
       properties:
         metadata:
@@ -31,11 +24,18 @@ properties:
         name:
           type: string
       required:
-        - metadata
-        - name
+      - metadata
+      - name
+      type: object
+    type: array
+  updated_at:
+    format: date-time
+    type: string
 required:
-  - guid
-  - created_at
-  - updated_at
-  - _links
-  - identifiers
+- guid
+- created_at
+- updated_at
+- _links
+- identifiers
+title: Platform
+type: object

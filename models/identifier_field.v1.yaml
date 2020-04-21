@@ -1,10 +1,10 @@
-title: identifier_field
-type: object
+additionalProperties: false
 properties:
-  source:
-    type: string
   id:
     type: string
+  source:
+    type: string
 required:
-  - source
-additionalProperties: false
+- source
+title: identifier_field
+type: object
