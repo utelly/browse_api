@@ -1,5 +1,6 @@
 title: Service
 type: object
+additionalProperties: false
 properties:
   guid:
     type: string
@@ -15,7 +16,7 @@ properties:
     type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  icons:
+  artworks:
     type: array
     items:
       $ref: ./picture_field.v1.yaml
@@ -38,4 +39,3 @@ required:
   - updated_at
   - _links
   - identifiers
-additionalProperties: false

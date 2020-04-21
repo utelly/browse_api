@@ -59,13 +59,13 @@ paths:
                               $ref: ../models/Tag.v1.yaml
                           required:
                             - tag
-                      contributors:
+                      persons:
                         type: array
                         items:
                           type: object
                           properties:
-                            contributor:
-                              $ref: ../models/Contributor.v1.yaml
+                            person:
+                              $ref: ../models/Person.v1.yaml
                             role:
                               type: string
                               enum:
@@ -79,7 +79,7 @@ paths:
                             character_name:
                               type: string
                           required:
-                            - contributor
+                            - person
                             - role
                       availabilities:
                         type: array
@@ -111,8 +111,8 @@ paths:
                           href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
                         content_ratings:
                           href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
-                        contributors:
-                          href: /content/creative_works/27c13eec19014084a0a3173061702b46/contributors
+                        persons:
+                          href: /content/creative_works/27c13eec19014084a0a3173061702b46/Persons
                       identifiers:
                         - source: mysource
                           id: '1'
@@ -183,7 +183,7 @@ paths:
                       - tags
                       - availabilities
                       - content_ratings
-                      - contributors                    
+                      - persons
   /content/creative_works:
     get:
       summary: List creative works
@@ -231,8 +231,8 @@ paths:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
                             content_ratings:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
-                            contributors:
-                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/contributors
+                            persons:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/persons
                           identifiers:
                             - source: mysource
                               id: '1'
@@ -342,7 +342,7 @@ paths:
                           identifiers:
                             - source: mysource
                               id: '1'
-                          icons:
+                          artworks:
                             - url: 'https://mydomain.com/picture.jpg'
                               width: 100
                               height: 100
@@ -405,6 +405,7 @@ paths:
                   type: array
                   items:
                     type: string
+            examples: {}
       description: ''
   /content/tags:
     get:
@@ -677,11 +678,11 @@ paths:
                   items:
                     type: string
       description: ''
-  /content/contributors:
+  /content/persons:
     get:
-      summary: List contributors
+      summary: List persons
       tags:
-        - Contributors management
+        - Persons management
       responses:
         '200':
           description: OK
@@ -690,25 +691,25 @@ paths:
               schema:
                 type: object
                 properties:
-                  contributors:
+                  persons:
                     type: array
                     items:
                       type: object
                       properties:
-                        contributor:
-                          $ref: ../models/Contributor.v1.yaml
+                        person:
+                          $ref: ../models/Person.v1.yaml
                       required:
-                        - contributor
+                        - person
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                  - contributors
+                  - persons
                   - _links
               examples:
                 '1':
                   value:
-                    contributors:
-                      - contributor:
+                    persons:
+                      - person:
                           guid: eb4aaa3de91242ba82ad48bee0b48996
                           name: Keyser Söze
                           identifiers:
@@ -724,21 +725,21 @@ paths:
                                 type: portrait
                           _links:
                             self:
-                              href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
+                              href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       self:
-                        href: '/content/contributors?offset=50&limit=50'
+                        href: '/content/persons?offset=50&limit=50'
                       next:
-                        href: '/content/contributors?offset=100&limit=50'
+                        href: '/content/persons?offset=100&limit=50'
                       prev:
-                        href: /content/contributors
+                        href: /content/persons
                       first:
-                        href: /content/contributors
+                        href: /content/persons
                       last:
-                        href: '/content/contributors?offset=2300&limit=50'
-      operationId: v1.content.contributors.get_list
+                        href: '/content/persons?offset=2300&limit=50'
+      operationId: v1.content.persons.get_list
       parameters: []
       requestBody:
         content:
@@ -859,7 +860,7 @@ paths:
                       identifiers:
                         - source: mysource
                           id: '1'
-                      icons:
+                      artworks:
                         - url: 'https://mydomain.com/picture.jpg'
                           width: 100
                           height: 100
@@ -1007,17 +1008,17 @@ paths:
                   type: array
                   items:
                     type: string
-  '/content/contributors/{contributor_guid}':
+  '/content/persons/{person_guid}':
     parameters:
       - schema:
           type: string
-        name: contributor_guid
+        name: person_guid
         in: path
         required: true
     get:
-      summary: Get a contributor
+      summary: Get a person
       tags:
-        - Contributors management
+        - Persons management
       responses:
         '200':
           description: OK
@@ -1026,14 +1027,14 @@ paths:
               schema:
                 type: object
                 properties:
-                  contributor:
-                    $ref: ../models/Contributor.v1.yaml
+                  person:
+                    $ref: ../models/Person.v1.yaml
                 required:
-                  - contributor
+                  - person
               examples:
                 '1':
                   value:
-                    contributor:
+                    person:
                       guid: eb4aaa3de91242ba82ad48bee0b48996
                       identifiers:
                         - source: mysource
@@ -1049,10 +1050,10 @@ paths:
                             type: portrait
                       _links:
                         self:
-                          href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
+                          href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
-      operationId: v1.content.contributor.get
+      operationId: v1.content.person.get
       description: ''
       requestBody:
         content:
@@ -1104,7 +1105,7 @@ paths:
                           identifiers:
                             - source: mysource
                               id: '1'
-                          icons:
+                          artworks:
                             - url: 'https://mydomain.com/picture.jpg'
                               width: 100
                               height: 100
@@ -1199,7 +1200,7 @@ paths:
                       identifiers:
                         - source: mysource
                           id: '1'
-                      icons:
+                      artworks:
                         - url: 'https://mydomain.com/picture.jpg'
                           width: 100
                           height: 100
@@ -1572,7 +1573,7 @@ paths:
                   items:
                     type: string
       description: ''
-  '/content/creative_works/{creative_work_guid}/contributors':
+  '/content/creative_works/{creative_work_guid}/persons':
     parameters:
       - schema:
           type: string
@@ -1580,7 +1581,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Get contributors from creative work
+      summary: Get persons from creative work
       responses:
         '200':
           description: OK
@@ -1589,13 +1590,13 @@ paths:
               schema:
                 type: object
                 properties:
-                  contributors:
+                  persons:
                     type: array
                     items:
                       type: object
                       properties:
-                        contributor:
-                          $ref: ../models/Contributor.v1.yaml
+                        person:
+                          $ref: ../models/Person.v1.yaml
                         role:
                           type: string
                           enum:
@@ -1609,20 +1610,20 @@ paths:
                         character_name:
                           type: string
                       required:
-                        - contributor
+                        - person
                         - role
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                  - contributors
+                  - persons
                   - _links
               examples:
                 '1':
                   value:
-                    contributors:
+                    persons:
                       - role: actor
                         character_name: Keyser Söze
-                        contributor:
+                        persons:
                           guid: eb4aaa3de91242ba82ad48bee0b48996
                           name: Kevin Spacey
                           identifiers:
@@ -1638,24 +1639,24 @@ paths:
                                 type: portrait
                           _links:
                             self:
-                              href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
+                              href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       self:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=50&limit=50'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=50&limit=50'
                       next:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=100&limit=50'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=100&limit=50'
                       prev:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons
                       first:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons
                       last:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=2300&limit=50'
-      operationId: v1.content.contributor.get_from_creative_work
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=2300&limit=50'
+      operationId: v1.content.person.get_from_creative_work
       parameters: []
       tags:
-        - Contributors management
+        - Persons management
       requestBody:
         content:
           application/json:
@@ -1830,7 +1831,7 @@ paths:
                             href: 'https://mydomain.com/link_to_asset.html'
                           _links:
                             self:
-                              href: /content/contributors/eb4aaa3de91242ba82ad48bee0b48996
+                              href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
                             service:
                               href: /content/services/27c13eec19014084a0a3173061702b46
                             platform:

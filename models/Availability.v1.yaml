@@ -47,10 +47,10 @@ properties:
         - quality
         - type
         - value
-  date_from:
+  datetime_from:
     type: string
     format: date-time
-  date_to:
+  datetime_to:
     type: string
     format: date-time
   recipe:

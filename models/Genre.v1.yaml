@@ -1,5 +1,6 @@
 title: Genre
 type: object
+additionalProperties: false
 properties:
   guid:
     type: string
@@ -28,10 +29,13 @@ properties:
       required:
         - metadata
         - name
+  artworks:
+    type: array
+    items:
+      $ref: ./picture_field.v1.yaml
 required:
   - guid
   - created_at
   - updated_at
   - _links
   - identifiers
-additionalProperties: false
