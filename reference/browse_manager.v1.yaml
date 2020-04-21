@@ -160,39 +160,32 @@ paths:
                             created_at: '2020-01-01T00:00:00Z'
                             updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.creative_works.get
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - genres
-                - tags
-                - availabilities
-                - content_ratings
-                - contributors
-            minItems: 1
-          in: query
-          name: embed
-          explode: false
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      parameters: []
       description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                languages:
+                  type: array
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                fields:
+                  type: array
+                  items:
+                    type: string
+                embed:
+                  type: array
+                  enum:
+                    - genres
+                    - tags
+                    - availabilities
+                    - content_ratings
+                    - contributors
+                  items:
+                    type: string
   /content/creative_works:
     get:
       summary: List creative works
@@ -283,42 +276,38 @@ paths:
                         href: '/content/creative_works?offset=2300&limit=50'
       operationId: v1.content.creative_works.get_list
       description: ''
-      parameters:
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - created_at
-                - '-created_at'
-                - updated_at
-                - '-updated_at'
-          in: query
-          name: sort
-          style: form
-        - schema:
-            type: integer
-            maximum: 50
-            minimum: 0
-          in: query
-          name: limit
-        - schema:
-            type: integer
-          in: query
-          name: offset
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-          in: query
-          name: languages
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  type: array
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                fields:
+                  type: array
+                  items:
+                    type: string
   /content/services:
     get:
       summary: List services
@@ -386,42 +375,39 @@ paths:
                       last:
                         href: '/content/services?offset=2300&limit=50'
       operationId: v1.content.service.get_list
-      parameters:
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - created_at
-                - '-created_at'
-                - updated_at
-                - '-updated_at'
-          in: query
-          name: sort
-          style: form
-        - schema:
-            type: integer
-            maximum: 50
-            minimum: 0
-          in: query
-          name: limit
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
-        - schema:
-            type: integer
-          in: query
-          name: offset
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-          in: query
-          name: languages
-          style: form
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   /content/tags:
     get:
       summary: List tags
@@ -479,42 +465,39 @@ paths:
                       last:
                         href: '/content/tags?offset=2300&limit=50'
       operationId: v1.content.tag.get_list
-      parameters:
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - created_at
-                - '-created_at'
-                - updated_at
-                - '-updated_at'
-          in: query
-          name: sort
-          style: form
-        - schema:
-            type: integer
-            maximum: 50
-            minimum: 0
-          in: query
-          name: limit
-        - schema:
-            type: integer
-          in: query
-          name: offset
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-          in: query
-          name: languages
-          style: form
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   /content/genres:
     get:
       summary: List genres
@@ -572,42 +555,39 @@ paths:
                       last:
                         href: '/content/genres?offset=2300&limit=50'
       operationId: v1.content.genre.get_list
-      parameters:
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - created_at
-                - '-created_at'
-                - updated_at
-                - '-updated_at'
-          in: query
-          name: sort
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
-        - schema:
-            type: integer
-            maximum: 50
-            minimum: 0
-          in: query
-          name: limit
-        - schema:
-            type: integer
-          in: query
-          name: offset
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-          in: query
-          name: languages
-          style: form
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   /content/content_ratings:
     get:
       summary: List content ratings
@@ -666,42 +646,39 @@ paths:
                       last:
                         href: '/content/content_ratings?offset=2300&limit=50'
       operationId: v1.content.content_rating.get_list
-      parameters:
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - created_at
-                - '-created_at'
-                - updated_at
-                - '-updated_at'
-          in: query
-          name: sort
-          style: form
-        - schema:
-            type: integer
-            maximum: 50
-            minimum: 0
-          in: query
-          name: limit
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
-        - schema:
-            type: integer
-          in: query
-          name: offset
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-          in: query
-          name: languages
-          style: form
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   /content/contributors:
     get:
       summary: List contributors
@@ -764,42 +741,39 @@ paths:
                       last:
                         href: '/content/contributors?offset=2300&limit=50'
       operationId: v1.content.contributors.get_list
-      parameters:
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - created_at
-                - '-created_at'
-                - updated_at
-                - '-updated_at'
-          in: query
-          name: sort
-          style: form
-        - schema:
-            type: integer
-            maximum: 50
-            minimum: 0
-          in: query
-          name: limit
-        - schema:
-            type: integer
-          in: query
-          name: offset
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-          in: query
-          name: languages
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   '/content/tags/{tag_guid}':
     parameters:
       - schema:
@@ -841,22 +815,21 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.tag.get
-      parameters:
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                languages:
+                  type: array
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                fields:
+                  type: array
+                  items:
+                    type: string
   '/content/services/{service_guid}':
     parameters:
       - schema:
@@ -908,22 +881,21 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.service.get
-      parameters:
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                languages:
+                  type: array
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                fields:
+                  type: array
+                  items:
+                    type: string
   '/content/genres/{genre_guid}':
     parameters:
       - schema:
@@ -965,22 +937,21 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.genre.get
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                languages:
+                  type: array
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                fields:
+                  type: array
+                  items:
+                    type: string
   '/content/content_ratings/{rating_guid}':
     parameters:
       - schema:
@@ -1023,22 +994,21 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.content_rating.get
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                languages:
+                  type: array
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                fields:
+                  type: array
+                  items:
+                    type: string
   '/content/contributors/{contributor_guid}':
     parameters:
       - schema:
@@ -1085,22 +1055,21 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.contributor.get
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                languages:
+                  type: array
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                fields:
+                  type: array
+                  items:
+                    type: string
   /content/platforms:
     get:
       summary: List platforms
@@ -1168,42 +1137,39 @@ paths:
                       last:
                         href: '/content/platforms?offset=2300&limit=50'
       operationId: v1.content.platform.get_list
-      parameters:
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - created_at
-                - '-created_at'
-                - updated_at
-                - '-updated_at'
-          in: query
-          name: sort
-          style: form
-        - schema:
-            type: integer
-            maximum: 50
-            minimum: 0
-          in: query
-          name: limit
-        - schema:
-            type: integer
-          in: query
-          name: offset
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-          in: query
-          name: languages
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   '/content/platforms/{platform_guid}':
     parameters:
       - schema:
@@ -1255,22 +1221,21 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: get-content-platforms-guid
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                languages:
+                  type: array
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                fields:
+                  type: array
+                  items:
+                    type: string
   /content/locations:
     get:
       summary: List locations
@@ -1328,42 +1293,39 @@ paths:
                       last:
                         href: '/content/locations?offset=2300&limit=50'
       operationId: v1.content.location.get_list
-      parameters:
-        - schema:
-            type: array
-            items:
-              type: string
-              enum:
-                - created_at
-                - '-created_at'
-                - updated_at
-                - '-updated_at'
-          in: query
-          name: sort
-          style: form
-        - schema:
-            type: integer
-            maximum: 50
-            minimum: 0
-          in: query
-          name: limit
-        - schema:
-            type: integer
-          in: query
-          name: offset
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-          in: query
-          name: languages
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   '/content/locations/{location_guid}':
     parameters:
       - schema:
@@ -1405,22 +1367,21 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.location.get
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                languages:
+                  type: array
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                fields:
+                  type: array
+                  items:
+                    type: string
   '/content/creative_works/{creative_work_guid}/tags':
     parameters:
       - schema:
@@ -1482,24 +1443,41 @@ paths:
                       last:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=2300&limit=50'
       operationId: v1.content.tag.get_from_creative_work
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      parameters: []
       tags:
         - Tag management
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   '/content/creative_works/{creative_work_guid}/genres':
     parameters:
       - schema:
@@ -1561,24 +1539,41 @@ paths:
                       last:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=2300&limit=50'
       operationId: v1.content.genre.get_from_creative_work
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      parameters: []
       tags:
         - Genre management
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   '/content/creative_works/{creative_work_guid}/contributors':
     parameters:
       - schema:
@@ -1660,24 +1655,41 @@ paths:
                       last:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=2300&limit=50'
       operationId: v1.content.contributor.get_from_creative_work
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      parameters: []
       tags:
         - Contributors management
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   '/content/creative_works/{creative_work_guid}/content_ratings':
     parameters:
       - schema:
@@ -1740,24 +1752,41 @@ paths:
                       last:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=2300&limit=50'
       operationId: v1.content.content_rating.get_from_creative_work
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      parameters: []
       tags:
         - Content rating management
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
   '/content/creative_works/{creative_work_guid}/availabilities':
     parameters:
       - schema:
@@ -1825,24 +1854,41 @@ paths:
                       last:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=2300&limit=50'
       operationId: v1.content.availability.get_from_creative_work
-      parameters:
-        - schema:
-            type: array
-            items:
-              $ref: ../models/languages_field.v1.yaml
-            minItems: 1
-          in: query
-          name: languages
-          description: ''
-          style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
-          name: fields
+      parameters: []
       tags:
         - Availability management
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/filter_field.v1.yaml
+                sort:
+                  type: array
+                  enum:
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                  minimum: 0
+                  maximum: 50
+                offset:
+                  type: integer
+                languages:
+                  items:
+                    $ref: ../models/languages_field.v1.yaml
+                  type: array
+                fields:
+                  type: array
+                  items:
+                    type: string
+      description: ''
 components:
   schemas: {}
   securitySchemes:
