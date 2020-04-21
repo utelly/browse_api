@@ -1,58 +1,58 @@
+description: ''
+items:
+  additionalProperties: false
+  anyOf:
+  - properties:
+      operator:
+        enum:
+        - eq
+        type: string
+      property:
+        type: string
+      value:
+        type: string
+  - properties:
+      operator:
+        enum:
+        - in
+        type: string
+      property:
+        type: string
+      value:
+        items:
+          type: string
+        type: array
+  - properties:
+      operator:
+        enum:
+        - regex
+        type: string
+      property:
+        type: string
+      value:
+        example: Kevin*
+        type: string
+  - properties:
+      operator:
+        enum:
+        - lte
+        - gte
+        type: string
+      property:
+        type: string
+      value:
+        type: number
+  - properties:
+      operator:
+        enum:
+        - lte
+        - gte
+        type: string
+      property:
+        type: string
+      value:
+        format: date-time
+        type: string
+  type: object
 title: filter_field
 type: array
-items:
-  anyOf:
-    - properties:
-        property:
-          type: string
-        operator:
-          type: string
-          enum:
-            - eq
-        value:
-          type: string
-    - properties:
-        property:
-          type: string
-        operator:
-          type: string
-          enum:
-            - in
-        value:
-          type: array
-          items:
-            type: string
-    - properties:
-        property:
-          type: string
-        operator:
-          type: string
-          enum:
-            - regex
-        value:
-          type: string
-          example: 'Kevin*'
-    - properties:
-        property:
-          type: string
-        operator:
-          type: string
-          enum:
-            - lte
-            - gte
-        value:
-          type: number
-    - properties:
-        property:
-          type: string
-        operator:
-          type: string
-          enum:
-            - lte
-            - gte
-        value:
-          type: string
-          format: date-time
-  type: object
-  additionalProperties: false
-description: ''

@@ -1,44 +1,44 @@
-title: Person
-type: object
+additionalProperties: false
 properties:
-  guid:
-    type: string
-  created_at:
-    type: string
-    format: date-time
-  updated_at:
-    type: string
-    format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
-  identifiers:
+  biographies:
+    items:
+      additionalProperties: false
+      properties:
+        biography:
+          type: string
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+      required:
+      - metadata
+      - biography
+      type: object
     type: array
+  created_at:
+    format: date-time
+    type: string
+  guid:
+    type: string
+  identifiers:
     items:
       $ref: ./identifier_field.v1.yaml
+    type: array
   name:
     type: string
   pictures:
-    type: array
     items:
       $ref: ./picture_field.v1.yaml
-  biographies:
     type: array
-    items:
-      type: object
-      additionalProperties: false
-      properties:
-        metadata:
-          $ref: ./metadata_field.v1.yaml
-        biography:
-          type: string
-      required:
-        - metadata
-        - biography
+  updated_at:
+    format: date-time
+    type: string
 required:
-  - guid
-  - created_at
-  - updated_at
-  - _links
-  - identifiers
-  - name
-additionalProperties: false
+- guid
+- created_at
+- updated_at
+- _links
+- identifiers
+- name
+title: Person
+type: object
