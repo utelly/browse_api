@@ -944,6 +944,9 @@ paths:
                           href: /content/genres/9be42f99a8ab420082719d1bafc8e649
                       created_at: '2020-01-01T00:00:00Z'
                       updated_at: '2020-01-01T00:00:00Z'
+                      relationships:
+                        - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                          rel: sibling
       operationId: v1.content.genre.get
       description: ''
       requestBody:
