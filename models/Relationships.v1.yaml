@@ -2,6 +2,7 @@ title: Relationships
 type: array
 items:
   type: object
+  additionalProperties: false
   properties:
     href:
       type: string

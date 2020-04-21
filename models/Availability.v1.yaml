@@ -55,6 +55,7 @@ properties:
     format: date-time
   recipe:
     type: object
+    additionalProperties: false
     properties:
       href:
         type: string

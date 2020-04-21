@@ -54,4 +54,5 @@ items:
           type: string
           format: date-time
   type: object
+  additionalProperties: false
 description: ''
