@@ -452,6 +452,9 @@ paths:
                               href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
                           created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                          relationships:
+                            - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
+                              rel: sibling
                     _links:
                       self:
                         href: '/content/tags?offset=50&limit=50'
