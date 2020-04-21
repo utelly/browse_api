@@ -1,5 +1,6 @@
 title: Tag
 type: object
+additionalProperties: false
 properties:
   guid:
     type: string
@@ -28,10 +29,12 @@ properties:
       required:
         - metadata
         - name
+  relationships:
+    $ref: ./Relationships.v1.yaml
 required:
   - guid
   - created_at
   - updated_at
   - _links
   - identifiers
-additionalProperties: false
+  - relationships

@@ -33,9 +33,12 @@ properties:
     type: array
     items:
       $ref: ./picture_field.v1.yaml
+  relationships:
+    $ref: ./Relationships.v1.yaml
 required:
   - guid
   - created_at
   - updated_at
   - _links
   - identifiers
+  - relationships

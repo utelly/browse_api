@@ -1,0 +1,13 @@
+title: Relationships
+type: array
+items:
+  type: object
+  properties:
+    href:
+      type: string
+    rel:
+      type: string
+      enum:
+        - parent
+        - sibling
+        - child

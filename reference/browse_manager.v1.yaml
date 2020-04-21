@@ -489,9 +489,9 @@ paths:
                 offset:
                   type: integer
                 languages:
+                  type: array
                   items:
                     $ref: ../models/languages_field.v1.yaml
-                  type: array
                 fields:
                   type: array
                   items:
