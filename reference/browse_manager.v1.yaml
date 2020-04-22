@@ -300,23 +300,28 @@ paths:
                     - fr
                     - de
                   filters:
-                    - property: titles.title
-                      operator: eq
-                      value: The Usual Suspects
-                    - property: persons.names.name
-                      operator: regex
-                      value: 'kevin*'
-                    - property: availabilities.services.names.name
-                      operator: eq
-                      value: Netflix
-                    - property: created_at
-                      operator: gte
-                      value: '2020-04-03T23:01:06Z'
-                    - property: genres.genre.names.name
-                      operator: in
-                      value:
-                        - Action
-                        - Comedy
+                    - filter:
+                        property: titles.title
+                        operator: eq
+                        value: The Usual Suspects
+                    - filter:
+                        property: persons.names.name
+                        operator: regex
+                        value: 'kevin*'
+                    - filter:
+                        property: availabilities.services.names.name
+                        operator: eq
+                        value: Netflix
+                    - filter:
+                        property: created_at
+                        operator: gte
+                        value: '2020-04-03T23:01:06Z'
+                    - filter:
+                        property: genres.genre.names.name
+                        operator: in
+                        value:
+                          - Action
+                          - Comedy
                   offset: 100
                   limit: 50
   '/content/creative_works/{creative_work_guid}':
