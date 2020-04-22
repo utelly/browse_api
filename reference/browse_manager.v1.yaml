@@ -105,7 +105,7 @@ paths:
                   type: array
               type: object
       description: ''
-  '/content/content_ratings/{rating_guid}':
+  '/content/content_ratings/{content_rating_guid}':
     get:
       operationId: v1.content.content_rating.get
       responses:
@@ -159,11 +159,11 @@ paths:
               type: object
       description: ''
     parameters:
-      - in: path
-        name: rating_guid
-        required: true
-        schema:
+      - schema:
           type: string
+        name: content_rating_guid
+        in: path
+        required: true
   /content/creative_works:
     get:
       description: ''
