@@ -1,71 +1,71 @@
 additionalProperties: false
 description: ''
+title: CreativeWork
+type: object
+x-examples: {}
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
   artworks:
+    type: array
     items:
       $ref: ./picture_field.v1.yaml
-    type: array
   created_at:
     format: date-time
     type: string
   descriptions:
+    type: array
     items:
       additionalProperties: false
+      type: object
       properties:
         description:
           type: string
         metadata:
           $ref: ./metadata_field.v1.yaml
       required:
-      - metadata
-      - description
-      type: object
-    type: array
+        - description
+        - metadata
   guid:
     type: string
   identifiers:
+    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-    type: array
-  parent:
-    $ref: ./hal_link_field.v1.yaml
+  relationships:
+    $ref: ./Relationships.v1.yaml
   titles:
+    type: array
     items:
       additionalProperties: false
+      type: object
       properties:
         metadata:
           $ref: ./metadata_field.v1.yaml
         title:
           type: string
       required:
-      - metadata
-      - title
-      type: object
-    type: array
+        - metadata
+        - title
   type:
     enum:
-    - movie
-    - series
-    - short
-    - tv
-    - web
-    - article
-    - supplemental
-    - season
-    - episode
+      - movie
+      - series
+      - short
+      - tv
+      - web
+      - article
+      - supplemental
+      - season
+      - episode
     type: string
   updated_at:
     format: date-time
     type: string
 required:
-- guid
-- created_at
-- updated_at
-- _links
-- identifiers
-- type
-title: CreativeWork
-type: object
-x-examples: {}
+  - _links
+  - created_at
+  - guid
+  - identifiers
+  - type
+  - updated_at

@@ -40,10 +40,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -59,29 +59,29 @@ paths:
                       first:
                         href: /content/content_ratings
                       last:
-                        href: /content/content_ratings?offset=2300&limit=50
+                        href: '/content/content_ratings?offset=2300&limit=50'
                       next:
-                        href: /content/content_ratings?offset=100&limit=50
+                        href: '/content/content_ratings?offset=100&limit=50'
                       prev:
                         href: /content/content_ratings
                       self:
-                        href: /content/content_ratings?offset=50&limit=50
+                        href: '/content/content_ratings?offset=50&limit=50'
                     content_ratings:
-                    - content_rating:
-                        _links:
-                          self:
-                            href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: bcb27a2c9ee74a5a86720c3b5828093c
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        updated_at: '2020-01-01T00:00:00Z'
-                        values:
-                        - metadata:
-                            country: GB
-                          organization: MPAA
-                          value: '12'
+                      - content_rating:
+                          _links:
+                            self:
+                              href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: bcb27a2c9ee74a5a86720c3b5828093c
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          updated_at: '2020-01-01T00:00:00Z'
+                          values:
+                            - metadata:
+                                country: GB
+                              organization: MPAA
+                              value: '12'
               schema:
                 additionalProperties: false
                 properties:
@@ -94,18 +94,18 @@ paths:
                         content_rating:
                           $ref: ../models/ContentRating.v1.yaml
                       required:
-                      - content_rating
+                        - content_rating
                       type: object
                     type: array
                 required:
-                - content_ratings
-                - _links
+                  - content_ratings
+                  - _links
                 type: object
           description: OK
       summary: List content ratings
       tags:
-      - Content rating management
-  /content/content_ratings/{rating_guid}:
+        - Content rating management
+  '/content/content_ratings/{rating_guid}':
     get:
       description: ''
       operationId: v1.content.content_rating.get
@@ -138,32 +138,32 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       guid: bcb27a2c9ee74a5a86720c3b5828093c
                       identifiers:
-                      - id: '1'
-                        source: mysource
+                        - id: '1'
+                          source: mysource
                       updated_at: '2020-01-01T00:00:00Z'
                       values:
-                      - metadata:
-                          country: GB
-                        organization: MPAA
-                        value: '12'
+                        - metadata:
+                            country: GB
+                          organization: MPAA
+                          value: '12'
               schema:
                 additionalProperties: false
                 properties:
                   content_rating:
                     $ref: ../models/ContentRating.v1.yaml
                 required:
-                - content_rating
+                  - content_rating
                 type: object
           description: OK
       summary: Get a content rating
       tags:
-      - Content rating management
+        - Content rating management
     parameters:
-    - in: path
-      name: rating_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: rating_guid
+        required: true
+        schema:
+          type: string
   /content/creative_works:
     get:
       description: ''
@@ -193,10 +193,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -212,62 +212,61 @@ paths:
                       first:
                         href: /content/creative_works
                       last:
-                        href: /content/creative_works?offset=2300&limit=50
+                        href: '/content/creative_works?offset=2300&limit=50'
                       next:
-                        href: /content/creative_works?offset=100&limit=50
+                        href: '/content/creative_works?offset=100&limit=50'
                       prev:
                         href: /content/creative_works
                       self:
-                        href: /content/creative_works?offset=50&limit=50
+                        href: '/content/creative_works?offset=50&limit=50'
                     creative_works:
-                    - creative_work:
-                        _links:
-                          availabilities:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
-                          content_ratings:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
-                          genres:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
-                          persons:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/persons
-                          self:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46
-                          tags:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
-                        artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: poster
-                          url: https://mydomain.com/poster.jpg
-                          width: 100
-                        created_at: '2020-01-01T00:00:10Z'
-                        descriptions:
-                        - description: A sole survivor tells of the twisty events
-                            leading up to a horrific gun battle on a boat, which began
-                            when five criminals met at a seemingly random police lineup.
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: full
-                        guid: 27c13eec19014084a0a3173061702b46
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        parent:
-                          href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
-                        titles:
-                        - metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: official
-                          title: The Usual Suspects
-                        type: movie
-                        updated_at: '2020-01-01T00:00:10Z'
+                      - creative_work:
+                          _links:
+                            availabilities:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
+                            content_ratings:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
+                            genres:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
+                            persons:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/persons
+                            self:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46
+                            tags:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
+                          artworks:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: poster
+                              url: 'https://mydomain.com/poster.jpg'
+                              width: 100
+                          created_at: '2020-01-01T00:00:10Z'
+                          descriptions:
+                            - description: 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.'
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: full
+                          guid: 27c13eec19014084a0a3173061702b46
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          relationships:
+                            - href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
+                              rel: parent
+                          titles:
+                            - metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: official
+                              title: The Usual Suspects
+                          type: movie
+                          updated_at: '2020-01-01T00:00:10Z'
               schema:
                 additionalProperties: false
                 properties:
@@ -280,18 +279,18 @@ paths:
                         creative_work:
                           $ref: ../models/CreativeWork.v1.yaml
                       required:
-                      - creative_work
+                        - creative_work
                       type: object
                     type: array
                 required:
-                - creative_works
-                - _links
+                  - creative_works
+                  - _links
                 type: object
           description: OK
       summary: List creative works
       tags:
-      - Creative work management
-  /content/creative_works/{creative_work_guid}:
+        - Creative work management
+  '/content/creative_works/{creative_work_guid}':
     get:
       description: ''
       operationId: v1.content.creative_works.get
@@ -305,11 +304,11 @@ paths:
                 embed:
                   items:
                     enum:
-                    - genres
-                    - tags
-                    - availabilities
-                    - content_ratings
-                    - persons
+                      - genres
+                      - tags
+                      - availabilities
+                      - content_ratings
+                      - persons
                     type: string
                   type: array
                 fields:
@@ -330,23 +329,23 @@ paths:
                   value:
                     _embedded:
                       genres:
-                      - genre:
-                          _links:
-                            self:
-                              href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                          created_at: '2020-01-01T00:00:00Z'
-                          guid: 9be42f99a8ab420082719d1bafc8e649
-                          identifiers:
-                          - id: '1'
-                            source: mysource
-                          names:
-                          - metadata:
-                              language: en
-                            name: Action
-                          relationships:
-                          - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                            rel: sibling
-                          updated_at: '2020-01-01T00:00:00Z'
+                        - genre:
+                            _links:
+                              self:
+                                href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                            created_at: '2020-01-01T00:00:00Z'
+                            guid: 9be42f99a8ab420082719d1bafc8e649
+                            identifiers:
+                              - id: '1'
+                                source: mysource
+                            names:
+                              - metadata:
+                                  language: en
+                                name: Action
+                            relationships:
+                              - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                                rel: sibling
+                            updated_at: '2020-01-01T00:00:00Z'
                     creative_work:
                       _links:
                         availabilities:
@@ -362,37 +361,36 @@ paths:
                         tags:
                           href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
                       artworks:
-                      - height: 100
-                        metadata:
-                          country: GB
-                          language: en
-                          source: mysource
-                          type: poster
-                        url: https://mydomain.com/poster.jpg
-                        width: 100
+                        - height: 100
+                          metadata:
+                            country: GB
+                            language: en
+                            source: mysource
+                            type: poster
+                          url: 'https://mydomain.com/poster.jpg'
+                          width: 100
                       created_at: '2020-01-01T00:00:10Z'
                       descriptions:
-                      - description: A sole survivor tells of the twisty events leading
-                          up to a horrific gun battle on a boat, which began when
-                          five criminals met at a seemingly random police lineup.
-                        metadata:
-                          country: GB
-                          language: en
-                          source: mysource
-                          type: full
+                        - description: 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.'
+                          metadata:
+                            country: GB
+                            language: en
+                            source: mysource
+                            type: full
                       guid: 27c13eec19014084a0a3173061702b46
                       identifiers:
-                      - id: '1'
-                        source: mysource
-                      parent:
-                        href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
-                      titles:
-                      - metadata:
-                          country: GB
-                          language: en
+                        - id: '1'
                           source: mysource
-                          type: official
-                        title: The Usual Suspects
+                      relationships:
+                        - href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
+                          rel: parent
+                      titles:
+                        - metadata:
+                            country: GB
+                            language: en
+                            source: mysource
+                            type: official
+                          title: The Usual Suspects
                       type: movie
                       updated_at: '2020-01-01T00:00:10Z'
               schema:
@@ -408,7 +406,7 @@ paths:
                             availability:
                               $ref: ../models/Availability.v1.yaml
                           required:
-                          - availability
+                            - availability
                           type: object
                         type: array
                       content_ratings:
@@ -426,7 +424,7 @@ paths:
                             genre:
                               $ref: ../models/Genre.v1.yaml
                           required:
-                          - genre
+                            - genre
                           type: object
                         type: array
                       persons:
@@ -436,20 +434,20 @@ paths:
                             character_name:
                               type: string
                             person:
-                              $ref: ../models/Person.v1.yaml
+                              $ref: ../models/People.v1.yaml
                             role:
                               enum:
-                              - actor
-                              - creator
-                              - director
-                              - editor
-                              - producer
-                              - writer
-                              - executive producer
+                                - actor
+                                - creator
+                                - director
+                                - editor
+                                - producer
+                                - writer
+                                - executive producer
                               type: string
                           required:
-                          - person
-                          - role
+                            - person
+                            - role
                           type: object
                         type: array
                       tags:
@@ -459,26 +457,26 @@ paths:
                             tag:
                               $ref: ../models/Tag.v1.yaml
                           required:
-                          - tag
+                            - tag
                           type: object
                         type: array
                     type: object
                   creative_work:
                     $ref: ../models/CreativeWork.v1.yaml
                 required:
-                - creative_work
+                  - creative_work
                 type: object
           description: OK
       summary: Get a creative work
       tags:
-      - Creative work management
+        - Creative work management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
-  /content/creative_works/{creative_work_guid}/availabilities:
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
+  '/content/creative_works/{creative_work_guid}/availabilities':
     get:
       description: ''
       operationId: v1.content.availability.get_from_creative_work
@@ -507,10 +505,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -526,34 +524,34 @@ paths:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities
                       last:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=2300&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=2300&limit=50'
                       next:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=100&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=100&limit=50'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities
                       self:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=50&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=50&limit=50'
                     availabilities:
-                    - availability:
-                        _links:
-                          location:
-                            href: /content/locations/27c13eec19014084a0a3173061702b46
-                          platform:
-                            href: /content/platforms/27c13eec19014084a0a3173061702b46
-                          self:
-                            href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
-                          service:
-                            href: /content/services/27c13eec19014084a0a3173061702b46
-                        created_at: '2020-01-01T00:00:00Z'
-                        datetime_from: '2020-01-01T00:00:00Z'
-                        datetime_to: '2020-01-01T00:00:00Z'
-                        guid: eb4aaa3de91242ba82ad48bee0b48996
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        recipe:
-                          href: https://mydomain.com/link_to_asset.html
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - availability:
+                          _links:
+                            location:
+                              href: /content/locations/27c13eec19014084a0a3173061702b46
+                            platform:
+                              href: /content/platforms/27c13eec19014084a0a3173061702b46
+                            self:
+                              href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
+                            service:
+                              href: /content/services/27c13eec19014084a0a3173061702b46
+                          created_at: '2020-01-01T00:00:00Z'
+                          datetime_from: '2020-01-01T00:00:00Z'
+                          datetime_to: '2020-01-01T00:00:00Z'
+                          guid: eb4aaa3de91242ba82ad48bee0b48996
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          recipe:
+                            href: 'https://mydomain.com/link_to_asset.html'
+                          updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
                 properties:
@@ -566,24 +564,24 @@ paths:
                         availability:
                           $ref: ../models/Availability.v1.yaml
                       required:
-                      - availability
+                        - availability
                       type: object
                     type: array
                 required:
-                - availabilities
-                - _links
+                  - availabilities
+                  - _links
                 type: object
           description: OK
       summary: Get availabilities from creative work
       tags:
-      - Availability management
+        - Availability management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
-  /content/creative_works/{creative_work_guid}/content_ratings:
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
+  '/content/creative_works/{creative_work_guid}/content_ratings':
     get:
       description: ''
       operationId: v1.content.content_rating.get_from_creative_work
@@ -612,10 +610,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -631,29 +629,29 @@ paths:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings
                       last:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=2300&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=2300&limit=50'
                       next:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=100&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=100&limit=50'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings
                       self:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=50&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=50&limit=50'
                     content_ratings:
-                    - content_rating:
-                        _links:
-                          self:
-                            href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: bcb27a2c9ee74a5a86720c3b5828093c
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        updated_at: '2020-01-01T00:00:00Z'
-                        values:
-                        - metadata:
-                            country: GB
-                          organization: MPAA
-                          value: '12'
+                      - content_rating:
+                          _links:
+                            self:
+                              href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: bcb27a2c9ee74a5a86720c3b5828093c
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          updated_at: '2020-01-01T00:00:00Z'
+                          values:
+                            - metadata:
+                                country: GB
+                              organization: MPAA
+                              value: '12'
               schema:
                 additionalProperties: false
                 properties:
@@ -666,24 +664,24 @@ paths:
                         content_rating:
                           $ref: ../models/ContentRating.v1.yaml
                       required:
-                      - content_rating
+                        - content_rating
                       type: object
                     type: array
                 required:
-                - content_ratings
-                - _links
+                  - content_ratings
+                  - _links
                 type: object
           description: OK
       summary: Get content ratings from creative work
       tags:
-      - Content rating management
+        - Content rating management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
-  /content/creative_works/{creative_work_guid}/genres:
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
+  '/content/creative_works/{creative_work_guid}/genres':
     get:
       description: ''
       operationId: v1.content.genre.get_from_creative_work
@@ -712,10 +710,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -731,31 +729,31 @@ paths:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres
                       last:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=2300&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=2300&limit=50'
                       next:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=100&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=100&limit=50'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres
                       self:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=50&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=50&limit=50'
                     genres:
-                    - genre:
-                        _links:
-                          self:
-                            href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: 9be42f99a8ab420082719d1bafc8e649
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            language: en
-                          name: Action
-                        relationships:
-                        - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                          rel: sibling
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - genre:
+                          _links:
+                            self:
+                              href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: 9be42f99a8ab420082719d1bafc8e649
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                language: en
+                              name: Action
+                          relationships:
+                            - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                              rel: sibling
+                          updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
                 properties:
@@ -768,24 +766,24 @@ paths:
                         genre:
                           $ref: ../models/Genre.v1.yaml
                       required:
-                      - genre
+                        - genre
                       type: object
                     type: array
                 required:
-                - genres
-                - _links
+                  - genres
+                  - _links
                 type: object
           description: OK
       summary: Get genres from creative work
       tags:
-      - Genre management
+        - Genre management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
-  /content/creative_works/{creative_work_guid}/persons:
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
+  '/content/creative_works/{creative_work_guid}/persons':
     get:
       description: ''
       operationId: v1.content.person.get_from_creative_work
@@ -814,10 +812,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -833,78 +831,98 @@ paths:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons
                       last:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=2300&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=2300&limit=50'
                       next:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=100&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=100&limit=50'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons
                       self:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=50&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=50&limit=50'
                     persons:
-                    - character_name: "Keyser S\xF6ze"
-                      person:
-                        _links:
-                          self:
-                            href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: eb4aaa3de91242ba82ad48bee0b48996
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        name: Kevin Spacey
-                        pictures:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            type: portrait
-                          url: https://mydomain.com/picture.jpg
-                          width: 100
-                        updated_at: '2020-01-01T00:00:00Z'
-                      role: actor
+                      - character_name: Keyser Söze
+                        person:
+                          _links:
+                            self:
+                              href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: eb4aaa3de91242ba82ad48bee0b48996
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          name: Kevin Spacey
+                          pictures:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                type: portrait
+                              url: 'https://mydomain.com/picture.jpg'
+                              width: 100
+                          updated_at: '2020-01-01T00:00:00Z'
+                        role: actor
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                   persons:
+                    type: array
                     items:
                       additionalProperties: false
-                      properties:
-                        character_name:
-                          type: string
-                        person:
-                          $ref: ../models/Person.v1.yaml
-                        role:
-                          enum:
-                          - actor
-                          - creator
-                          - director
-                          - editor
-                          - producer
-                          - writer
-                          - executive producer
-                          type: string
-                      required:
-                      - person
-                      - role
                       type: object
-                    type: array
+                      properties:
+                        character_names:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              character_names:
+                                type: string
+                              metadata:
+                                $ref: ../models/metadata_field.v1.yaml
+                            required:
+                              - character_names
+                              - metadata
+                        person:
+                          $ref: ../models/People.v1.yaml
+                        roles:
+                          enum:
+                            - actor
+                            - creator
+                            - director
+                            - editor
+                            - producer
+                            - writer
+                            - executive producer
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              role:
+                                type: string
+                              metadata:
+                                $ref: ../models/metadata_field.v1.yaml
+                            required:
+                              - role
+                              - metadata
+                      required:
+                        - person
+                        - roles
                 required:
-                - persons
-                - _links
-                type: object
+                  - _links
+                  - persons
           description: OK
       summary: Get persons from creative work
       tags:
-      - Persons management
+        - Persons management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
-  /content/creative_works/{creative_work_guid}/tags:
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
+  '/content/creative_works/{creative_work_guid}/tags':
     get:
       description: ''
       operationId: v1.content.tag.get_from_creative_work
@@ -933,10 +951,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -952,31 +970,31 @@ paths:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags
                       last:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=2300&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=2300&limit=50'
                       next:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=100&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=100&limit=50'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags
                       self:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=50&limit=50
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=50&limit=50'
                     tags:
-                    - tag:
-                        _links:
-                          self:
-                            href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: 8703dd1ced974ecea01116f2c0a5a282
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            language: en
-                          name: Warm
-                        relationships:
-                        - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
-                          rel: sibling
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - tag:
+                          _links:
+                            self:
+                              href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: 8703dd1ced974ecea01116f2c0a5a282
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                language: en
+                              name: Warm
+                          relationships:
+                            - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
+                              rel: sibling
+                          updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
                 properties:
@@ -989,23 +1007,23 @@ paths:
                         tag:
                           $ref: ../models/Tag.v1.yaml
                       required:
-                      - tag
+                        - tag
                       type: object
                     type: array
                 required:
-                - tags
-                - _links
+                  - tags
+                  - _links
                 type: object
           description: OK
       summary: Get tags from creative work
       tags:
-      - Tag management
+        - Tag management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
   /content/genres:
     get:
       description: ''
@@ -1035,10 +1053,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -1054,31 +1072,31 @@ paths:
                       first:
                         href: /content/genres
                       last:
-                        href: /content/genres?offset=2300&limit=50
+                        href: '/content/genres?offset=2300&limit=50'
                       next:
-                        href: /content/genres?offset=100&limit=50
+                        href: '/content/genres?offset=100&limit=50'
                       prev:
                         href: /content/genres
                       self:
-                        href: /content/genres?offset=50&limit=50
+                        href: '/content/genres?offset=50&limit=50'
                     genres:
-                    - genre:
-                        _links:
-                          self:
-                            href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: 9be42f99a8ab420082719d1bafc8e649
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            language: en
-                          name: Action
-                        relationships:
-                        - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                          rel: sibling
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - genre:
+                          _links:
+                            self:
+                              href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: 9be42f99a8ab420082719d1bafc8e649
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                language: en
+                              name: Action
+                          relationships:
+                            - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                              rel: sibling
+                          updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
                 properties:
@@ -1091,18 +1109,18 @@ paths:
                         genre:
                           $ref: ../models/Genre.v1.yaml
                       required:
-                      - genre
+                        - genre
                       type: object
                     type: array
                 required:
-                - genres
-                - _links
+                  - genres
+                  - _links
                 type: object
           description: OK
       summary: List genres
       tags:
-      - Genre management
-  /content/genres/{genre_guid}:
+        - Genre management
+  '/content/genres/{genre_guid}':
     get:
       description: ''
       operationId: v1.content.genre.get
@@ -1135,15 +1153,15 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       guid: 9be42f99a8ab420082719d1bafc8e649
                       identifiers:
-                      - id: '1'
-                        source: mysource
+                        - id: '1'
+                          source: mysource
                       names:
-                      - metadata:
-                          language: en
-                        name: Action
+                        - metadata:
+                            language: en
+                          name: Action
                       relationships:
-                      - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                        rel: sibling
+                        - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                          rel: sibling
                       updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
@@ -1151,18 +1169,18 @@ paths:
                   genre:
                     $ref: ../models/Genre.v1.yaml
                 required:
-                - genre
+                  - genre
                 type: object
           description: OK
       summary: Get a genre
       tags:
-      - Genre management
+        - Genre management
     parameters:
-    - in: path
-      name: genre_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: genre_guid
+        required: true
+        schema:
+          type: string
   /content/locations:
     get:
       description: ''
@@ -1192,10 +1210,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -1211,28 +1229,28 @@ paths:
                       first:
                         href: /content/locations
                       last:
-                        href: /content/locations?offset=2300&limit=50
+                        href: '/content/locations?offset=2300&limit=50'
                       next:
-                        href: /content/locations?offset=100&limit=50
+                        href: '/content/locations?offset=100&limit=50'
                       prev:
                         href: /content/locations
                       self:
-                        href: /content/locations?offset=50&limit=50
+                        href: '/content/locations?offset=50&limit=50'
                     locations:
-                    - location:
-                        _links:
-                          self:
-                            href: /content/locations/e1d00d49612f48c791458f8f754358a9
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: e1d00d49612f48c791458f8f754358a9
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            country: FR
-                          name: France
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - location:
+                          _links:
+                            self:
+                              href: /content/locations/e1d00d49612f48c791458f8f754358a9
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: e1d00d49612f48c791458f8f754358a9
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                country: FR
+                              name: France
+                          updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
                 properties:
@@ -1245,18 +1263,18 @@ paths:
                         location:
                           $ref: ../models/Location.v1.yaml
                       required:
-                      - location
+                        - location
                       type: object
                     type: array
                 required:
-                - locations
-                - _links
+                  - locations
+                  - _links
                 type: object
           description: OK
       summary: List locations
       tags:
-      - Location management
-  /content/locations/{location_guid}:
+        - Location management
+  '/content/locations/{location_guid}':
     get:
       description: ''
       operationId: v1.content.location.get
@@ -1289,12 +1307,12 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       guid: e1d00d49612f48c791458f8f754358a9
                       identifiers:
-                      - id: '1'
-                        source: mysource
+                        - id: '1'
+                          source: mysource
                       names:
-                      - metadata:
-                          country: FR
-                        name: France
+                        - metadata:
+                            country: FR
+                          name: France
                       updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
@@ -1302,18 +1320,18 @@ paths:
                   location:
                     $ref: ../models/Location.v1.yaml
                 required:
-                - location
+                  - location
                 type: object
           description: OK
       summary: Get a location
       tags:
-      - Location management
+        - Location management
     parameters:
-    - in: path
-      name: location_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: location_guid
+        required: true
+        schema:
+          type: string
   /content/persons:
     get:
       description: ''
@@ -1343,10 +1361,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -1362,33 +1380,33 @@ paths:
                       first:
                         href: /content/persons
                       last:
-                        href: /content/persons?offset=2300&limit=50
+                        href: '/content/persons?offset=2300&limit=50'
                       next:
-                        href: /content/persons?offset=100&limit=50
+                        href: '/content/persons?offset=100&limit=50'
                       prev:
                         href: /content/persons
                       self:
-                        href: /content/persons?offset=50&limit=50
+                        href: '/content/persons?offset=50&limit=50'
                     persons:
-                    - person:
-                        _links:
-                          self:
-                            href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: eb4aaa3de91242ba82ad48bee0b48996
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        name: "Keyser S\xF6ze"
-                        pictures:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            type: portrait
-                          url: https://mydomain.com/picture.jpg
-                          width: 100
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - person:
+                          _links:
+                            self:
+                              href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: eb4aaa3de91242ba82ad48bee0b48996
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          name: Keyser Söze
+                          pictures:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                type: portrait
+                              url: 'https://mydomain.com/picture.jpg'
+                              width: 100
+                          updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
                 properties:
@@ -1399,20 +1417,20 @@ paths:
                       additionalProperties: false
                       properties:
                         person:
-                          $ref: ../models/Person.v1.yaml
+                          $ref: ../models/People.v1.yaml
                       required:
-                      - person
+                        - person
                       type: object
                     type: array
                 required:
-                - persons
-                - _links
+                  - persons
+                  - _links
                 type: object
           description: OK
       summary: List persons
       tags:
-      - Persons management
-  /content/persons/{person_guid}:
+        - Persons management
+  '/content/persons/{person_guid}':
     get:
       description: ''
       operationId: v1.content.person.get
@@ -1445,36 +1463,36 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       guid: eb4aaa3de91242ba82ad48bee0b48996
                       identifiers:
-                      - id: '1'
-                        source: mysource
-                      name: "Keyser S\xF6ze"
+                        - id: '1'
+                          source: mysource
+                      name: Keyser Söze
                       pictures:
-                      - height: 100
-                        metadata:
-                          country: GB
-                          language: en
-                          type: portrait
-                        url: https://mydomain.com/picture.jpg
-                        width: 100
+                        - height: 100
+                          metadata:
+                            country: GB
+                            language: en
+                            type: portrait
+                          url: 'https://mydomain.com/picture.jpg'
+                          width: 100
                       updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
                 properties:
                   person:
-                    $ref: ../models/Person.v1.yaml
+                    $ref: ../models/People.v1.yaml
                 required:
-                - person
+                  - person
                 type: object
           description: OK
       summary: Get a person
       tags:
-      - Persons management
+        - Persons management
     parameters:
-    - in: path
-      name: person_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: person_guid
+        required: true
+        schema:
+          type: string
   /content/platforms:
     get:
       description: ''
@@ -1504,10 +1522,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -1523,38 +1541,38 @@ paths:
                       first:
                         href: /content/platforms
                       last:
-                        href: /content/platforms?offset=2300&limit=50
+                        href: '/content/platforms?offset=2300&limit=50'
                       next:
-                        href: /content/platforms?offset=100&limit=50
+                        href: '/content/platforms?offset=100&limit=50'
                       prev:
                         href: /content/platforms
                       self:
-                        href: /content/platforms?offset=50&limit=50
+                        href: '/content/platforms?offset=50&limit=50'
                     platforms:
-                    - platform:
-                        _links:
-                          self:
-                            href: /content/platforms/e1d00d49612f48c791458f8f754358a9
-                        artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: icon
-                          url: https://mydomain.com/picture.jpg
-                          width: 100
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: e1d00d49612f48c791458f8f754358a9
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            country: GB
-                            language: en
-                          name: IOS
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - platform:
+                          _links:
+                            self:
+                              href: /content/platforms/e1d00d49612f48c791458f8f754358a9
+                          artworks:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: icon
+                              url: 'https://mydomain.com/picture.jpg'
+                              width: 100
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: e1d00d49612f48c791458f8f754358a9
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                country: GB
+                                language: en
+                              name: IOS
+                          updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
                 properties:
@@ -1567,18 +1585,18 @@ paths:
                         platform:
                           $ref: ../models/Platform.v1.yaml
                       required:
-                      - platform
+                        - platform
                       type: object
                     type: array
                 required:
-                - platforms
-                - _links
+                  - platforms
+                  - _links
                 type: object
           description: OK
       summary: List platforms
       tags:
-      - Platform management
-  /content/platforms/{platform_guid}:
+        - Platform management
+  '/content/platforms/{platform_guid}':
     get:
       description: ''
       operationId: get-content-platforms-guid
@@ -1609,24 +1627,24 @@ paths:
                         self:
                           href: /content/platforms/e1d00d49612f48c791458f8f754358a9
                       artworks:
-                      - height: 100
-                        metadata:
-                          country: GB
-                          language: en
-                          source: mysource
-                          type: icon
-                        url: https://mydomain.com/picture.jpg
-                        width: 100
+                        - height: 100
+                          metadata:
+                            country: GB
+                            language: en
+                            source: mysource
+                            type: icon
+                          url: 'https://mydomain.com/picture.jpg'
+                          width: 100
                       created_at: '2020-01-01T00:00:00Z'
                       guid: e1d00d49612f48c791458f8f754358a9
                       identifiers:
-                      - id: '1'
-                        source: mysource
+                        - id: '1'
+                          source: mysource
                       names:
-                      - metadata:
-                          country: GB
-                          language: en
-                        name: IOS
+                        - metadata:
+                            country: GB
+                            language: en
+                          name: IOS
                       updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
@@ -1634,18 +1652,18 @@ paths:
                   platform:
                     $ref: ../models/Platform.v1.yaml
                 required:
-                - platform
+                  - platform
                 type: object
           description: OK
       summary: Get a platform
       tags:
-      - Platform management
+        - Platform management
     parameters:
-    - in: path
-      name: platform_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: platform_guid
+        required: true
+        schema:
+          type: string
   /content/services:
     get:
       description: ''
@@ -1676,10 +1694,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -1695,38 +1713,38 @@ paths:
                       first:
                         href: /content/services
                       last:
-                        href: /content/services?offset=2300&limit=50
+                        href: '/content/services?offset=2300&limit=50'
                       next:
-                        href: /content/services?offset=100&limit=50
+                        href: '/content/services?offset=100&limit=50'
                       prev:
                         href: /content/services
                       self:
-                        href: /content/services?offset=50&limit=50
+                        href: '/content/services?offset=50&limit=50'
                     services:
-                    - service:
-                        _links:
-                          self:
-                            href: /content/services/df3a998849344e9b954b7807fc623f08
-                        artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: icon
-                          url: https://mydomain.com/picture.jpg
-                          width: 100
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: df3a998849344e9b954b7807fc623f08
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            country: GB
-                            language: en
-                          name: BBC One London
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - service:
+                          _links:
+                            self:
+                              href: /content/services/df3a998849344e9b954b7807fc623f08
+                          artworks:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: icon
+                              url: 'https://mydomain.com/picture.jpg'
+                              width: 100
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: df3a998849344e9b954b7807fc623f08
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                country: GB
+                                language: en
+                              name: BBC One London
+                          updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
                 properties:
@@ -1739,18 +1757,18 @@ paths:
                         service:
                           $ref: ../models/Service.v1.yaml
                       required:
-                      - service
+                        - service
                       type: object
                     type: array
                 required:
-                - services
-                - _links
+                  - services
+                  - _links
                 type: object
           description: OK
       summary: List services
       tags:
-      - Service management
-  /content/services/{service_guid}:
+        - Service management
+  '/content/services/{service_guid}':
     get:
       description: ''
       operationId: v1.content.service.get
@@ -1781,24 +1799,24 @@ paths:
                         self:
                           href: /content/services/df3a998849344e9b954b7807fc623f08
                       artworks:
-                      - height: 100
-                        metadata:
-                          country: GB
-                          language: en
-                          source: mysource
-                          type: icon
-                        url: https://mydomain.com/picture.jpg
-                        width: 100
+                        - height: 100
+                          metadata:
+                            country: GB
+                            language: en
+                            source: mysource
+                            type: icon
+                          url: 'https://mydomain.com/picture.jpg'
+                          width: 100
                       created_at: '2020-01-01T00:00:00Z'
                       guid: df3a998849344e9b954b7807fc623f08
                       identifiers:
-                      - id: '1'
-                        source: mysource
+                        - id: '1'
+                          source: mysource
                       names:
-                      - metadata:
-                          country: GB
-                          language: en
-                        name: BBC One London
+                        - metadata:
+                            country: GB
+                            language: en
+                          name: BBC One London
                       updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
@@ -1806,18 +1824,18 @@ paths:
                   service:
                     $ref: ../models/Service.v1.yaml
                 required:
-                - service
+                  - service
                 type: object
           description: OK
       summary: Get a service
       tags:
-      - Service management
+        - Service management
     parameters:
-    - in: path
-      name: service_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: service_guid
+        required: true
+        schema:
+          type: string
   /content/tags:
     get:
       description: ''
@@ -1847,10 +1865,10 @@ paths:
                   type: integer
                 sort:
                   enum:
-                  - created_at
-                  - -created_at
-                  - updated_at
-                  - -updated_at
+                    - created_at
+                    - '-created_at'
+                    - updated_at
+                    - '-updated_at'
                   items:
                     type: string
                   type: array
@@ -1866,31 +1884,31 @@ paths:
                       first:
                         href: /content/tags
                       last:
-                        href: /content/tags?offset=2300&limit=50
+                        href: '/content/tags?offset=2300&limit=50'
                       next:
-                        href: /content/tags?offset=100&limit=50
+                        href: '/content/tags?offset=100&limit=50'
                       prev:
                         href: /content/tags
                       self:
-                        href: /content/tags?offset=50&limit=50
+                        href: '/content/tags?offset=50&limit=50'
                     tags:
-                    - tag:
-                        _links:
-                          self:
-                            href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: 8703dd1ced974ecea01116f2c0a5a282
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            language: en
-                          name: Warm
-                        relationships:
-                        - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
-                          rel: sibling
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - tag:
+                          _links:
+                            self:
+                              href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: 8703dd1ced974ecea01116f2c0a5a282
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                language: en
+                              name: Warm
+                          relationships:
+                            - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
+                              rel: sibling
+                          updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
                 properties:
@@ -1903,18 +1921,18 @@ paths:
                         tag:
                           $ref: ../models/Tag.v1.yaml
                       required:
-                      - tag
+                        - tag
                       type: object
                     type: array
                 required:
-                - tags
-                - _links
+                  - tags
+                  - _links
                 type: object
           description: OK
       summary: List tags
       tags:
-      - Tag management
-  /content/tags/{tag_guid}:
+        - Tag management
+  '/content/tags/{tag_guid}':
     get:
       description: ''
       operationId: v1.content.tag.get
@@ -1947,15 +1965,15 @@ paths:
                       created_at: '2020-01-01T00:00:00Z'
                       guid: 8703dd1ced974ecea01116f2c0a5a282
                       identifiers:
-                      - id: '1'
-                        source: mysource
+                        - id: '1'
+                          source: mysource
                       names:
-                      - metadata:
-                          language: en
-                        name: Warm
+                        - metadata:
+                            language: en
+                          name: Warm
                       relationships:
-                      - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
-                        rel: sibling
+                        - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
+                          rel: sibling
                       updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
@@ -1963,24 +1981,24 @@ paths:
                   tag:
                     $ref: ../models/Tag.v1.yaml
                 required:
-                - tag
+                  - tag
                 type: object
           description: OK
       summary: Get a tag
       tags:
-      - Tag management
+        - Tag management
     parameters:
-    - in: path
-      name: tag_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: tag_guid
+        required: true
+        schema:
+          type: string
 security:
-- Authorization: []
+  - Authorization: []
 servers:
-- description: prod
-  url: https://services.utelly.com/browse_manager/v1
-- description: staging
-  url: https://staging-services.utelly.com/browse_manager/v1
-- description: dev
-  url: https://dev-services.utelly.com/browse_manager/v1
+  - description: prod
+    url: 'https://services.utelly.com/browse_manager/v1'
+  - description: staging
+    url: 'https://staging-services.utelly.com/browse_manager/v1'
+  - description: dev
+    url: 'https://dev-services.utelly.com/browse_manager/v1'
