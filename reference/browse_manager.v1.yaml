@@ -883,12 +883,12 @@ paths:
                           items:
                             type: object
                             properties:
-                              character_names:
+                              character_name:
                                 type: string
                               metadata:
                                 $ref: ../models/metadata_field.v1.yaml
                             required:
-                              - character_names
+                              - character_name
                               - metadata
                         person:
                           $ref: ../models/People.v1.yaml
