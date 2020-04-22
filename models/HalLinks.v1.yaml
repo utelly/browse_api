@@ -1,22 +1,23 @@
-title: HalLinks
-type: object
-x-examples:
-  '1':
-    self:
-      href: /creative_works/34
-    prev:
-      href: /creative_works/33
-    next:
-      href: /creative_works/35
-    first:
-      href: /creative_works/1
-    last:
-      href: /creative_works/190
 additionalProperties:
+  $ref: ./hal_link_field.v1.yaml
+  additionalProperties: false
   type: object
-  $ref: ./hal_link_field.v1.yaml  
 properties:
   self:
     $ref: ./hal_link_field.v1.yaml
 required:
-  - self
+- self
+title: HalLinks
+type: object
+x-examples:
+  '1':
+    first:
+      href: /creative_works/1
+    last:
+      href: /creative_works/190
+    next:
+      href: /creative_works/35
+    prev:
+      href: /creative_works/33
+    self:
+      href: /creative_works/34

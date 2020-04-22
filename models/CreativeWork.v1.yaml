@@ -1,41 +1,38 @@
-title: CreativeWork
-type: object
-x-examples: {}
-description: ''
 additionalProperties: false
+description: ''
 properties:
-  guid:
-    type: string
-  created_at:
-    type: string
-    format: date-time
-  updated_at:
-    type: string
-    format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
-  identifiers:
+  artworks:
+    items:
+      $ref: ./picture_field.v1.yaml
     type: array
+  created_at:
+    format: date-time
+    type: string
+  descriptions:
+    items:
+      additionalProperties: false
+      properties:
+        description:
+          type: string
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+      required:
+      - description
+      - metadata
+      type: object
+    type: array
+  guid:
+    type: string
+  identifiers:
     items:
       $ref: ./identifier_field.v1.yaml
-  parent:
-    $ref: ./hal_link_field.v1.yaml
-  type:
-    type: string
-    enum:
-      - movie
-      - series
-      - short
-      - tv
-      - web
-      - article
-      - supplemental
-      - season
-      - episode    
-  titles:
     type: array
+  relationships:
+    $ref: ./Relationships.v1.yaml
+  titles:
     items:
-      type: object
       additionalProperties: false
       properties:
         metadata:
@@ -43,29 +40,32 @@ properties:
         title:
           type: string
       required:
-        - metadata
-        - title
-  descriptions:
-    type: array
-    items:
+      - metadata
+      - title
       type: object
-      additionalProperties: false
-      properties:
-        metadata:
-          $ref: ./metadata_field.v1.yaml
-        description:
-          type: string
-      required:
-        - metadata
-        - description
-  artworks:
     type: array
-    items:
-      $ref: ./picture_field.v1.yaml
+  type:
+    enum:
+    - movie
+    - series
+    - short
+    - tv
+    - web
+    - article
+    - supplemental
+    - season
+    - episode
+    type: string
+  updated_at:
+    format: date-time
+    type: string
 required:
-  - guid
-  - created_at
-  - updated_at
-  - _links
-  - identifiers
-  - type
+- _links
+- created_at
+- guid
+- identifiers
+- type
+- updated_at
+title: CreativeWork
+type: object
+x-examples: {}

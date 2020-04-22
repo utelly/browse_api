@@ -1,24 +1,22 @@
-title: Genre
-type: object
+additionalProperties: false
 properties:
-  guid:
-    type: string
-  created_at:
-    type: string
-    format: date-time
-  updated_at:
-    type: string
-    format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
-  identifiers:
+  artworks:
+    items:
+      $ref: ./picture_field.v1.yaml
     type: array
+  created_at:
+    format: date-time
+    type: string
+  guid:
+    type: string
+  identifiers:
     items:
       $ref: ./identifier_field.v1.yaml
-  names:
     type: array
+  names:
     items:
-      type: object
       additionalProperties: false
       properties:
         metadata:
@@ -26,12 +24,21 @@ properties:
         name:
           type: string
       required:
-        - metadata
-        - name
+      - metadata
+      - name
+      type: object
+    type: array
+  relationships:
+    $ref: ./Relationships.v1.yaml
+  updated_at:
+    format: date-time
+    type: string
 required:
-  - guid
-  - created_at
-  - updated_at
-  - _links
-  - identifiers
-additionalProperties: false
+- _links
+- created_at
+- guid
+- identifiers
+- relationships
+- updated_at
+title: Genre
+type: object

@@ -1,37 +1,47 @@
-title: Location
-type: object
+additionalProperties: false
 properties:
-  guid:
-    type: string
-  created_at:
-    type: string
-    format: date-time
-  updated_at:
-    type: string
-    format: date-time
   _links:
     $ref: ./HalLinks.v1.yaml
-  identifiers:
+  artworks:
+    items:
+      $ref: ./picture_field.v1.yaml
     type: array
+  created_at:
+    format: date-time
+    type: string
+  elevation_meters:
+    type: number
+  guid:
+    type: string
+  identifiers:
     items:
       $ref: ./identifier_field.v1.yaml
-  names:
     type: array
+  latitude:
+    type: number
+  longitude:
+    type: number
+  names:
     items:
-      type: object
       additionalProperties: false
       properties:
-        name:
-          type: string
         metadata:
           $ref: ./metadata_field.v1.yaml
+        name:
+          type: string
       required:
-        - name
-        - metadata
+      - name
+      - metadata
+      type: object
+    type: array
+  updated_at:
+    format: date-time
+    type: string
 required:
-  - guid
-  - created_at
-  - updated_at
-  - _links
-  - identifiers
-additionalProperties: false
+- guid
+- created_at
+- updated_at
+- _links
+- identifiers
+title: Location
+type: object
