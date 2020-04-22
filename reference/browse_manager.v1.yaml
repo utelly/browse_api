@@ -839,7 +839,10 @@ paths:
                       self:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=50&limit=50'
                     persons:
-                      - character_name: Keyser Söze
+                      - character_names:
+                          - character_name: Keyser Söze
+                            metadata:
+                              source: mysource
                         person:
                           _links:
                             self:
@@ -859,7 +862,10 @@ paths:
                               url: 'https://mydomain.com/picture.jpg'
                               width: 100
                           updated_at: '2020-01-01T00:00:00Z'
-                        role: actor
+                        roles:
+                          - role: actor
+                            metadata:
+                              source: mysource
               schema:
                 additionalProperties: false
                 type: object
