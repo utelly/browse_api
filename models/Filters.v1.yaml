@@ -1,5 +1,5 @@
 description: ''
-title: filter_field
+title: Filters
 type: array
 items:
   anyOf:
