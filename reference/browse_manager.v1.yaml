@@ -893,14 +893,6 @@ paths:
                         person:
                           $ref: ../models/People.v1.yaml
                         roles:
-                          enum:
-                            - actor
-                            - creator
-                            - director
-                            - editor
-                            - producer
-                            - writer
-                            - executive producer
                           type: array
                           items:
                             type: object
