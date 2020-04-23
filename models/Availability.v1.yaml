@@ -5,12 +5,15 @@ properties:
     $ref: ./HalLinks.v1.yaml
   created_at:
     format: date-time
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
     type: string
   datetime_from:
     format: date-time
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
     type: string
   datetime_to:
     format: date-time
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
     type: string
   guid:
     type: string
@@ -56,6 +59,7 @@ properties:
     type: object
   updated_at:
     format: date-time
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
     type: string
 required:
 - guid
