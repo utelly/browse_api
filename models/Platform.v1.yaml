@@ -32,10 +32,10 @@ properties:
     format: date-time
     type: string
 required:
-- guid
-- created_at
-- updated_at
 - _links
+- created_at
+- guid
 - identifiers
+- updated_at
 title: Platform
 type: object
