@@ -1,46 +1,46 @@
 additionalProperties: false
+title: People
+type: object
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
   biographies:
+    type: array
     items:
       additionalProperties: false
+      type: object
       properties:
         biography:
           type: string
         metadata:
           $ref: ./metadata_field.v1.yaml
       required:
-      - metadata
-      - biography
-      type: object
-    type: array
+        - biography
+        - metadata
   created_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   guid:
     type: string
   identifiers:
+    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-    type: array
   name:
     type: string
-  pictures:
+  artworks:
+    type: array
     items:
       $ref: ./picture_field.v1.yaml
-    type: array
   updated_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
 required:
-- guid
-- created_at
-- updated_at
-- _links
-- identifiers
-- name
-title: People
-type: object
+  - _links
+  - created_at
+  - guid
+  - identifiers
+  - name
+  - updated_at
