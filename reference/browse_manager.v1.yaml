@@ -744,11 +744,11 @@ paths:
                             - id: '1'
                               source: mysource
                           updated_at: '2020-01-01T00:00:00Z'
-                          values:
+                          content_ratings:
                             - metadata:
                                 country: GB
                               organization: MPAA
-                              value: '12'
+                              content_rating: '12'
               schema:
                 additionalProperties: false
                 properties:
