@@ -1,9 +1,7 @@
 description: ''
 items:
-  additionalProperties: false
   properties:
     filter:
-      additionalProperties: false
       anyOf:
       - properties:
           operator:
