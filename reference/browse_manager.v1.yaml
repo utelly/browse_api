@@ -51,7 +51,7 @@ paths:
                   - availability
                 type: object
           description: OK
-      summary: Your GET endpoint
+      summary: Get an availability
       tags: []
       parameters:
         - schema:
@@ -78,39 +78,46 @@ paths:
     get:
       description: ''
       operationId: v1.content.content_rating.get_list
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -172,21 +179,7 @@ paths:
     get:
       description: ''
       operationId: v1.content.content_rating.get
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-              type: object
+      requestBody: {}
       responses:
         '200':
           content:
@@ -221,6 +214,21 @@ paths:
       summary: Get a content rating
       tags:
         - Content rating management
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
     parameters:
       - in: path
         name: content_rating_guid
@@ -231,7 +239,37 @@ paths:
     get:
       description: ''
       operationId: v1.content.creative_works.get_list
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
@@ -261,43 +299,12 @@ paths:
                         value:
                           - Action
                           - Comedy
-                  languages:
-                    - en
-                    - fr
-                    - de
-                  limit: 50
-                  offset: 100
-                  sort:
-                    - updated_at
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -391,32 +398,35 @@ paths:
     get:
       description: ''
       operationId: v1.content.creative_works.get
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                embed:
-                  items:
-                    enum:
-                      - genres
-                      - tags
-                      - availabilities
-                      - content_ratings
-                      - persons
-                    type: string
-                  type: array
-                fields:
-                  items:
-                    type: string
-                  type: array
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-              type: object
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - genres
+                - tags
+                - availabilities
+                - content_ratings
+                - persons
+          in: query
+          name: embed
+          style: form
+      requestBody: {}
       responses:
         '200':
           content:
@@ -577,39 +587,46 @@ paths:
     get:
       description: ''
       operationId: v1.content.availability.get_from_creative_work
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -682,39 +699,46 @@ paths:
     get:
       description: ''
       operationId: v1.content.content_rating.get_from_creative_work
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -782,39 +806,37 @@ paths:
     get:
       description: ''
       operationId: v1.content.genre.get_from_creative_work
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
-                filters:
-                  $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       responses:
         '200':
           content:
@@ -874,6 +896,15 @@ paths:
       summary: Get genres from creative work
       tags:
         - Genre management
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              type: object
+              properties:
+                filters:
+                  $ref: ../models/Filters.v1.yaml
     parameters:
       - in: path
         name: creative_work_guid
@@ -884,39 +915,46 @@ paths:
     get:
       description: ''
       operationId: v1.content.person.get_from_creative_work
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -1023,39 +1061,46 @@ paths:
     get:
       description: ''
       operationId: v1.content.tag.get_from_creative_work
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -1125,39 +1170,46 @@ paths:
     get:
       description: ''
       operationId: v1.content.genre.get_list
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -1221,21 +1273,7 @@ paths:
     get:
       description: ''
       operationId: v1.content.genre.get
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-              type: object
+      requestBody: {}
       responses:
         '200':
           content:
@@ -1272,6 +1310,21 @@ paths:
       summary: Get a genre
       tags:
         - Genre management
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
     parameters:
       - in: path
         name: genre_guid
@@ -1282,39 +1335,46 @@ paths:
     get:
       description: ''
       operationId: v1.content.location.get_list
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -1375,21 +1435,7 @@ paths:
     get:
       description: ''
       operationId: v1.content.location.get
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-              type: object
+      requestBody: {}
       responses:
         '200':
           content:
@@ -1423,6 +1469,21 @@ paths:
       summary: Get a location
       tags:
         - Location management
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
     parameters:
       - in: path
         name: location_guid
@@ -1433,39 +1494,46 @@ paths:
     get:
       description: ''
       operationId: v1.content.persons.get_list
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -1531,21 +1599,7 @@ paths:
     get:
       description: ''
       operationId: v1.content.person.get
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-              type: object
+      requestBody: {}
       responses:
         '200':
           content:
@@ -1584,6 +1638,21 @@ paths:
       summary: Get a person
       tags:
         - Persons management
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
     parameters:
       - in: path
         name: person_guid
@@ -1594,39 +1663,46 @@ paths:
     get:
       description: ''
       operationId: v1.content.platform.get_list
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -1697,21 +1773,7 @@ paths:
     get:
       description: ''
       operationId: get-content-platforms-guid
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-              type: object
+      requestBody: {}
       responses:
         '200':
           content:
@@ -1755,6 +1817,21 @@ paths:
       summary: Get a platform
       tags:
         - Platform management
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
     parameters:
       - in: path
         name: platform_guid
@@ -1765,40 +1842,47 @@ paths:
     get:
       description: ''
       operationId: v1.content.service.get_list
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             examples: {}
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -1869,21 +1953,7 @@ paths:
     get:
       description: ''
       operationId: v1.content.service.get
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-              type: object
+      requestBody: {}
       responses:
         '200':
           content:
@@ -1927,6 +1997,21 @@ paths:
       summary: Get a service
       tags:
         - Service management
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
     parameters:
       - in: path
         name: service_guid
@@ -1937,39 +2022,46 @@ paths:
     get:
       description: ''
       operationId: v1.content.tag.get_list
-      parameters: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
+        - schema:
+            type: integer
+            maximum: 50
+          in: query
+          name: limit
+        - schema:
+            type: integer
+          in: query
+          name: offset
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: sort
+          style: form
       requestBody:
         content:
           application/json:
             schema:
               additionalProperties: false
+              type: object
               properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
                 filters:
                   $ref: ../models/Filters.v1.yaml
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-                limit:
-                  maximum: 50
-                  minimum: 0
-                  type: integer
-                offset:
-                  type: integer
-                sort:
-                  items:
-                    enum:
-                      - created_at
-                      - '-created_at'
-                      - updated_at
-                      - '-updated_at'
-                    type: string
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -2033,21 +2125,7 @@ paths:
     get:
       description: ''
       operationId: v1.content.tag.get
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-              type: object
+      requestBody: {}
       responses:
         '200':
           content:
@@ -2084,6 +2162,21 @@ paths:
       summary: Get a tag
       tags:
         - Tag management
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
     parameters:
       - in: path
         name: tag_guid
