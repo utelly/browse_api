@@ -1,42 +1,42 @@
 additionalProperties: false
-title: ContentRating
-type: object
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
-  created_at:
-    format: date-time
-    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
-    type: string
-  guid:
-    type: string
-  identifiers:
-    type: array
-    items:
-      $ref: ./identifier_field.v1.yaml
-  updated_at:
-    format: date-time
-    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
-    type: string
   content_ratings:
-    type: array
     items:
       additionalProperties: false
-      type: object
       properties:
+        content_rating:
+          type: string
         metadata:
           $ref: ./metadata_field.v1.yaml
         organization:
           type: string
-        content_rating:
-          type: string
       required:
-        - organization
-        - content_rating
+      - organization
+      - content_rating
+      type: object
+    type: array
+  created_at:
+    format: date-time
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    type: string
+  guid:
+    type: string
+  identifiers:
+    items:
+      $ref: ./identifier_field.v1.yaml
+    type: array
+  updated_at:
+    format: date-time
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    type: string
 required:
-  - _links
-  - created_at
-  - guid
-  - identifiers
-  - updated_at
-  - content_ratings
+- _links
+- created_at
+- guid
+- identifiers
+- updated_at
+- content_ratings
+title: ContentRating
+type: object
