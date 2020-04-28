@@ -15,21 +15,6 @@ paths:
     get:
       description: ''
       operationId: get-content-availabilities-availability_guid
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                fields:
-                  items:
-                    type: string
-                  type: array
-                languages:
-                  items:
-                    $ref: ../models/languages_field.v1.yaml
-                  type: array
-              type: object
       responses:
         '200':
           content:
@@ -68,6 +53,21 @@ paths:
           description: OK
       summary: Your GET endpoint
       tags: []
+      parameters:
+        - schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          in: query
+          name: languages
+          style: form
+        - schema:
+            type: array
+            items:
+              type: string
+          in: query
+          name: fields
+          style: form
     parameters:
       - in: path
         name: availability_guid
