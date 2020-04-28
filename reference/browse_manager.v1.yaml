@@ -427,7 +427,6 @@ paths:
             type: string
           type: array
         style: form
-      requestBody: {}
       responses:
         '200':
           content:
@@ -1291,7 +1290,6 @@ paths:
             type: string
           type: array
         style: form
-      requestBody: {}
       responses:
         '200':
           content:
@@ -1453,7 +1451,6 @@ paths:
             type: string
           type: array
         style: form
-      requestBody: {}
       responses:
         '200':
           content:
@@ -1617,7 +1614,6 @@ paths:
             type: string
           type: array
         style: form
-      requestBody: {}
       responses:
         '200':
           content:
@@ -1791,7 +1787,6 @@ paths:
             type: string
           type: array
         style: form
-      requestBody: {}
       responses:
         '200':
           content:
@@ -1971,7 +1966,6 @@ paths:
             type: string
           type: array
         style: form
-      requestBody: {}
       responses:
         '200':
           content:
@@ -2143,7 +2137,6 @@ paths:
             type: string
           type: array
         style: form
-      requestBody: {}
       responses:
         '200':
           content:
