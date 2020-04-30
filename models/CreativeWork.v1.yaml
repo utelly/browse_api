@@ -11,7 +11,7 @@ properties:
             availability:
               $ref: ../models/Availability.v1.yaml
           required:
-            - availability
+          - availability
           type: object
         type: array
       content_ratings:
@@ -29,7 +29,7 @@ properties:
             genre:
               $ref: ../models/Genre.v1.yaml
           required:
-            - genre
+          - genre
           type: object
         type: array
       persons:
@@ -42,17 +42,17 @@ properties:
               $ref: ../models/People.v1.yaml
             role:
               enum:
-                - actor
-                - creator
-                - director
-                - editor
-                - producer
-                - writer
-                - executive producer
+              - actor
+              - creator
+              - director
+              - editor
+              - producer
+              - writer
+              - executive producer
               type: string
           required:
-            - person
-            - role
+          - person
+          - role
           type: object
         type: array
       tags:
@@ -62,10 +62,10 @@ properties:
             tag:
               $ref: ../models/Tag.v1.yaml
           required:
-            - tag
+          - tag
           type: object
         type: array
-    type: object  
+    type: object
   _links:
     $ref: ./HalLinks.v1.yaml
   artworks:
