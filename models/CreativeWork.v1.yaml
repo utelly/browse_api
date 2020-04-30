@@ -91,7 +91,7 @@ properties:
       required:
         - metadata
         - title
-  subtype:
+  type:
     type: string
     enum:
       - movie
@@ -112,5 +112,4 @@ required:
   - created_at
   - guid
   - identifiers
-  - type
   - updated_at
