@@ -11,25 +11,25 @@ info:
   version: v1
 openapi: 3.0.0
 paths:
-  /content/availabilities/{availability_guid}:
+  '/content/availabilities/{availability_guid}':
     get:
       description: ''
       operationId: get-content-availabilities-availability_guid
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
       responses:
         '200':
           content:
@@ -51,62 +51,62 @@ paths:
                     datetime_to: '2020-01-01T00:00:00Z'
                     guid: eb4aaa3de91242ba82ad48bee0b48996
                     identifiers:
-                    - id: '1'
-                      source: mysource
+                      - id: '1'
+                        source: mysource
                     recipe:
-                      href: https://mydomain.com/link_to_asset.html
+                      href: 'https://mydomain.com/link_to_asset.html'
                     updated_at: '2020-01-01T00:00:00Z'
               schema:
                 $ref: ../models/Availability.v1.yaml
           description: OK
       summary: Get an availability
       tags:
-      - Availability management
+        - Availability management
     parameters:
-    - in: path
-      name: availability_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: availability_guid
+        required: true
+        schema:
+          type: string
   /content/content_ratings:
     get:
       description: ''
       operationId: v1.content.content_rating.get_list
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -125,31 +125,31 @@ paths:
                   value:
                     _embedded:
                       content_ratings:
-                      - _links:
-                          self:
-                            href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                        content_ratings:
-                        - content_rating: '12'
-                          metadata:
-                            country: GB
-                          organization: MPAA
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: bcb27a2c9ee74a5a86720c3b5828093c
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        updated_at: '2020-01-01T00:00:00Z'
+                        - _links:
+                            self:
+                              href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
+                          content_ratings:
+                            - content_rating: '12'
+                              metadata:
+                                country: GB
+                              organization: MPAA
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: bcb27a2c9ee74a5a86720c3b5828093c
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/content_ratings
                       last:
-                        href: /content/content_ratings?offset=2300&limit=50&filter_id=1
+                        href: '/content/content_ratings?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/content_ratings?offset=100&limit=50&filter_id=1
+                        href: '/content/content_ratings?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/content_ratings
                       self:
-                        href: /content/content_ratings?offset=50&limit=50&filter_id=1
+                        href: '/content/content_ratings?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -164,32 +164,32 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: List content ratings
       tags:
-      - Content rating management
-  /content/content_ratings/{content_rating_guid}:
+        - Content rating management
+  '/content/content_ratings/{content_rating_guid}':
     get:
       description: ''
       operationId: v1.content.content_rating.get
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
       responses:
         '200':
           content:
@@ -201,67 +201,67 @@ paths:
                       self:
                         href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
                     content_ratings:
-                    - content_rating: '12'
-                      metadata:
-                        country: GB
-                      organization: MPAA
+                      - content_rating: '12'
+                        metadata:
+                          country: GB
+                        organization: MPAA
                     created_at: '2020-01-01T00:00:00Z'
                     guid: bcb27a2c9ee74a5a86720c3b5828093c
                     identifiers:
-                    - id: '1'
-                      source: mysource
+                      - id: '1'
+                        source: mysource
                     updated_at: '2020-01-01T00:00:00Z'
               schema:
                 $ref: ../models/ContentRating.v1.yaml
           description: OK
       summary: Get a content rating
       tags:
-      - Content rating management
+        - Content rating management
     parameters:
-    - in: path
-      name: content_rating_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: content_rating_guid
+        required: true
+        schema:
+          type: string
   /content/creative_works:
     get:
       description: ''
       operationId: v1.content.creative_works.get_list
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -269,28 +269,28 @@ paths:
               '1':
                 value:
                   filters:
-                  - filter:
-                      operator: eq
-                      property: titles.title
-                      value: The Usual Suspects
-                  - filter:
-                      operator: regex
-                      property: persons.names.name
-                      value: kevin*
-                  - filter:
-                      operator: eq
-                      property: availabilities.services.names.name
-                      value: Netflix
-                  - filter:
-                      operator: gte
-                      property: created_at
-                      value: '2020-04-03T23:01:06Z'
-                  - filter:
-                      operator: in
-                      property: genres.genre.names.name
-                      value:
-                      - Action
-                      - Comedy
+                    - filter:
+                        operator: eq
+                        property: titles.title
+                        value: The Usual Suspects
+                    - filter:
+                        operator: regex
+                        property: persons.names.name
+                        value: 'kevin*'
+                    - filter:
+                        operator: eq
+                        property: availabilities.services.names.name
+                        value: Netflix
+                    - filter:
+                        operator: gte
+                        property: created_at
+                        value: '2020-04-03T23:01:06Z'
+                    - filter:
+                        operator: in
+                        property: genres.genre.names.name
+                        value:
+                          - Action
+                          - Comedy
             schema:
               additionalProperties: false
               properties:
@@ -306,65 +306,63 @@ paths:
                   value:
                     _embedded:
                       creative_works:
-                      - _links:
-                          availabilities:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
-                          content_ratings:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
-                          genres:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
-                          persons:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/persons
-                          self:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46
-                          tags:
-                            href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
-                        artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: poster
-                          url: https://mydomain.com/poster.jpg
-                          width: 100
-                        created_at: '2020-01-01T00:00:10Z'
-                        descriptions:
-                        - description: A sole survivor tells of the twisty events
-                            leading up to a horrific gun battle on a boat, which began
-                            when five criminals met at a seemingly random police lineup.
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: full
-                        guid: 27c13eec19014084a0a3173061702b46
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        relationships:
-                        - href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
-                          rel: parent
-                        titles:
-                        - metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: official
-                          title: The Usual Suspects
-                        type: movie
-                        updated_at: '2020-01-01T00:00:10Z'
+                        - _links:
+                            availabilities:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
+                            content_ratings:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
+                            genres:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
+                            persons:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/persons
+                            self:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46
+                            tags:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
+                          artworks:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: poster
+                              url: 'https://mydomain.com/poster.jpg'
+                              width: 100
+                          created_at: '2020-01-01T00:00:10Z'
+                          descriptions:
+                            - description: 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.'
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: full
+                          guid: 27c13eec19014084a0a3173061702b46
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          relationships:
+                            - href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
+                              rel: parent
+                          titles:
+                            - metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: official
+                              title: The Usual Suspects
+                          type: movie
+                          updated_at: '2020-01-01T00:00:10Z'
                     _links:
                       first:
                         href: /content/creative_works
                       last:
-                        href: /content/creative_works?offset=2300&limit=50&filter_id=1
+                        href: '/content/creative_works?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/creative_works?offset=100&limit=50&filter_id=1
+                        href: '/content/creative_works?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works
                       self:
-                        href: /content/creative_works?offset=50&limit=50&filter_id=1
+                        href: '/content/creative_works?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -379,45 +377,45 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: List creative works
       tags:
-      - Creative work management
-  /content/creative_works/{creative_work_guid}:
+        - Creative work management
+  '/content/creative_works/{creative_work_guid}':
     get:
       description: ''
       operationId: v1.content.creative_works.get
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: embed
-        schema:
-          items:
-            enum:
-            - genres
-            - tags
-            - availabilities
-            - content_ratings
-            - persons
-            type: string
-          type: array
-        style: form
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: embed
+          schema:
+            items:
+              enum:
+                - genres
+                - tags
+                - availabilities
+                - content_ratings
+                - persons
+              type: string
+            type: array
+          style: form
       responses:
         '200':
           content:
@@ -427,23 +425,23 @@ paths:
                   value:
                     _embedded:
                       genres:
-                      - genre:
-                          _links:
-                            self:
-                              href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                          created_at: '2020-01-01T00:00:00Z'
-                          guid: 9be42f99a8ab420082719d1bafc8e649
-                          identifiers:
-                          - id: '1'
-                            source: mysource
-                          names:
-                          - metadata:
-                              language: en
-                            name: Action
-                          relationships:
-                          - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                            rel: sibling
-                          updated_at: '2020-01-01T00:00:00Z'
+                        - genre:
+                            _links:
+                              self:
+                                href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                            created_at: '2020-01-01T00:00:00Z'
+                            guid: 9be42f99a8ab420082719d1bafc8e649
+                            identifiers:
+                              - id: '1'
+                                source: mysource
+                            names:
+                              - metadata:
+                                  language: en
+                                name: Action
+                            relationships:
+                              - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                                rel: sibling
+                            updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       availabilities:
                         href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
@@ -458,38 +456,36 @@ paths:
                       tags:
                         href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
                     artworks:
-                    - height: 100
-                      metadata:
-                        country: GB
-                        language: en
-                        source: mysource
-                        type: poster
-                      url: https://mydomain.com/poster.jpg
-                      width: 100
+                      - height: 100
+                        metadata:
+                          country: GB
+                          language: en
+                          source: mysource
+                          type: poster
+                        url: 'https://mydomain.com/poster.jpg'
+                        width: 100
                     created_at: '2020-01-01T00:00:10Z'
                     descriptions:
-                    - description: A sole survivor tells of the twisty events leading
-                        up to a horrific gun battle on a boat, which began when five
-                        criminals met at a seemingly random police lineup.
-                      metadata:
-                        country: GB
-                        language: en
-                        source: mysource
-                        type: full
+                      - description: 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.'
+                        metadata:
+                          country: GB
+                          language: en
+                          source: mysource
+                          type: full
                     guid: 27c13eec19014084a0a3173061702b46
                     identifiers:
-                    - id: '1'
-                      source: mysource
-                    relationships:
-                    - href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
-                      rel: parent
-                    titles:
-                    - metadata:
-                        country: GB
-                        language: en
+                      - id: '1'
                         source: mysource
-                        type: official
-                      title: The Usual Suspects
+                    relationships:
+                      - href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
+                        rel: parent
+                    titles:
+                      - metadata:
+                          country: GB
+                          language: en
+                          source: mysource
+                          type: official
+                        title: The Usual Suspects
                     type: movie
                     updated_at: '2020-01-01T00:00:10Z'
               schema:
@@ -497,52 +493,52 @@ paths:
           description: OK
       summary: Get a creative work
       tags:
-      - Creative work management
+        - Creative work management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
-  /content/creative_works/{creative_work_guid}/availabilities:
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
+  '/content/creative_works/{creative_work_guid}/availabilities':
     get:
       description: ''
       operationId: v1.content.availability.get_from_creative_work
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -561,36 +557,36 @@ paths:
                   value:
                     _embedded:
                       availabilities:
-                      - _links:
-                          location:
-                            href: /content/locations/27c13eec19014084a0a3173061702b46
-                          platform:
-                            href: /content/platforms/27c13eec19014084a0a3173061702b46
-                          self:
-                            href: /content/availabilities/eb4aaa3de91242ba82ad48bee0b48996
-                          service:
-                            href: /content/services/27c13eec19014084a0a3173061702b46
-                        created_at: '2020-01-01T00:00:00Z'
-                        datetime_from: '2020-01-01T00:00:00Z'
-                        datetime_to: '2020-01-01T00:00:00Z'
-                        guid: eb4aaa3de91242ba82ad48bee0b48996
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        recipe:
-                          href: https://mydomain.com/link_to_asset.html
-                        updated_at: '2020-01-01T00:00:00Z'
+                        - _links:
+                            location:
+                              href: /content/locations/27c13eec19014084a0a3173061702b46
+                            platform:
+                              href: /content/platforms/27c13eec19014084a0a3173061702b46
+                            self:
+                              href: /content/availabilities/eb4aaa3de91242ba82ad48bee0b48996
+                            service:
+                              href: /content/services/27c13eec19014084a0a3173061702b46
+                          created_at: '2020-01-01T00:00:00Z'
+                          datetime_from: '2020-01-01T00:00:00Z'
+                          datetime_to: '2020-01-01T00:00:00Z'
+                          guid: eb4aaa3de91242ba82ad48bee0b48996
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          recipe:
+                            href: 'https://mydomain.com/link_to_asset.html'
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities
                       last:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=2300&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=100&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities
                       self:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=50&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -605,58 +601,58 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: Get availabilities from creative work
       tags:
-      - Availability management
+        - Availability management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
-  /content/creative_works/{creative_work_guid}/content_ratings:
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
+  '/content/creative_works/{creative_work_guid}/content_ratings':
     get:
       description: ''
       operationId: v1.content.content_rating.get_from_creative_work
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -675,31 +671,31 @@ paths:
                   value:
                     _embedded:
                       content_ratings:
-                      - _links:
-                          self:
-                            href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                        content_ratings:
-                        - content_rating: '12'
-                          metadata:
-                            country: GB
-                          organization: MPAA
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: bcb27a2c9ee74a5a86720c3b5828093c
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        updated_at: '2020-01-01T00:00:00Z'
+                        - _links:
+                            self:
+                              href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
+                          content_ratings:
+                            - content_rating: '12'
+                              metadata:
+                                country: GB
+                              organization: MPAA
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: bcb27a2c9ee74a5a86720c3b5828093c
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings
                       last:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=2300&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=100&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings
                       self:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=50&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -712,64 +708,64 @@ paths:
                             $ref: ../models/ContentRating.v1.yaml
                           type: array
                       required:
-                      - content_ratings
+                        - content_ratings
                       type: object
                     type: array
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: Get content ratings from creative work
       tags:
-      - Content rating management
+        - Content rating management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
-  /content/creative_works/{creative_work_guid}/contributors:
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
+  '/content/creative_works/{creative_work_guid}/contributors':
     get:
       description: ''
       operationId: v1.content.person.get_from_creative_work
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -788,44 +784,44 @@ paths:
                   value:
                     _embedded:
                       contributors:
-                      - character_names:
-                        - character_name: "Keyser S\xF6ze"
-                          metadata:
-                            source: mysource
-                        person:
-                          _links:
-                            self:
-                              href: /content/people/eb4aaa3de91242ba82ad48bee0b48996
-                          artworks:
-                          - height: 100
-                            metadata:
-                              country: GB
-                              language: en
-                              type: portrait
-                            url: https://mydomain.com/picture.jpg
-                            width: 100
-                          created_at: '2020-01-01T00:00:00Z'
-                          guid: eb4aaa3de91242ba82ad48bee0b48996
-                          identifiers:
-                          - id: '1'
-                            source: mysource
-                          name: Kevin Spacey
-                          updated_at: '2020-01-01T00:00:00Z'
-                        roles:
-                        - metadata:
-                            source: mysource
-                          role: actor
+                        - character_names:
+                            - character_name: Keyser Söze
+                              metadata:
+                                source: mysource
+                          person:
+                            _links:
+                              self:
+                                href: /content/people/eb4aaa3de91242ba82ad48bee0b48996
+                            artworks:
+                              - height: 100
+                                metadata:
+                                  country: GB
+                                  language: en
+                                  type: portrait
+                                url: 'https://mydomain.com/picture.jpg'
+                                width: 100
+                            created_at: '2020-01-01T00:00:00Z'
+                            guid: eb4aaa3de91242ba82ad48bee0b48996
+                            identifiers:
+                              - id: '1'
+                                source: mysource
+                            name: Kevin Spacey
+                            updated_at: '2020-01-01T00:00:00Z'
+                          roles:
+                            - metadata:
+                                source: mysource
+                              role: actor
                     _links:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons
                       last:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=2300&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=100&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons
                       self:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=50&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -864,58 +860,58 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: Get crontibutors from creative work
       tags:
-      - Contributor Management
+        - Contributor Management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
-  /content/creative_works/{creative_work_guid}/genres:
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
+  '/content/creative_works/{creative_work_guid}/genres':
     get:
       description: ''
       operationId: v1.content.genre.get_from_creative_work
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -933,34 +929,34 @@ paths:
                 '1':
                   value:
                     _embedded:
-                    - genres:
-                      - _links:
-                          self:
-                            href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: 9be42f99a8ab420082719d1bafc8e649
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            language: en
-                          name: Action
-                        relationships:
-                        - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                          rel: sibling
-                        updated_at: '2020-01-01T00:00:00Z'
+                      - genres:
+                          - _links:
+                              self:
+                                href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                            created_at: '2020-01-01T00:00:00Z'
+                            guid: 9be42f99a8ab420082719d1bafc8e649
+                            identifiers:
+                              - id: '1'
+                                source: mysource
+                            names:
+                              - metadata:
+                                  language: en
+                                name: Action
+                            relationships:
+                              - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                                rel: sibling
+                            updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres
                       last:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=2300&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=100&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres
                       self:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=50&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -975,58 +971,58 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: Get genres from creative work
       tags:
-      - Genre management
+        - Genre management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
-  /content/creative_works/{creative_work_guid}/tags:
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
+  '/content/creative_works/{creative_work_guid}/tags':
     get:
       description: ''
       operationId: v1.content.tag.get_from_creative_work
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -1045,33 +1041,33 @@ paths:
                   value:
                     _embedded:
                       tags:
-                      - _links:
-                          self:
-                            href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: 8703dd1ced974ecea01116f2c0a5a282
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            language: en
-                          name: Warm
-                        relationships:
-                        - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
-                          rel: sibling
-                        updated_at: '2020-01-01T00:00:00Z'
+                        - _links:
+                            self:
+                              href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: 8703dd1ced974ecea01116f2c0a5a282
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                language: en
+                              name: Warm
+                          relationships:
+                            - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
+                              rel: sibling
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags
                       last:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=2300&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=100&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags
                       self:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=50&limit=50&filter_id=1
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1086,58 +1082,58 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: Get tags from creative work
       tags:
-      - Tag management
+        - Tag management
     parameters:
-    - in: path
-      name: creative_work_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: creative_work_guid
+        required: true
+        schema:
+          type: string
   /content/genres:
     get:
       description: ''
       operationId: v1.content.genre.get_list
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -1156,33 +1152,33 @@ paths:
                   value:
                     _embedded:
                       genres:
-                      - _links:
-                          self:
-                            href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: 9be42f99a8ab420082719d1bafc8e649
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            language: en
-                          name: Action
-                        relationships:
-                        - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                          rel: sibling
-                        updated_at: '2020-01-01T00:00:00Z'
+                        - _links:
+                            self:
+                              href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: 9be42f99a8ab420082719d1bafc8e649
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                language: en
+                              name: Action
+                          relationships:
+                            - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                              rel: sibling
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/genres
                       last:
-                        href: /content/genres?offset=2300&limit=50&filter_id=1
+                        href: '/content/genres?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/genres?offset=100&limit=50&filter_id=1
+                        href: '/content/genres?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/genres
                       self:
-                        href: /content/genres?offset=50&limit=50&filter_id=1
+                        href: '/content/genres?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1197,32 +1193,32 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: List genres
       tags:
-      - Genre management
-  /content/genres/{genre_guid}:
+        - Genre management
+  '/content/genres/{genre_guid}':
     get:
       description: ''
       operationId: v1.content.genre.get
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
       responses:
         '200':
           content:
@@ -1236,67 +1232,67 @@ paths:
                     created_at: '2020-01-01T00:00:00Z'
                     guid: 9be42f99a8ab420082719d1bafc8e649
                     identifiers:
-                    - id: '1'
-                      source: mysource
+                      - id: '1'
+                        source: mysource
                     names:
-                    - metadata:
-                        language: en
-                      name: Action
+                      - metadata:
+                          language: en
+                        name: Action
                     relationships:
-                    - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                      rel: sibling
+                      - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                        rel: sibling
                     updated_at: '2020-01-01T00:00:00Z'
               schema:
                 $ref: ../models/Genre.v1.yaml
           description: OK
       summary: Get a genre
       tags:
-      - Genre management
+        - Genre management
     parameters:
-    - in: path
-      name: genre_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: genre_guid
+        required: true
+        schema:
+          type: string
   /content/locations:
     get:
       description: ''
       operationId: v1.content.location.get_list
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -1315,30 +1311,30 @@ paths:
                   value:
                     _embedded:
                       locations:
-                      - _links:
-                          self:
-                            href: /content/locations/e1d00d49612f48c791458f8f754358a9
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: e1d00d49612f48c791458f8f754358a9
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            country: FR
-                          name: France
-                        updated_at: '2020-01-01T00:00:00Z'
+                        - _links:
+                            self:
+                              href: /content/locations/e1d00d49612f48c791458f8f754358a9
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: e1d00d49612f48c791458f8f754358a9
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                country: FR
+                              name: France
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/locations
                       last:
-                        href: /content/locations?offset=2300&limit=50&filter_id=1
+                        href: '/content/locations?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/locations?offset=100&limit=50&filter_id=1
+                        href: '/content/locations?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/locations
                       self:
-                        href: /content/locations?offset=50&limit=50&filter_id=1
+                        href: '/content/locations?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1353,32 +1349,32 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: List locations
       tags:
-      - Location management
-  /content/locations/{location_guid}:
+        - Location management
+  '/content/locations/{location_guid}':
     get:
       description: ''
       operationId: v1.content.location.get
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
       responses:
         '200':
           content:
@@ -1392,64 +1388,64 @@ paths:
                     created_at: '2020-01-01T00:00:00Z'
                     guid: e1d00d49612f48c791458f8f754358a9
                     identifiers:
-                    - id: '1'
-                      source: mysource
+                      - id: '1'
+                        source: mysource
                     names:
-                    - metadata:
-                        country: FR
-                      name: France
+                      - metadata:
+                          country: FR
+                        name: France
                     updated_at: '2020-01-01T00:00:00Z'
               schema:
                 $ref: ../models/Location.v1.yaml
           description: OK
       summary: Get a location
       tags:
-      - Location management
+        - Location management
     parameters:
-    - in: path
-      name: location_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: location_guid
+        required: true
+        schema:
+          type: string
   /content/people:
     get:
       description: ''
       operationId: v1.content.persons.get_list
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -1468,80 +1464,75 @@ paths:
                   value:
                     _embedded:
                       people:
-                      - _links:
-                          self:
-                            href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
-                        artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            type: portrait
-                          url: https://mydomain.com/picture.jpg
-                          width: 100
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: eb4aaa3de91242ba82ad48bee0b48996
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        name: "Keyser S\xF6ze"
-                        updated_at: '2020-01-01T00:00:00Z'
+                        - _links:
+                            self:
+                              href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
+                          artworks:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                type: portrait
+                              url: 'https://mydomain.com/picture.jpg'
+                              width: 100
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: eb4aaa3de91242ba82ad48bee0b48996
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          name: Keyser Söze
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/persons
                       last:
-                        href: /content/persons?offset=2300&limit=50&filter_id=1
+                        href: '/content/persons?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/persons?offset=100&limit=50&filter_id=1
+                        href: '/content/persons?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/persons
                       self:
-                        href: /content/persons?offset=50&limit=50&filter_id=1
+                        href: '/content/persons?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _embedded:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        people:
-                          items:
-                            $ref: ../models/People.v1.yaml
-                          type: array
-                      required:
-                      - people
-                      type: object
-                    type: array
+                    type: object
+                    properties:
+                      people:
+                        type: array
+                        items:
+                          $ref: ../models/People.v1.yaml
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
-                type: object
+                  - _embedded
+                  - _links
           description: OK
       summary: List people
       tags:
-      - People Management
+        - People Management
     parameters: []
-  /content/people/{person_guid}:
+  '/content/people/{person_guid}':
     get:
       description: ''
       operationId: v1.content.person.get
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
       responses:
         '200':
           content:
@@ -1553,71 +1544,71 @@ paths:
                       self:
                         href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
                     artworks:
-                    - height: 100
-                      metadata:
-                        country: GB
-                        language: en
-                        type: portrait
-                      url: https://mydomain.com/picture.jpg
-                      width: 100
+                      - height: 100
+                        metadata:
+                          country: GB
+                          language: en
+                          type: portrait
+                        url: 'https://mydomain.com/picture.jpg'
+                        width: 100
                     created_at: '2020-01-01T00:00:00Z'
                     guid: eb4aaa3de91242ba82ad48bee0b48996
                     identifiers:
-                    - id: '1'
-                      source: mysource
-                    name: "Keyser S\xF6ze"
+                      - id: '1'
+                        source: mysource
+                    name: Keyser Söze
                     updated_at: '2020-01-01T00:00:00Z'
               schema:
                 $ref: ../models/People.v1.yaml
           description: OK
       summary: Get a person
       tags:
-      - People Management
+        - People Management
     parameters:
-    - in: path
-      name: person_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: person_guid
+        required: true
+        schema:
+          type: string
   /content/platforms:
     get:
       description: ''
       operationId: v1.content.platform.get_list
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -1636,40 +1627,40 @@ paths:
                   value:
                     _embedded:
                       platforms:
-                      - _links:
-                          self:
-                            href: /content/platforms/e1d00d49612f48c791458f8f754358a9
-                        artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: icon
-                          url: https://mydomain.com/picture.jpg
-                          width: 100
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: e1d00d49612f48c791458f8f754358a9
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            country: GB
-                            language: en
-                          name: IOS
-                        updated_at: '2020-01-01T00:00:00Z'
+                        - _links:
+                            self:
+                              href: /content/platforms/e1d00d49612f48c791458f8f754358a9
+                          artworks:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: icon
+                              url: 'https://mydomain.com/picture.jpg'
+                              width: 100
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: e1d00d49612f48c791458f8f754358a9
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                country: GB
+                                language: en
+                              name: IOS
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/platforms
                       last:
-                        href: /content/platforms?offset=2300&limit=50&filter_id=1
+                        href: '/content/platforms?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/platforms?offset=100&limit=50&filter_id=1
+                        href: '/content/platforms?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/platforms
                       self:
-                        href: /content/platforms?offset=50&limit=50&filter_id=1
+                        href: '/content/platforms?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1684,32 +1675,32 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: List platforms
       tags:
-      - Platform management
-  /content/platforms/{platform_guid}:
+        - Platform management
+  '/content/platforms/{platform_guid}':
     get:
       description: ''
       operationId: get-content-platforms-guid
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
       responses:
         '200':
           content:
@@ -1721,76 +1712,76 @@ paths:
                       self:
                         href: /content/platforms/e1d00d49612f48c791458f8f754358a9
                     artworks:
-                    - height: 100
-                      metadata:
-                        country: GB
-                        language: en
-                        source: mysource
-                        type: icon
-                      url: https://mydomain.com/picture.jpg
-                      width: 100
+                      - height: 100
+                        metadata:
+                          country: GB
+                          language: en
+                          source: mysource
+                          type: icon
+                        url: 'https://mydomain.com/picture.jpg'
+                        width: 100
                     created_at: '2020-01-01T00:00:00Z'
                     guid: e1d00d49612f48c791458f8f754358a9
                     identifiers:
-                    - id: '1'
-                      source: mysource
+                      - id: '1'
+                        source: mysource
                     names:
-                    - metadata:
-                        country: GB
-                        language: en
-                      name: IOS
+                      - metadata:
+                          country: GB
+                          language: en
+                        name: IOS
                     updated_at: '2020-01-01T00:00:00Z'
               schema:
                 $ref: ../models/Platform.v1.yaml
           description: OK
       summary: Get a platform
       tags:
-      - Platform management
+        - Platform management
     parameters:
-    - in: path
-      name: platform_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: platform_guid
+        required: true
+        schema:
+          type: string
   /content/services:
     get:
       description: ''
       operationId: v1.content.service.get_list
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -1810,40 +1801,40 @@ paths:
                   value:
                     _embedded:
                       services:
-                      - _links:
-                          self:
-                            href: /content/services/df3a998849344e9b954b7807fc623f08
-                        artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: icon
-                          url: https://mydomain.com/picture.jpg
-                          width: 100
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: df3a998849344e9b954b7807fc623f08
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            country: GB
-                            language: en
-                          name: BBC One London
-                        updated_at: '2020-01-01T00:00:00Z'
+                        - _links:
+                            self:
+                              href: /content/services/df3a998849344e9b954b7807fc623f08
+                          artworks:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: icon
+                              url: 'https://mydomain.com/picture.jpg'
+                              width: 100
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: df3a998849344e9b954b7807fc623f08
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                country: GB
+                                language: en
+                              name: BBC One London
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/services
                       last:
-                        href: /content/services?offset=2300&limit=50&filter_id=1
+                        href: '/content/services?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/services?offset=100&limit=50&filter_id=1
+                        href: '/content/services?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/services
                       self:
-                        href: /content/services?offset=50&limit=50&filter_id=1
+                        href: '/content/services?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1858,32 +1849,32 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: List services
       tags:
-      - Service management
-  /content/services/{service_guid}:
+        - Service management
+  '/content/services/{service_guid}':
     get:
       description: ''
       operationId: v1.content.service.get
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
       responses:
         '200':
           content:
@@ -1895,76 +1886,76 @@ paths:
                       self:
                         href: /content/services/df3a998849344e9b954b7807fc623f08
                     artworks:
-                    - height: 100
-                      metadata:
-                        country: GB
-                        language: en
-                        source: mysource
-                        type: icon
-                      url: https://mydomain.com/picture.jpg
-                      width: 100
+                      - height: 100
+                        metadata:
+                          country: GB
+                          language: en
+                          source: mysource
+                          type: icon
+                        url: 'https://mydomain.com/picture.jpg'
+                        width: 100
                     created_at: '2020-01-01T00:00:00Z'
                     guid: df3a998849344e9b954b7807fc623f08
                     identifiers:
-                    - id: '1'
-                      source: mysource
+                      - id: '1'
+                        source: mysource
                     names:
-                    - metadata:
-                        country: GB
-                        language: en
-                      name: BBC One London
+                      - metadata:
+                          country: GB
+                          language: en
+                        name: BBC One London
                     updated_at: '2020-01-01T00:00:00Z'
               schema:
                 $ref: ../models/Service.v1.yaml
           description: OK
       summary: Get a service
       tags:
-      - Service management
+        - Service management
     parameters:
-    - in: path
-      name: service_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: service_guid
+        required: true
+        schema:
+          type: string
   /content/tags:
     get:
       description: ''
       operationId: v1.content.tag.get_list
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: offset
+          schema:
+            type: integer
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filter_id
+          schema:
             type: string
-          type: array
-        style: form
-      - in: query
-        name: limit
-        schema:
-          maximum: 50
-          type: integer
-      - in: query
-        name: offset
-        schema:
-          type: integer
-      - in: query
-        name: sort
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - in: query
-        name: filter_id
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -1983,33 +1974,33 @@ paths:
                   value:
                     _embedded:
                       tags:
-                      - _links:
-                          self:
-                            href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
-                        created_at: '2020-01-01T00:00:00Z'
-                        guid: 8703dd1ced974ecea01116f2c0a5a282
-                        identifiers:
-                        - id: '1'
-                          source: mysource
-                        names:
-                        - metadata:
-                            language: en
-                          name: Warm
-                        relationships:
-                        - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
-                          rel: sibling
-                        updated_at: '2020-01-01T00:00:00Z'
+                        - _links:
+                            self:
+                              href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: 8703dd1ced974ecea01116f2c0a5a282
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                language: en
+                              name: Warm
+                          relationships:
+                            - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
+                              rel: sibling
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/tags
                       last:
-                        href: /content/tags?offset=2300&limit=50&filter_id=1
+                        href: '/content/tags?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: /content/tags?offset=100&limit=50&filter_id=1
+                        href: '/content/tags?offset=100&limit=50&filter_id=1'
                       prev:
                         href: /content/tags
                       self:
-                        href: /content/tags?offset=50&limit=50&filter_id=1
+                        href: '/content/tags?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -2024,32 +2015,32 @@ paths:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                - _links
-                - _embedded
+                  - _links
+                  - _embedded
                 type: object
           description: OK
       summary: List tags
       tags:
-      - Tag management
-  /content/tags/{tag_guid}:
+        - Tag management
+  '/content/tags/{tag_guid}':
     get:
       description: ''
       operationId: v1.content.tag.get
       parameters:
-      - in: query
-        name: languages
-        schema:
-          items:
-            $ref: ../models/languages_field.v1.yaml
-          type: array
-        style: form
-      - in: query
-        name: fields
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
       responses:
         '200':
           content:
@@ -2063,34 +2054,34 @@ paths:
                     created_at: '2020-01-01T00:00:00Z'
                     guid: 8703dd1ced974ecea01116f2c0a5a282
                     identifiers:
-                    - id: '1'
-                      source: mysource
+                      - id: '1'
+                        source: mysource
                     names:
-                    - metadata:
-                        language: en
-                      name: Warm
+                      - metadata:
+                          language: en
+                        name: Warm
                     relationships:
-                    - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
-                      rel: sibling
+                      - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
+                        rel: sibling
                     updated_at: '2020-01-01T00:00:00Z'
               schema:
                 $ref: ../models/Tag.v1.yaml
           description: OK
       summary: Get a tag
       tags:
-      - Tag management
+        - Tag management
     parameters:
-    - in: path
-      name: tag_guid
-      required: true
-      schema:
-        type: string
+      - in: path
+        name: tag_guid
+        required: true
+        schema:
+          type: string
 security:
-- Authorization: []
+  - Authorization: []
 servers:
-- description: prod
-  url: https://services.utelly.com/browse_manager/v1
-- description: staging
-  url: https://staging-services.utelly.com/browse_manager/v1
-- description: dev
-  url: https://dev-services.utelly.com/browse_manager/v1
+  - description: prod
+    url: 'https://services.utelly.com/browse_manager/v1'
+  - description: staging
+    url: 'https://staging-services.utelly.com/browse_manager/v1'
+  - description: dev
+    url: 'https://dev-services.utelly.com/browse_manager/v1'
