@@ -32,14 +32,14 @@ properties:
           - genre
           type: object
         type: array
-      persons:
+      contributors:
         items:
           additionalProperties: false
           properties:
             character_name:
               type: string
             person:
-              $ref: ../models/People.v1.yaml
+              $ref: ../models/Person.v1.yaml
             role:
               enum:
               - actor
