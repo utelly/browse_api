@@ -275,7 +275,7 @@ paths:
                         value: The Usual Suspects
                     - filter:
                         operator: regex
-                        property: persons.names.name
+                        property: contributors.names.name
                         value: 'kevin*'
                     - filter:
                         operator: eq
@@ -313,8 +313,8 @@ paths:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
                             genres:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
-                            persons:
-                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/persons
+                            contributors:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/contributors
                             self:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46
                             tags:
@@ -412,7 +412,7 @@ paths:
                 - tags
                 - availabilities
                 - content_ratings
-                - persons
+                - contributors
               type: string
             type: array
           style: form
@@ -449,8 +449,8 @@ paths:
                         href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
                       genres:
                         href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
-                      persons:
-                        href: /content/creative_works/27c13eec19014084a0a3173061702b46/Persons
+                      contributors:
+                        href: /content/creative_works/27c13eec19014084a0a3173061702b46/contributors
                       self:
                         href: /content/creative_works/27c13eec19014084a0a3173061702b46
                       tags:
@@ -730,7 +730,7 @@ paths:
   '/content/creative_works/{creative_work_guid}/contributors':
     get:
       description: ''
-      operationId: v1.content.person.get_from_creative_work
+      operationId: v1.content.contributors.get_from_creative_work
       parameters:
         - in: query
           name: languages
@@ -813,15 +813,15 @@ paths:
                               role: actor
                     _links:
                       first:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors
                       last:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=2300&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=100&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=100&limit=50&filter_id=1'
                       prev:
-                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons
+                        href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors
                       self:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=50&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -843,7 +843,7 @@ paths:
                                 type: object
                               type: array
                             person:
-                              $ref: ../models/People.v1.yaml
+                              $ref: ../models/Person.v1.yaml
                             roles:
                               items:
                                 additionalProperties: false
@@ -1410,7 +1410,7 @@ paths:
   /content/people:
     get:
       description: ''
-      operationId: v1.content.persons.get_list
+      operationId: v1.content.people.get_list
       parameters:
         - in: query
           name: languages
@@ -1466,7 +1466,7 @@ paths:
                       people:
                         - _links:
                             self:
-                              href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
+                              href: /content/people/eb4aaa3de91242ba82ad48bee0b48996
                           artworks:
                             - height: 100
                               metadata:
@@ -1484,15 +1484,15 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
-                        href: /content/persons
+                        href: /content/people
                       last:
-                        href: '/content/persons?offset=2300&limit=50&filter_id=1'
+                        href: '/content/people?offset=2300&limit=50&filter_id=1'
                       next:
-                        href: '/content/persons?offset=100&limit=50&filter_id=1'
+                        href: '/content/people?offset=100&limit=50&filter_id=1'
                       prev:
-                        href: /content/persons
+                        href: /content/people
                       self:
-                        href: '/content/persons?offset=50&limit=50&filter_id=1'
+                        href: '/content/people?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 type: object
@@ -1503,7 +1503,7 @@ paths:
                       people:
                         type: array
                         items:
-                          $ref: ../models/People.v1.yaml
+                          $ref: ../models/Person.v1.yaml
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
@@ -1542,7 +1542,7 @@ paths:
                   value:
                     _links:
                       self:
-                        href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
+                        href: /content/people/eb4aaa3de91242ba82ad48bee0b48996
                     artworks:
                       - height: 100
                         metadata:
@@ -1559,7 +1559,7 @@ paths:
                     name: Keyser Söze
                     updated_at: '2020-01-01T00:00:00Z'
               schema:
-                $ref: ../models/People.v1.yaml
+                $ref: ../models/Person.v1.yaml
           description: OK
       summary: Get a person
       tags:

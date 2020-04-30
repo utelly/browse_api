@@ -42,5 +42,5 @@ required:
 - identifiers
 - name
 - updated_at
-title: People
+title: Person
 type: object
