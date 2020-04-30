@@ -698,25 +698,20 @@ paths:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=50&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _embedded:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        content_ratings:
-                          items:
-                            $ref: ../models/ContentRating.v1.yaml
-                          type: array
-                      required:
-                        - content_ratings
-                      type: object
-                    type: array
+                    type: object
+                    properties:
+                      content_ratings:
+                        type: array
+                        items:
+                          $ref: ../models/ContentRating.v1.yaml
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
                 required:
-                  - _links
                   - _embedded
-                type: object
+                  - _links
           description: OK
       summary: Get content ratings from creative work
       tags:
