@@ -37,34 +37,27 @@ paths:
               examples:
                 '1':
                   value:
-                    availability:
-                      _links:
-                        location:
-                          href: /content/locations/27c13eec19014084a0a3173061702b46
-                        platform:
-                          href: /content/platforms/27c13eec19014084a0a3173061702b46
-                        self:
-                          href: /content/availabilities/eb4aaa3de91242ba82ad48bee0b48996
-                        service:
-                          href: /content/services/27c13eec19014084a0a3173061702b46
-                      created_at: '2020-01-01T00:00:00Z'
-                      datetime_from: '2020-01-01T00:00:00Z'
-                      datetime_to: '2020-01-01T00:00:00Z'
-                      guid: eb4aaa3de91242ba82ad48bee0b48996
-                      identifiers:
-                        - id: '1'
-                          source: mysource
-                      recipe:
-                        href: 'https://mydomain.com/link_to_asset.html'
-                      updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      location:
+                        href: /content/locations/27c13eec19014084a0a3173061702b46
+                      platform:
+                        href: /content/platforms/27c13eec19014084a0a3173061702b46
+                      self:
+                        href: /content/availabilities/eb4aaa3de91242ba82ad48bee0b48996
+                      service:
+                        href: /content/services/27c13eec19014084a0a3173061702b46
+                    created_at: '2020-01-01T00:00:00Z'
+                    datetime_from: '2020-01-01T00:00:00Z'
+                    datetime_to: '2020-01-01T00:00:00Z'
+                    guid: eb4aaa3de91242ba82ad48bee0b48996
+                    identifiers:
+                      - id: '1'
+                        source: mysource
+                    recipe:
+                      href: 'https://mydomain.com/link_to_asset.html'
+                    updated_at: '2020-01-01T00:00:00Z'
               schema:
-                additionalProperties: false
-                properties:
-                  availability:
-                    $ref: ../models/Availability.v1.yaml
-                required:
-                  - availability
-                type: object
+                $ref: ../models/Availability.v1.yaml
           description: OK
       summary: Get an availability
       tags:
@@ -141,9 +134,9 @@ paths:
                         href: /content/content_ratings
                       self:
                         href: '/content/content_ratings?offset=50&limit=50&filter_id=1'
-                    content_ratings:
-                      - content_rating:
-                          _links:
+                    _embedded:
+                      content_ratings:
+                        - _links:
                             self:
                               href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
                           content_ratings:
@@ -159,23 +152,20 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  content_ratings:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        content_rating:
+                  _embedded:
+                    type: object
+                    properties:
+                      content_ratings:
+                        type: array
+                        items:
                           $ref: ../models/ContentRating.v1.yaml
-                      required:
-                        - content_rating
-                      type: object
-                    type: array
                 required:
-                  - content_ratings
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: List content ratings
       tags:
@@ -206,29 +196,22 @@ paths:
               examples:
                 '1':
                   value:
-                    content_rating:
-                      _links:
-                        self:
-                          href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                      content_ratings:
-                        - content_rating: '12'
-                          metadata:
-                            country: GB
-                          organization: MPAA
-                      created_at: '2020-01-01T00:00:00Z'
-                      guid: bcb27a2c9ee74a5a86720c3b5828093c
-                      identifiers:
-                        - id: '1'
-                          source: mysource
-                      updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
+                    content_ratings:
+                      - content_rating: '12'
+                        metadata:
+                          country: GB
+                        organization: MPAA
+                    created_at: '2020-01-01T00:00:00Z'
+                    guid: bcb27a2c9ee74a5a86720c3b5828093c
+                    identifiers:
+                      - id: '1'
+                        source: mysource
+                    updated_at: '2020-01-01T00:00:00Z'
               schema:
-                additionalProperties: false
-                properties:
-                  content_rating:
-                    $ref: ../models/ContentRating.v1.yaml
-                required:
-                  - content_rating
-                type: object
+                $ref: ../models/ContentRating.v1.yaml
           description: OK
       summary: Get a content rating
       tags:
@@ -331,9 +314,9 @@ paths:
                         href: /content/creative_works
                       self:
                         href: '/content/creative_works?offset=50&limit=50&filter_id=1'
-                    creative_works:
-                      - creative_work:
-                          _links:
+                    _embedded:
+                      creative_works:
+                        - _links:
                             availabilities:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
                             content_ratings:
@@ -381,23 +364,20 @@ paths:
                           updated_at: '2020-01-01T00:00:10Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  creative_works:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        creative_work:
+                  _embedded:
+                    type: object
+                    properties:
+                      creative_works:
+                        type: array
+                        items:
                           $ref: ../models/CreativeWork.v1.yaml
-                      required:
-                        - creative_work
-                      type: object
-                    type: array
                 required:
-                  - creative_works
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: List creative works
       tags:
@@ -460,126 +440,54 @@ paths:
                               - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
                                 rel: sibling
                             updated_at: '2020-01-01T00:00:00Z'
-                    creative_work:
-                      _links:
-                        availabilities:
-                          href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
-                        content_ratings:
-                          href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
-                        genres:
-                          href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
-                        persons:
-                          href: /content/creative_works/27c13eec19014084a0a3173061702b46/Persons
-                        self:
-                          href: /content/creative_works/27c13eec19014084a0a3173061702b46
-                        tags:
-                          href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
-                      artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: poster
-                          url: 'https://mydomain.com/poster.jpg'
-                          width: 100
-                      created_at: '2020-01-01T00:00:10Z'
-                      descriptions:
-                        - description: 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.'
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: full
-                      guid: 27c13eec19014084a0a3173061702b46
-                      identifiers:
-                        - id: '1'
-                          source: mysource
-                      relationships:
-                        - href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
-                          rel: parent
-                      titles:
-                        - metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: official
-                          title: The Usual Suspects
-                      type: movie
-                      updated_at: '2020-01-01T00:00:10Z'
-              schema:
-                additionalProperties: false
-                properties:
-                  _embedded:
-                    additionalProperties: false
-                    properties:
+                    _links:
                       availabilities:
-                        items:
-                          additionalProperties: false
-                          properties:
-                            availability:
-                              $ref: ../models/Availability.v1.yaml
-                          required:
-                            - availability
-                          type: object
-                        type: array
+                        href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
                       content_ratings:
-                        items:
-                          additionalProperties: false
-                          properties:
-                            content_rating:
-                              $ref: ../models/ContentRating.v1.yaml
-                          type: object
-                        type: array
+                        href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
                       genres:
-                        items:
-                          additionalProperties: false
-                          properties:
-                            genre:
-                              $ref: ../models/Genre.v1.yaml
-                          required:
-                            - genre
-                          type: object
-                        type: array
+                        href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
                       persons:
-                        items:
-                          additionalProperties: false
-                          properties:
-                            character_name:
-                              type: string
-                            person:
-                              $ref: ../models/People.v1.yaml
-                            role:
-                              enum:
-                                - actor
-                                - creator
-                                - director
-                                - editor
-                                - producer
-                                - writer
-                                - executive producer
-                              type: string
-                          required:
-                            - person
-                            - role
-                          type: object
-                        type: array
+                        href: /content/creative_works/27c13eec19014084a0a3173061702b46/Persons
+                      self:
+                        href: /content/creative_works/27c13eec19014084a0a3173061702b46
                       tags:
-                        items:
-                          additionalProperties: false
-                          properties:
-                            tag:
-                              $ref: ../models/Tag.v1.yaml
-                          required:
-                            - tag
-                          type: object
-                        type: array
-                    type: object
-                  creative_work:
-                    $ref: ../models/CreativeWork.v1.yaml
-                required:
-                  - creative_work
-                type: object
+                        href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
+                    artworks:
+                      - height: 100
+                        metadata:
+                          country: GB
+                          language: en
+                          source: mysource
+                          type: poster
+                        url: 'https://mydomain.com/poster.jpg'
+                        width: 100
+                    created_at: '2020-01-01T00:00:10Z'
+                    descriptions:
+                      - description: 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.'
+                        metadata:
+                          country: GB
+                          language: en
+                          source: mysource
+                          type: full
+                    guid: 27c13eec19014084a0a3173061702b46
+                    identifiers:
+                      - id: '1'
+                        source: mysource
+                    relationships:
+                      - href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
+                        rel: parent
+                    titles:
+                      - metadata:
+                          country: GB
+                          language: en
+                          source: mysource
+                          type: official
+                        title: The Usual Suspects
+                    type: movie
+                    updated_at: '2020-01-01T00:00:10Z'
+              schema:
+                $ref: ../models/CreativeWork.v1.yaml
           description: OK
       summary: Get a creative work
       tags:
@@ -656,9 +564,9 @@ paths:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities
                       self:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=50&limit=50&filter_id=1'
-                    availabilities:
-                      - availability:
-                          _links:
+                    _embedded:
+                      availabilities:
+                        - _links:
                             location:
                               href: /content/locations/27c13eec19014084a0a3173061702b46
                             platform:
@@ -679,23 +587,20 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  availabilities:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        availability:
+                  _embedded:
+                    type: object
+                    properties:
+                      availabilities:
+                        type: array
+                        items:
                           $ref: ../models/Availability.v1.yaml
-                      required:
-                        - availability
-                      type: object
-                    type: array
                 required:
-                  - availabilities
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: Get availabilities from creative work
       tags:
@@ -772,9 +677,9 @@ paths:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings
                       self:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=50&limit=50&filter_id=1'
-                    content_ratings:
-                      - content_rating:
-                          _links:
+                    _embedded:
+                      content_ratings:
+                        - _links:
                             self:
                               href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
                           content_ratings:
@@ -790,23 +695,25 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  content_ratings:
+                  _embedded:
+                    type: array
                     items:
                       additionalProperties: false
-                      properties:
-                        content_rating:
-                          $ref: ../models/ContentRating.v1.yaml
-                      required:
-                        - content_rating
                       type: object
-                    type: array
+                      properties:
+                        content_ratings:
+                          type: array
+                          items:
+                            $ref: ../models/ContentRating.v1.yaml
+                      required:
+                        - content_ratings
                 required:
-                  - content_ratings
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: Get content ratings from creative work
       tags:
@@ -883,43 +790,40 @@ paths:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres
                       self:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=50&limit=50&filter_id=1'
-                    genres:
-                      - genre:
-                          _links:
-                            self:
-                              href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                          created_at: '2020-01-01T00:00:00Z'
-                          guid: 9be42f99a8ab420082719d1bafc8e649
-                          identifiers:
-                            - id: '1'
-                              source: mysource
-                          names:
-                            - metadata:
-                                language: en
-                              name: Action
-                          relationships:
-                            - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                              rel: sibling
-                          updated_at: '2020-01-01T00:00:00Z'
+                    _embedded:
+                      - genres:
+                          - _links:
+                              self:
+                                href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                            created_at: '2020-01-01T00:00:00Z'
+                            guid: 9be42f99a8ab420082719d1bafc8e649
+                            identifiers:
+                              - id: '1'
+                                source: mysource
+                            names:
+                              - metadata:
+                                  language: en
+                                name: Action
+                            relationships:
+                              - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                                rel: sibling
+                            updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  genres:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        genre:
+                  _embedded:
+                    type: object
+                    properties:
+                      genres:
+                        type: array
+                        items:
                           $ref: ../models/Genre.v1.yaml
-                      required:
-                        - genre
-                      type: object
-                    type: array
                 required:
-                  - genres
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: Get genres from creative work
       tags:
@@ -930,7 +834,7 @@ paths:
         required: true
         schema:
           type: string
-  '/content/creative_works/{creative_work_guid}/persons':
+  '/content/creative_works/{creative_work_guid}/contributors':
     get:
       description: ''
       operationId: v1.content.person.get_from_creative_work
@@ -996,84 +900,76 @@ paths:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons
                       self:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/persons?offset=50&limit=50&filter_id=1'
-                    persons:
-                      - character_names:
-                          - character_name: Keyser Söze
-                            metadata:
-                              source: mysource
-                        person:
-                          _links:
-                            self:
-                              href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
-                          artworks:
-                            - height: 100
+                    _embedded:
+                      contributors:
+                        - character_names:
+                            - character_name: Keyser Söze
                               metadata:
-                                country: GB
-                                language: en
-                                type: portrait
-                              url: 'https://mydomain.com/picture.jpg'
-                              width: 100
-                          created_at: '2020-01-01T00:00:00Z'
-                          guid: eb4aaa3de91242ba82ad48bee0b48996
-                          identifiers:
-                            - id: '1'
-                              source: mysource
-                          name: Kevin Spacey
-                          updated_at: '2020-01-01T00:00:00Z'
-                        roles:
-                          - metadata:
-                              source: mysource
-                            role: actor
+                                source: mysource
+                          person:
+                            _links:
+                              self:
+                                href: /content/people/eb4aaa3de91242ba82ad48bee0b48996
+                            artworks:
+                              - height: 100
+                                metadata:
+                                  country: GB
+                                  language: en
+                                  type: portrait
+                                url: 'https://mydomain.com/picture.jpg'
+                                width: 100
+                            created_at: '2020-01-01T00:00:00Z'
+                            guid: eb4aaa3de91242ba82ad48bee0b48996
+                            identifiers:
+                              - id: '1'
+                                source: mysource
+                            name: Kevin Spacey
+                            updated_at: '2020-01-01T00:00:00Z'
+                          roles:
+                            - metadata:
+                                source: mysource
+                              role: actor
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  persons:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        character_names:
-                          items:
-                            additionalProperties: false
-                            properties:
-                              character_name:
-                                type: string
-                              metadata:
-                                $ref: ../models/metadata_field.v1.yaml
-                            required:
-                              - character_name
-                              - metadata
-                            type: object
-                          type: array
-                        person:
-                          $ref: ../models/People.v1.yaml
-                        roles:
-                          items:
-                            additionalProperties: false
-                            properties:
-                              metadata:
-                                $ref: ../models/metadata_field.v1.yaml
-                              role:
-                                type: string
-                            required:
-                              - role
-                              - metadata
-                            type: object
-                          type: array
-                      required:
-                        - person
-                        - roles
-                      type: object
-                    type: array
+                  _embedded:
+                    type: object
+                    properties:
+                      contributors:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            person:
+                              $ref: ../models/People.v1.yaml
+                            roles:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  role:
+                                    type: string
+                                  metadata:
+                                    $ref: ../models/metadata_field.v1.yaml
+                            character_names:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  character_name:
+                                    type: string
+                                  metadata:
+                                    $ref: ../models/metadata_field.v1.yaml
                 required:
                   - _links
-                  - persons
-                type: object
+                  - _embedded
           description: OK
-      summary: Get persons from creative work
+      summary: Get crontibutors from creative work
       tags:
-        - Persons management
+        - Contributor Management
     parameters:
       - in: path
         name: creative_work_guid
@@ -1146,9 +1042,9 @@ paths:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags
                       self:
                         href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=50&limit=50&filter_id=1'
-                    tags:
-                      - tag:
-                          _links:
+                    _embedded:
+                      tags:
+                        - _links:
                             self:
                               href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
                           created_at: '2020-01-01T00:00:00Z'
@@ -1166,23 +1062,20 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  tags:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        tag:
+                  _embedded:
+                    type: object
+                    properties:
+                      tags:
+                        type: array
+                        items:
                           $ref: ../models/Tag.v1.yaml
-                      required:
-                        - tag
-                      type: object
-                    type: array
                 required:
-                  - tags
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: Get tags from creative work
       tags:
@@ -1259,9 +1152,9 @@ paths:
                         href: /content/genres
                       self:
                         href: '/content/genres?offset=50&limit=50&filter_id=1'
-                    genres:
-                      - genre:
-                          _links:
+                    _embedded:
+                      genres:
+                        - _links:
                             self:
                               href: /content/genres/9be42f99a8ab420082719d1bafc8e649
                           created_at: '2020-01-01T00:00:00Z'
@@ -1279,23 +1172,20 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  genres:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        genre:
+                  _embedded:
+                    type: object
+                    properties:
+                      genres:
+                        type: array
+                        items:
                           $ref: ../models/Genre.v1.yaml
-                      required:
-                        - genre
-                      type: object
-                    type: array
                 required:
-                  - genres
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: List genres
       tags:
@@ -1326,31 +1216,24 @@ paths:
               examples:
                 '1':
                   value:
-                    genre:
-                      _links:
-                        self:
-                          href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                      created_at: '2020-01-01T00:00:00Z'
-                      guid: 9be42f99a8ab420082719d1bafc8e649
-                      identifiers:
-                        - id: '1'
-                          source: mysource
-                      names:
-                        - metadata:
-                            language: en
-                          name: Action
-                      relationships:
-                        - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                          rel: sibling
-                      updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                    created_at: '2020-01-01T00:00:00Z'
+                    guid: 9be42f99a8ab420082719d1bafc8e649
+                    identifiers:
+                      - id: '1'
+                        source: mysource
+                    names:
+                      - metadata:
+                          language: en
+                        name: Action
+                    relationships:
+                      - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                        rel: sibling
+                    updated_at: '2020-01-01T00:00:00Z'
               schema:
-                additionalProperties: false
-                properties:
-                  genre:
-                    $ref: ../models/Genre.v1.yaml
-                required:
-                  - genre
-                type: object
+                $ref: ../models/Genre.v1.yaml
           description: OK
       summary: Get a genre
       tags:
@@ -1427,9 +1310,9 @@ paths:
                         href: /content/locations
                       self:
                         href: '/content/locations?offset=50&limit=50&filter_id=1'
-                    locations:
-                      - location:
-                          _links:
+                    _embedded:
+                      locations:
+                        - _links:
                             self:
                               href: /content/locations/e1d00d49612f48c791458f8f754358a9
                           created_at: '2020-01-01T00:00:00Z'
@@ -1444,23 +1327,20 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  locations:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        location:
+                  _embedded:
+                    type: object
+                    properties:
+                      locations:
+                        type: array
+                        items:
                           $ref: ../models/Location.v1.yaml
-                      required:
-                        - location
-                      type: object
-                    type: array
                 required:
-                  - locations
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: List locations
       tags:
@@ -1491,28 +1371,21 @@ paths:
               examples:
                 '1':
                   value:
-                    location:
-                      _links:
-                        self:
-                          href: /content/locations/e1d00d49612f48c791458f8f754358a9
-                      created_at: '2020-01-01T00:00:00Z'
-                      guid: e1d00d49612f48c791458f8f754358a9
-                      identifiers:
-                        - id: '1'
-                          source: mysource
-                      names:
-                        - metadata:
-                            country: FR
-                          name: France
-                      updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: /content/locations/e1d00d49612f48c791458f8f754358a9
+                    created_at: '2020-01-01T00:00:00Z'
+                    guid: e1d00d49612f48c791458f8f754358a9
+                    identifiers:
+                      - id: '1'
+                        source: mysource
+                    names:
+                      - metadata:
+                          country: FR
+                        name: France
+                    updated_at: '2020-01-01T00:00:00Z'
               schema:
-                additionalProperties: false
-                properties:
-                  location:
-                    $ref: ../models/Location.v1.yaml
-                required:
-                  - location
-                type: object
+                $ref: ../models/Location.v1.yaml
           description: OK
       summary: Get a location
       tags:
@@ -1523,7 +1396,7 @@ paths:
         required: true
         schema:
           type: string
-  /content/persons:
+  /content/people:
     get:
       description: ''
       operationId: v1.content.persons.get_list
@@ -1589,9 +1462,9 @@ paths:
                         href: /content/persons
                       self:
                         href: '/content/persons?offset=50&limit=50&filter_id=1'
-                    persons:
-                      - person:
-                          _links:
+                    _embedded:
+                      people:
+                        - _links:
                             self:
                               href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
                           artworks:
@@ -1611,28 +1484,31 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  persons:
+                  _embedded:
+                    type: array
                     items:
                       additionalProperties: false
-                      properties:
-                        person:
-                          $ref: ../models/People.v1.yaml
-                      required:
-                        - person
                       type: object
-                    type: array
+                      properties:
+                        people:
+                          type: array
+                          items:
+                            $ref: ../models/People.v1.yaml
+                      required:
+                        - people
                 required:
-                  - persons
                   - _links
-                type: object
+                  - _embedded
           description: OK
-      summary: List persons
+      summary: List people
       tags:
-        - Persons management
-  '/content/persons/{person_guid}':
+        - People Management
+    parameters: []
+  '/content/people/{person_guid}':
     get:
       description: ''
       operationId: v1.content.person.get
@@ -1658,37 +1534,30 @@ paths:
               examples:
                 '1':
                   value:
-                    person:
-                      _links:
-                        self:
-                          href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
-                      artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            type: portrait
-                          url: 'https://mydomain.com/picture.jpg'
-                          width: 100
-                      created_at: '2020-01-01T00:00:00Z'
-                      guid: eb4aaa3de91242ba82ad48bee0b48996
-                      identifiers:
-                        - id: '1'
-                          source: mysource
-                      name: Keyser Söze
-                      updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: /content/persons/eb4aaa3de91242ba82ad48bee0b48996
+                    artworks:
+                      - height: 100
+                        metadata:
+                          country: GB
+                          language: en
+                          type: portrait
+                        url: 'https://mydomain.com/picture.jpg'
+                        width: 100
+                    created_at: '2020-01-01T00:00:00Z'
+                    guid: eb4aaa3de91242ba82ad48bee0b48996
+                    identifiers:
+                      - id: '1'
+                        source: mysource
+                    name: Keyser Söze
+                    updated_at: '2020-01-01T00:00:00Z'
               schema:
-                additionalProperties: false
-                properties:
-                  person:
-                    $ref: ../models/People.v1.yaml
-                required:
-                  - person
-                type: object
+                $ref: ../models/People.v1.yaml
           description: OK
       summary: Get a person
       tags:
-        - Persons management
+        - People Management
     parameters:
       - in: path
         name: person_guid
@@ -1761,9 +1630,9 @@ paths:
                         href: /content/platforms
                       self:
                         href: '/content/platforms?offset=50&limit=50&filter_id=1'
-                    platforms:
-                      - platform:
-                          _links:
+                    _embedded:
+                      platforms:
+                        - _links:
                             self:
                               href: /content/platforms/e1d00d49612f48c791458f8f754358a9
                           artworks:
@@ -1788,23 +1657,20 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  platforms:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        platform:
+                  _embedded:
+                    type: object
+                    properties:
+                      platforms:
+                        type: array
+                        items:
                           $ref: ../models/Platform.v1.yaml
-                      required:
-                        - platform
-                      type: object
-                    type: array
                 required:
-                  - platforms
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: List platforms
       tags:
@@ -1835,38 +1701,31 @@ paths:
               examples:
                 '1':
                   value:
-                    platform:
-                      _links:
-                        self:
-                          href: /content/platforms/e1d00d49612f48c791458f8f754358a9
-                      artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: icon
-                          url: 'https://mydomain.com/picture.jpg'
-                          width: 100
-                      created_at: '2020-01-01T00:00:00Z'
-                      guid: e1d00d49612f48c791458f8f754358a9
-                      identifiers:
-                        - id: '1'
+                    _links:
+                      self:
+                        href: /content/platforms/e1d00d49612f48c791458f8f754358a9
+                    artworks:
+                      - height: 100
+                        metadata:
+                          country: GB
+                          language: en
                           source: mysource
-                      names:
-                        - metadata:
-                            country: GB
-                            language: en
-                          name: IOS
-                      updated_at: '2020-01-01T00:00:00Z'
+                          type: icon
+                        url: 'https://mydomain.com/picture.jpg'
+                        width: 100
+                    created_at: '2020-01-01T00:00:00Z'
+                    guid: e1d00d49612f48c791458f8f754358a9
+                    identifiers:
+                      - id: '1'
+                        source: mysource
+                    names:
+                      - metadata:
+                          country: GB
+                          language: en
+                        name: IOS
+                    updated_at: '2020-01-01T00:00:00Z'
               schema:
-                additionalProperties: false
-                properties:
-                  platform:
-                    $ref: ../models/Platform.v1.yaml
-                required:
-                  - platform
-                type: object
+                $ref: ../models/Platform.v1.yaml
           description: OK
       summary: Get a platform
       tags:
@@ -1944,9 +1803,9 @@ paths:
                         href: /content/services
                       self:
                         href: '/content/services?offset=50&limit=50&filter_id=1'
-                    services:
-                      - service:
-                          _links:
+                    _embedded:
+                      services:
+                        - _links:
                             self:
                               href: /content/services/df3a998849344e9b954b7807fc623f08
                           artworks:
@@ -1971,23 +1830,20 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  services:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        service:
+                  _embedded:
+                    type: object
+                    properties:
+                      services:
+                        type: array
+                        items:
                           $ref: ../models/Service.v1.yaml
-                      required:
-                        - service
-                      type: object
-                    type: array
                 required:
-                  - services
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: List services
       tags:
@@ -2018,38 +1874,31 @@ paths:
               examples:
                 '1':
                   value:
-                    service:
-                      _links:
-                        self:
-                          href: /content/services/df3a998849344e9b954b7807fc623f08
-                      artworks:
-                        - height: 100
-                          metadata:
-                            country: GB
-                            language: en
-                            source: mysource
-                            type: icon
-                          url: 'https://mydomain.com/picture.jpg'
-                          width: 100
-                      created_at: '2020-01-01T00:00:00Z'
-                      guid: df3a998849344e9b954b7807fc623f08
-                      identifiers:
-                        - id: '1'
+                    _links:
+                      self:
+                        href: /content/services/df3a998849344e9b954b7807fc623f08
+                    artworks:
+                      - height: 100
+                        metadata:
+                          country: GB
+                          language: en
                           source: mysource
-                      names:
-                        - metadata:
-                            country: GB
-                            language: en
-                          name: BBC One London
-                      updated_at: '2020-01-01T00:00:00Z'
+                          type: icon
+                        url: 'https://mydomain.com/picture.jpg'
+                        width: 100
+                    created_at: '2020-01-01T00:00:00Z'
+                    guid: df3a998849344e9b954b7807fc623f08
+                    identifiers:
+                      - id: '1'
+                        source: mysource
+                    names:
+                      - metadata:
+                          country: GB
+                          language: en
+                        name: BBC One London
+                    updated_at: '2020-01-01T00:00:00Z'
               schema:
-                additionalProperties: false
-                properties:
-                  service:
-                    $ref: ../models/Service.v1.yaml
-                required:
-                  - service
-                type: object
+                $ref: ../models/Service.v1.yaml
           description: OK
       summary: Get a service
       tags:
@@ -2126,9 +1975,9 @@ paths:
                         href: /content/tags
                       self:
                         href: '/content/tags?offset=50&limit=50&filter_id=1'
-                    tags:
-                      - tag:
-                          _links:
+                    _embedded:
+                      tags:
+                        - _links:
                             self:
                               href: /content/tags/8703dd1ced974ecea01116f2c0a5a282
                           created_at: '2020-01-01T00:00:00Z'
@@ -2146,23 +1995,20 @@ paths:
                           updated_at: '2020-01-01T00:00:00Z'
               schema:
                 additionalProperties: false
+                type: object
                 properties:
                   _links:
                     $ref: ../models/HalLinks.v1.yaml
-                  tags:
-                    items:
-                      additionalProperties: false
-                      properties:
-                        tag:
+                  _embedded:
+                    type: object
+                    properties:
+                      tags:
+                        type: array
+                        items:
                           $ref: ../models/Tag.v1.yaml
-                      required:
-                        - tag
-                      type: object
-                    type: array
                 required:
-                  - tags
                   - _links
-                type: object
+                  - _embedded
           description: OK
       summary: List tags
       tags:
@@ -2193,31 +2039,24 @@ paths:
               examples:
                 '1':
                   value:
-                    tag:
-                      _links:
-                        self:
-                          href: /content/tags/8703dd1ced974ecea01116f2c0a5a290
-                      created_at: '2020-01-01T00:00:00Z'
-                      guid: 8703dd1ced974ecea01116f2c0a5a282
-                      identifiers:
-                        - id: '1'
-                          source: mysource
-                      names:
-                        - metadata:
-                            language: en
-                          name: Warm
-                      relationships:
-                        - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
-                          rel: sibling
-                      updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      self:
+                        href: /content/tags/8703dd1ced974ecea01116f2c0a5a290
+                    created_at: '2020-01-01T00:00:00Z'
+                    guid: 8703dd1ced974ecea01116f2c0a5a282
+                    identifiers:
+                      - id: '1'
+                        source: mysource
+                    names:
+                      - metadata:
+                          language: en
+                        name: Warm
+                    relationships:
+                      - href: /content/tags/67903dd1ced974ecea01116f2c0a5a290
+                        rel: sibling
+                    updated_at: '2020-01-01T00:00:00Z'
               schema:
-                additionalProperties: false
-                properties:
-                  tag:
-                    $ref: ../models/Tag.v1.yaml
-                required:
-                  - tag
-                type: object
+                $ref: ../models/Tag.v1.yaml
           description: OK
       summary: Get a tag
       tags:

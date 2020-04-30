@@ -1,6 +1,71 @@
 additionalProperties: false
 description: ''
 properties:
+  _embedded:
+    additionalProperties: false
+    properties:
+      availabilities:
+        items:
+          additionalProperties: false
+          properties:
+            availability:
+              $ref: ../models/Availability.v1.yaml
+          required:
+            - availability
+          type: object
+        type: array
+      content_ratings:
+        items:
+          additionalProperties: false
+          properties:
+            content_rating:
+              $ref: ../models/ContentRating.v1.yaml
+          type: object
+        type: array
+      genres:
+        items:
+          additionalProperties: false
+          properties:
+            genre:
+              $ref: ../models/Genre.v1.yaml
+          required:
+            - genre
+          type: object
+        type: array
+      persons:
+        items:
+          additionalProperties: false
+          properties:
+            character_name:
+              type: string
+            person:
+              $ref: ../models/People.v1.yaml
+            role:
+              enum:
+                - actor
+                - creator
+                - director
+                - editor
+                - producer
+                - writer
+                - executive producer
+              type: string
+          required:
+            - person
+            - role
+          type: object
+        type: array
+      tags:
+        items:
+          additionalProperties: false
+          properties:
+            tag:
+              $ref: ../models/Tag.v1.yaml
+          required:
+            - tag
+          type: object
+        type: array
+    type: object  
   _links:
     $ref: ./HalLinks.v1.yaml
   artworks:
