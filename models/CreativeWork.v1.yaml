@@ -91,7 +91,7 @@ properties:
       required:
         - metadata
         - title
-  type:
+  _type:
     type: string
     enum:
       - movie
