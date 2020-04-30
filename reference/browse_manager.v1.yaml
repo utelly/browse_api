@@ -929,23 +929,23 @@ paths:
                 '1':
                   value:
                     _embedded:
-                      - genres:
-                          - _links:
-                              self:
-                                href: /content/genres/9be42f99a8ab420082719d1bafc8e649
-                            created_at: '2020-01-01T00:00:00Z'
-                            guid: 9be42f99a8ab420082719d1bafc8e649
-                            identifiers:
-                              - id: '1'
-                                source: mysource
-                            names:
-                              - metadata:
-                                  language: en
-                                name: Action
-                            relationships:
-                              - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
-                                rel: sibling
-                            updated_at: '2020-01-01T00:00:00Z'
+                      genres:
+                        - _links:
+                            self:
+                              href: /content/genres/9be42f99a8ab420082719d1bafc8e649
+                          created_at: '2020-01-01T00:00:00Z'
+                          guid: 9be42f99a8ab420082719d1bafc8e649
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          names:
+                            - metadata:
+                                language: en
+                              name: Action
+                          relationships:
+                            - href: /content/genres/67903dd1ced974ecea01116f2c0a5a290
+                              rel: sibling
+                          updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres
