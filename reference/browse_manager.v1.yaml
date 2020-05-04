@@ -779,29 +779,13 @@ paths:
                   value:
                     _embedded:
                       contributors:
-                        - character_names:
+                        - _links:
+                            self: /content/contributors/8703dd1ced974ecea01116f2c0a5a282
+                            person: /content/people/8703dd1ced974ecea01116f2c0a5a282
+                          character_names:
                             - character_name: Keyser Söze
                               metadata:
                                 source: mysource
-                          person:
-                            _links:
-                              self:
-                                href: /content/people/eb4aaa3de91242ba82ad48bee0b48996
-                            artworks:
-                              - height: 100
-                                metadata:
-                                  country: GB
-                                  language: en
-                                  type: portrait
-                                url: 'https://mydomain.com/picture.jpg'
-                                width: 100
-                            created_at: '2020-01-01T00:00:00Z'
-                            guid: eb4aaa3de91242ba82ad48bee0b48996
-                            identifiers:
-                              - id: '1'
-                                source: mysource
-                            name: Kevin Spacey
-                            updated_at: '2020-01-01T00:00:00Z'
                           roles:
                             - metadata:
                                 source: mysource
@@ -2045,6 +2029,55 @@ paths:
     parameters:
       - in: path
         name: tag_guid
+        required: true
+        schema:
+          type: string
+  '/content/contributors/{contributor_guid}':
+    get:
+      description: ''
+      operationId: v1.content.contributor.get
+      parameters:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                '1':
+                  value:
+                    _links:
+                      self: /content/contributors/8703dd1ced974ecea01116f2c0a5a282
+                      person: /content/people/8703dd1ced974ecea01116f2c0a5a282
+                    character_names:
+                      - character_name: Keyser Söze
+                        metadata:
+                          source: mysource
+                    roles:
+                      - metadata:
+                          source: mysource
+                        role: actor
+              schema:
+                $ref: ../models/Contributor.v1.yaml
+          description: OK
+      summary: Get a Contributor
+      tags:
+        - Contributor management
+    parameters:
+      - in: path
+        name: contributor_guid
         required: true
         schema:
           type: string
