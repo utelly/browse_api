@@ -1,0 +1,28 @@
+title: Contributor
+type: object
+additionalProperties: false
+properties:
+  roles:
+    type: array
+    items:
+      additionalProperties: false
+      type: object
+      properties:
+        metadata:
+          $ref: ../models/metadata_field.v1.yaml
+        role:
+          type: string
+  character_names:
+    type: array
+    items:
+      additionalProperties: false
+      type: object
+      properties:
+        character_name:
+          type: string
+        metadata:
+          $ref: ../models/metadata_field.v1.yaml
+  deleted:
+    type: boolean
+  _links:
+    $ref: ./HalLinks.v1.yaml
