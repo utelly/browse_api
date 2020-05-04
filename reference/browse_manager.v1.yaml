@@ -2059,8 +2059,10 @@ paths:
                 '1':
                   value:
                     _links:
-                      self: /content/contributors/8703dd1ced974ecea01116f2c0a5a282
-                      person: /content/people/8703dd1ced974ecea01116f2c0a5a282
+                      self:
+                        href: /content/contributors/8703dd1ced974ecea01116f2c0a5a282
+                      person:
+                        href: /content/people/8703dd1ced974ecea01116f2c0a5a282
                     character_names:
                       - character_name: Keyser Söze
                         metadata:
