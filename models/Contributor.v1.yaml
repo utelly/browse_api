@@ -1,28 +1,42 @@
-title: Contributor
-type: object
 additionalProperties: false
 properties:
-  roles:
-    type: array
-    items:
-      additionalProperties: false
-      type: object
-      properties:
-        metadata:
-          $ref: ../models/metadata_field.v1.yaml
-        role:
-          type: string
+  _links:
+    $ref: ./HalLinks.v1.yaml
   character_names:
-    type: array
     items:
       additionalProperties: false
-      type: object
       properties:
         character_name:
           type: string
         metadata:
           $ref: ../models/metadata_field.v1.yaml
+      type: object
+    type: array
+  created_at:
+    format: date-time
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    type: string
   deleted:
     type: boolean
-  _links:
-    $ref: ./HalLinks.v1.yaml
+  guid:
+    type: string
+  identifiers:
+    items:
+      $ref: ./identifier_field.v1.yaml
+    type: array
+  roles:
+    items:
+      additionalProperties: false
+      properties:
+        metadata:
+          $ref: ../models/metadata_field.v1.yaml
+        role:
+          type: string
+      type: object
+    type: array
+  updated_at:
+    format: date-time
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    type: string
+title: Contributor
+type: object

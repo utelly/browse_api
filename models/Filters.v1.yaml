@@ -1,5 +1,6 @@
 description: ''
 items:
+  additionalProperties: false
   properties:
     filter:
       anyOf:
