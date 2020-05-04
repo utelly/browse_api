@@ -1,10 +1,14 @@
 additionalProperties: false
+title: ContentRating
+type: object
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
   content_ratings:
+    type: array
     items:
       additionalProperties: false
+      type: object
       properties:
         content_rating:
           type: string
@@ -13,30 +17,28 @@ properties:
         organization:
           type: string
       required:
-      - organization
-      - content_rating
-      type: object
-    type: array
+        - content_rating
+        - organization
   created_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   guid:
     type: string
   identifiers:
+    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-    type: array
   updated_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
+  deleted:
+    type: boolean
 required:
-- _links
-- created_at
-- guid
-- identifiers
-- updated_at
-- content_ratings
-title: ContentRating
-type: object
+  - _links
+  - content_ratings
+  - created_at
+  - guid
+  - identifiers
+  - updated_at

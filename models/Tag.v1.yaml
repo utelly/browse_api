@@ -1,42 +1,44 @@
 additionalProperties: false
+title: Tag
+type: object
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
   created_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   guid:
     type: string
   identifiers:
+    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-    type: array
   names:
+    type: array
     items:
       additionalProperties: false
+      type: object
       properties:
         metadata:
           $ref: ./metadata_field.v1.yaml
         name:
           type: string
       required:
-      - metadata
-      - name
-      type: object
-    type: array
+        - metadata
+        - name
   relationships:
     $ref: ./Relationships.v1.yaml
   updated_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
+  deleted:
+    type: boolean
 required:
-- guid
-- created_at
-- updated_at
-- _links
-- identifiers
-- relationships
-title: Tag
-type: object
+  - _links
+  - created_at
+  - guid
+  - identifiers
+  - relationships
+  - updated_at

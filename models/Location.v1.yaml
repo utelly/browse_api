@@ -1,49 +1,52 @@
 additionalProperties: false
+title: Location
+type: object
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
   artworks:
+    type: array
     items:
       $ref: ./picture_field.v1.yaml
-    type: array
   created_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   elevation_meters:
     type: number
   guid:
     type: string
   identifiers:
+    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-    type: array
   latitude:
     type: number
   longitude:
     type: number
   names:
+    type: array
     items:
       additionalProperties: false
+      type: object
       properties:
         metadata:
           $ref: ./metadata_field.v1.yaml
         name:
           type: string
+        code:
+          type: string
       required:
-      - name
-      - metadata
-      type: object
-    type: array
+        - metadata
   updated_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
+  deleted:
+    type: boolean
 required:
-- guid
-- created_at
-- updated_at
-- _links
-- identifiers
-title: Location
-type: object
+  - _links
+  - created_at
+  - guid
+  - identifiers
+  - updated_at
