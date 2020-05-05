@@ -1418,7 +1418,7 @@ paths:
   /content/people:
     get:
       description: ''
-      operationId: v1.content.people.get_list
+      operationId: v1.content.person.get_list
       parameters:
         - in: query
           name: languages
@@ -1526,7 +1526,7 @@ paths:
   '/content/people/{person_guid}':
     get:
       description: ''
-      operationId: v1.content.people.get_one
+      operationId: v1.content.person.get_one
       parameters:
         - in: query
           name: languages
