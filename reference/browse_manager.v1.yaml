@@ -277,7 +277,7 @@ paths:
   /content/creative_works:
     get:
       description: ''
-      operationId: v1.content.creative_works.get_list
+      operationId: v1.content.creative_work.get_list
       parameters:
         - in: query
           name: languages
