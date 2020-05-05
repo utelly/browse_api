@@ -183,5 +183,6 @@ enum:
 - yo
 - za
 - zu
+- xx
 title: languages_field
 type: string

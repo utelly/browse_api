@@ -264,5 +264,6 @@ enum:
 - ZMW
 - ZWL
 - EUR
+- XXX
 title: currency_field
 type: string

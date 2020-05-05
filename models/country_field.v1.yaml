@@ -248,5 +248,6 @@ enum:
 - ZA
 - ZM
 - ZW
+- XX
 title: country_field
 type: string
