@@ -320,28 +320,23 @@ paths:
               '1':
                 value:
                   filters:
-                    - filter:
-                        operator: eq
-                        property: titles.title
-                        value: The Usual Suspects
-                    - filter:
-                        operator: regex
-                        property: contributors.names.name
-                        value: 'kevin*'
-                    - filter:
-                        operator: eq
-                        property: availabilities.services.names.name
-                        value: Netflix
-                    - filter:
-                        operator: gte
-                        property: created_at
-                        value: '2020-04-03T23:01:06Z'
-                    - filter:
-                        operator: in
-                        property: genres.genre.names.name
-                        value:
-                          - Action
-                          - Comedy
+                    - operator: eq
+                      property: titles.title
+                      value: The Usual Suspects
+                    - operator: regex
+                      property: contributors.names.name
+                      value: 'kevin*'
+                    - operator: eq
+                      property: availabilities.services.names.name
+                      value: Netflix
+                    - operator: gte
+                      property: created_at
+                      value: '2020-04-03T23:01:06Z'
+                    - operator: in
+                      property: genres.genre.names.name
+                      value:
+                        - Action
+                        - Comedy
             schema:
               additionalProperties: false
               properties:

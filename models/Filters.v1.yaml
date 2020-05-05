@@ -1,9 +1,8 @@
 description: ''
+type: array
+title: Filters
 items:
-  additionalProperties: false
-  properties:
-    filter:
-      anyOf:
+  anyOf:
       - properties:
           operator:
             enum:
@@ -76,7 +75,4 @@ items:
         - operator
         - property
         - value
-      type: object
   type: object
-title: Filters
-type: array
