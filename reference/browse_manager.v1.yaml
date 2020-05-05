@@ -93,9 +93,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -143,13 +143,13 @@ paths:
                       first:
                         href: /content/content_ratings
                       last:
-                        href: '/content/content_ratings?offset=2300&limit=50&filter_id=1'
+                        href: '/content/content_ratings?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/content_ratings?offset=100&limit=50&filter_id=1'
+                        href: '/content/content_ratings?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/content_ratings
                       self:
-                        href: '/content/content_ratings?offset=50&limit=50&filter_id=1'
+                        href: '/content/content_ratings?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -299,9 +299,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -407,13 +407,13 @@ paths:
                       first:
                         href: /content/creative_works
                       last:
-                        href: '/content/creative_works?offset=2300&limit=50&filter_id=1'
+                        href: '/content/creative_works?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/creative_works?offset=100&limit=50&filter_id=1'
+                        href: '/content/creative_works?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works
                       self:
-                        href: '/content/creative_works?offset=50&limit=50&filter_id=1'
+                        href: '/content/creative_works?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -575,9 +575,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -630,13 +630,13 @@ paths:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities
                       last:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=2300&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=100&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities
                       self:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?offset=50&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -689,9 +689,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -739,13 +739,13 @@ paths:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings
                       last:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=2300&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=100&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings
                       self:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?offset=50&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/content_ratings?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -798,9 +798,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -847,13 +847,13 @@ paths:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors
                       last:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=2300&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=100&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors
                       self:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?offset=50&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/contributors?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -906,9 +906,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -958,13 +958,13 @@ paths:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres
                       last:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=2300&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=100&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres
                       self:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?offset=50&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/genres?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1017,9 +1017,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -1069,13 +1069,13 @@ paths:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags
                       last:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=2300&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=100&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags
                       self:
-                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?offset=50&limit=50&filter_id=1'
+                        href: '/content/creative_works/8703dd1ced974ecea01116f2c0a5a282/tags?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1128,9 +1128,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -1180,13 +1180,13 @@ paths:
                       first:
                         href: /content/genres
                       last:
-                        href: '/content/genres?offset=2300&limit=50&filter_id=1'
+                        href: '/content/genres?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/genres?offset=100&limit=50&filter_id=1'
+                        href: '/content/genres?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/genres
                       self:
-                        href: '/content/genres?offset=50&limit=50&filter_id=1'
+                        href: '/content/genres?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1287,9 +1287,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -1336,13 +1336,13 @@ paths:
                       first:
                         href: /content/locations
                       last:
-                        href: '/content/locations?offset=2300&limit=50&filter_id=1'
+                        href: '/content/locations?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/locations?offset=100&limit=50&filter_id=1'
+                        href: '/content/locations?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/locations
                       self:
-                        href: '/content/locations?offset=50&limit=50&filter_id=1'
+                        href: '/content/locations?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1440,9 +1440,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -1494,13 +1494,13 @@ paths:
                       first:
                         href: /content/people
                       last:
-                        href: '/content/people?offset=2300&limit=50&filter_id=1'
+                        href: '/content/people?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/people?offset=100&limit=50&filter_id=1'
+                        href: '/content/people?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/people
                       self:
-                        href: '/content/people?offset=50&limit=50&filter_id=1'
+                        href: '/content/people?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1604,9 +1604,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -1663,13 +1663,13 @@ paths:
                       first:
                         href: /content/platforms
                       last:
-                        href: '/content/platforms?offset=2300&limit=50&filter_id=1'
+                        href: '/content/platforms?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/platforms?offset=100&limit=50&filter_id=1'
+                        href: '/content/platforms?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/platforms
                       self:
-                        href: '/content/platforms?offset=50&limit=50&filter_id=1'
+                        href: '/content/platforms?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1777,9 +1777,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -1837,13 +1837,13 @@ paths:
                       first:
                         href: /content/services
                       last:
-                        href: '/content/services?offset=2300&limit=50&filter_id=1'
+                        href: '/content/services?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/services?offset=100&limit=50&filter_id=1'
+                        href: '/content/services?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/services
                       self:
-                        href: '/content/services?offset=50&limit=50&filter_id=1'
+                        href: '/content/services?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
@@ -1951,9 +1951,9 @@ paths:
             maximum: 50
             type: integer
         - in: query
-          name: offset
+          name: after_guid
           schema:
-            type: integer
+            type: string
         - in: query
           name: sort
           schema:
@@ -2003,13 +2003,13 @@ paths:
                       first:
                         href: /content/tags
                       last:
-                        href: '/content/tags?offset=2300&limit=50&filter_id=1'
+                        href: '/content/tags?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       next:
-                        href: '/content/tags?offset=100&limit=50&filter_id=1'
+                        href: '/content/tags?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
                       prev:
                         href: /content/tags
                       self:
-                        href: '/content/tags?offset=50&limit=50&filter_id=1'
+                        href: '/content/tags?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50&filter_id=1'
               schema:
                 additionalProperties: false
                 properties:
