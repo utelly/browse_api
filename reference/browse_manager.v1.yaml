@@ -626,6 +626,7 @@ paths:
                             - id: '1'
                               source: mysource
                           updated_at: '2020-01-01T00:00:00Z'
+                          deleted: false
                     _links:
                       first:
                         href: /content/creative_works/8703dd1ced974ecea01116f2c0a5a282/availabilities
