@@ -603,8 +603,6 @@ paths:
                         - _links:
                             location:
                               href: /content/locations/27c13eec19014084a0a3173061702b46
-                            platform:
-                              href: /content/platforms/27c13eec19014084a0a3173061702b46
                             self:
                               href: /content/availabilities/eb4aaa3de91242ba82ad48bee0b48996
                             service:
