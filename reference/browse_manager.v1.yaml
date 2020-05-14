@@ -53,8 +53,6 @@ paths:
                     identifiers:
                       - id: '1'
                         source: mysource
-                    recipe:
-                      href: 'https://mydomain.com/link_to_asset.html'
                     updated_at: '2020-01-01T00:00:00Z'
               schema:
                 $ref: ../models/Availability.v1.yaml
