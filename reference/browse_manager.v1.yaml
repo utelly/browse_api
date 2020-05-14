@@ -40,12 +40,21 @@ paths:
                     _links:
                       location:
                         href: /content/locations/27c13eec19014084a0a3173061702b46
-                      platform:
-                        href: /content/platforms/27c13eec19014084a0a3173061702b46
                       self:
                         href: /content/availabilities/eb4aaa3de91242ba82ad48bee0b48996
                       service:
                         href: /content/services/27c13eec19014084a0a3173061702b46
+                    targets:
+                      - url: 'https://mydomain.com/ressource_url'
+                        quality: HD
+                        metadata:
+                          source: mysource
+                        platform: web
+                        price: 0
+                        currency: EUR
+                        ownership: Rent
+                        provider: mydomain
+                        product: default
                     created_at: '2020-01-01T00:00:00Z'
                     datetime_from: '2020-01-01T00:00:00Z'
                     datetime_to: '2020-01-01T00:00:00Z'
@@ -54,6 +63,7 @@ paths:
                       - id: '1'
                         source: mysource
                     updated_at: '2020-01-01T00:00:00Z'
+                    deleted: false
               schema:
                 $ref: ../models/Availability.v1.yaml
           description: OK
