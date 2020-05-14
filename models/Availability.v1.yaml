@@ -86,4 +86,3 @@ required:
   - guid
   - identifiers
   - updated_at
-  - targets

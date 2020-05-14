@@ -19,26 +19,7 @@ properties:
       contributors:
         type: array
         items:
-          additionalProperties: false
-          type: object
-          properties:
-            character_name:
-              type: string
-            person:
-              $ref: ../models/Person.v1.yaml
-            role:
-              enum:
-                - actor
-                - creator
-                - director
-                - editor
-                - producer
-                - writer
-                - executive producer
-              type: string
-          required:
-            - person
-            - role
+          $ref: ./Contributor.v1.yaml
       genres:
         type: array
         items:
@@ -112,6 +93,7 @@ properties:
 required:
   - _links
   - created_at
+  - deleted
   - guid
   - identifiers
   - type

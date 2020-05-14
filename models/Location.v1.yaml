@@ -47,6 +47,7 @@ properties:
 required:
   - _links
   - created_at
+  - deleted
   - guid
   - identifiers
   - updated_at
