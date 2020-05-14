@@ -614,7 +614,9 @@ paths:
                           targets:
                             - url: 'https://mydomain.com/ressource_url'
                               quality: HD
-                              metadata: {}
+                              metadata:
+                                id: '1'
+                                source: mysource
                               platform: web
                               price: 0
                               currency: EUR
@@ -628,8 +630,6 @@ paths:
                           identifiers:
                             - id: '1'
                               source: mysource
-                          recipe:
-                            href: 'https://mydomain.com/link_to_asset.html'
                           updated_at: '2020-01-01T00:00:00Z'
                     _links:
                       first:
