@@ -1,77 +1,75 @@
 additionalProperties: false
 description: ''
+title: Availability
+type: object
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
   created_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   datetime_from:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   datetime_to:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   deleted:
     type: boolean
   guid:
     type: string
   identifiers:
+    type: array
     items:
       $ref: ./identifier_field.v1.yaml
+  updated_at:
+    format: date-time
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
+    type: string
+  targets:
     type: array
-  prices:
     items:
-      additionalProperties: false
+      type: object
       properties:
         currency:
           $ref: ./currency_field.v1.yaml
+        ownership:
+          type: string
+          enum:
+            - Rent
+            - Buy
+        platform:
+          type: string
+          enum:
+            - web
+            - android
+            - ios
+            - tv
+        price:
+          type: number
+        product:
+          type: string
+        provider:
+          type: string
+        quality:
+          type: string
+          enum:
+            - HD
+            - SD
+            - Full HD
+            - UHD
+            - 4K
+            - 8K
+        url:
+          type: string
         metadata:
           $ref: ./metadata_field.v1.yaml
-        quality:
-          enum:
-          - HD
-          - SD
-          - Full HD
-          - UHD
-          - 4K
-          - 8K
-          type: string
-        type:
-          enum:
-          - Rent
-          - Buy
-          type: string
-        value:
-          type: number
-      required:
-      - currency
-      - metadata
-      - quality
-      - type
-      - value
-      type: object
-    minItems: 1
-    type: array
-  recipe:
-    additionalProperties: false
-    properties:
-      href:
-        type: string
-    type: object
-  updated_at:
-    format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
-    type: string
 required:
-- _links
-- created_at
-- guid
-- identifiers
-- recipe
-- updated_at
-title: Availability
-type: object
+  - _links
+  - created_at
+  - guid
+  - identifiers
+  - updated_at
