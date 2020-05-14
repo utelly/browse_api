@@ -67,6 +67,16 @@ properties:
           type: string
         metadata:
           $ref: ./metadata_field.v1.yaml
+      required:
+        - currency
+        - ownership
+        - platform
+        - price
+        - product
+        - provider
+        - quality
+        - url
+        - metadata
 required:
   - _links
   - created_at
