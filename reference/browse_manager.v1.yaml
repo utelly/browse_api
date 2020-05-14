@@ -613,7 +613,6 @@ paths:
                             - url: 'https://mydomain.com/ressource_url'
                               quality: HD
                               metadata:
-                                id: '1'
                                 source: mysource
                               platform: web
                               price: 0
