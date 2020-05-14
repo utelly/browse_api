@@ -264,6 +264,7 @@ paths:
                         href: /content/people/8703dd1ced974ecea01116f2c0a5a282
                       self:
                         href: /content/contributors/8703dd1ced974ecea01116f2c0a5a282
+                    guid: 8703dd1ced974ecea01116f2c0a5a282
                     character_names:
                       - character_name: Keyser Söze
                         metadata:
@@ -855,6 +856,7 @@ paths:
                       contributors:
                         - created_at: '2020-01-01T00:00:00Z'
                           updated_at: '2020-01-01T00:00:00Z'
+                          guid: 8703dd1ced974ecea01116f2c0a5a282
                           identifiers:
                             - id: '1'
                               source: mysource
