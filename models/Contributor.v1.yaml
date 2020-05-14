@@ -1,57 +1,57 @@
 additionalProperties: false
-title: Contributor
-type: object
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
   character_names:
-    type: array
     items:
       additionalProperties: false
-      type: object
       properties:
         character_name:
           type: string
         metadata:
           $ref: ../models/metadata_field.v1.yaml
       required:
-        - character_name
-        - metadata
+      - character_name
+      - metadata
+      type: object
+    type: array
   created_at:
     format: date-time
-    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
     type: string
   deleted:
     type: boolean
   guid:
     type: string
   identifiers:
-    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  roles:
     type: array
+  roles:
     items:
       additionalProperties: false
-      type: object
       properties:
         metadata:
           $ref: ../models/metadata_field.v1.yaml
         role:
           type: string
       required:
-        - metadata
-        - role
+      - metadata
+      - role
+      type: object
+    type: array
   updated_at:
     format: date-time
-    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
     type: string
 required:
-  - _links
-  - character_names
-  - created_at
-  - deleted
-  - guid
-  - identifiers
-  - roles
-  - updated_at
+- _links
+- character_names
+- created_at
+- deleted
+- guid
+- identifiers
+- roles
+- updated_at
+title: Contributor
+type: object

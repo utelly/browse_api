@@ -1,53 +1,48 @@
 additionalProperties: false
 description: ''
-title: Availability
-type: object
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
   created_at:
     format: date-time
-    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
     type: string
   datetime_from:
     format: date-time
-    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
     type: string
   datetime_to:
     format: date-time
-    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
     type: string
   deleted:
     type: boolean
   guid:
     type: string
   identifiers:
-    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-  updated_at:
-    format: date-time
-    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
-    type: string
-  targets:
     type: array
+  targets:
     items:
-      type: object
+      additionalProperties: false
       properties:
         currency:
           $ref: ./currency_field.v1.yaml
+        metadata:
+          $ref: ./metadata_field.v1.yaml
         ownership:
-          type: string
           enum:
-            - Rent
-            - Buy
+          - Rent
+          - Buy
+          type: string
         platform:
-          type: string
           enum:
-            - web
-            - android
-            - ios
-            - tv
+          - web
+          - android
+          - ios
+          - tv
+          type: string
         price:
           type: number
         product:
@@ -55,34 +50,40 @@ properties:
         provider:
           type: string
         quality:
-          type: string
           enum:
-            - HD
-            - SD
-            - Full HD
-            - UHD
-            - 4K
-            - 8K
+          - HD
+          - SD
+          - Full HD
+          - UHD
+          - 4K
+          - 8K
+          type: string
         url:
           type: string
-        metadata:
-          $ref: ./metadata_field.v1.yaml
       required:
-        - currency
-        - ownership
-        - platform
-        - price
-        - product
-        - provider
-        - quality
-        - url
-        - metadata
+      - currency
+      - ownership
+      - platform
+      - price
+      - product
+      - provider
+      - quality
+      - url
+      - metadata
+      type: object
+    type: array
+  updated_at:
+    format: date-time
+    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    type: string
 required:
-  - _links
-  - created_at
-  - datetime_from
-  - datetime_to
-  - deleted
-  - guid
-  - identifiers
-  - updated_at
+- _links
+- created_at
+- datetime_from
+- datetime_to
+- deleted
+- guid
+- identifiers
+- updated_at
+title: Availability
+type: object
