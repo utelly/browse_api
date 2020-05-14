@@ -80,6 +80,10 @@ properties:
 required:
   - _links
   - created_at
+  - datetime_from
+  - datetime_to
+  - deleted
   - guid
   - identifiers
   - updated_at
+  - targets
