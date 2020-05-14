@@ -551,6 +551,7 @@ paths:
                         title: The Usual Suspects
                     type: movie
                     updated_at: '2020-01-01T00:00:10Z'
+                    deleted: false
               schema:
                 $ref: ../models/CreativeWork.v1.yaml
           description: OK
