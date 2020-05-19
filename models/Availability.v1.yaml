@@ -3,22 +3,6 @@ description: ''
 title: Availability
 type: object
 properties:
-  _embedded:
-    additionalProperties: false
-    properties:
-      creative_works:
-        items:
-          $ref: ./CreativeWork.v1.yaml
-        type: array
-      locations:
-        items:
-          $ref: ./Location.v1.yaml
-        type: array
-      services:
-        items:
-          $ref: ./Service.v1.yaml
-        type: array
-    type: object  
   _links:
     $ref: ./HalLinks.v1.yaml
   created_at:
@@ -94,6 +78,18 @@ properties:
     format: date-time
     pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
+  _embedded:
+    type: object
+    additionalProperties: false
+    properties:
+      locations:
+        type: array
+        items:
+          $ref: ./Location.v1.yaml
+      services:
+        type: array
+        items:
+          $ref: ./Service.v1.yaml
 required:
   - _links
   - created_at
