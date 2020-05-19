@@ -1,100 +1,76 @@
 additionalProperties: false
 description: ''
+title: CreativeWork
+type: object
+x-examples: {}
 properties:
-  _embedded:
-    additionalProperties: false
-    properties:
-      availabilities:
-        items:
-          $ref: ./Availability.v1.yaml
-        type: array
-      content_ratings:
-        items:
-          $ref: ./ContentRating.v1.yaml
-        type: array
-      contributors:
-        items:
-          $ref: ./Contributor.v1.yaml
-        type: array
-      genres:
-        items:
-          $ref: ./Genre.v1.yaml
-        type: array
-      tags:
-        items:
-          $ref: ./Tag.v1.yaml
-        type: array
-    type: object
   _links:
     $ref: ./HalLinks.v1.yaml
   artworks:
+    type: array
     items:
       $ref: ./picture_field.v1.yaml
-    type: array
   created_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   deleted:
     type: boolean
   descriptions:
+    type: array
     items:
       additionalProperties: false
+      type: object
       properties:
         description:
           type: string
         metadata:
           $ref: ./metadata_field.v1.yaml
       required:
-      - description
-      - metadata
-      type: object
-    type: array
+        - description
+        - metadata
   guid:
     type: string
   identifiers:
+    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-    type: array
   relationships:
     $ref: ./Relationships.v1.yaml
   titles:
+    type: array
     items:
       additionalProperties: false
+      type: object
       properties:
         metadata:
           $ref: ./metadata_field.v1.yaml
         title:
           type: string
       required:
-      - metadata
-      - title
-      type: object
-    type: array
+        - metadata
+        - title
   type:
     enum:
-    - movie
-    - series
-    - short
-    - tv
-    - web
-    - article
-    - supplemental
-    - season
-    - episode
+      - movie
+      - series
+      - short
+      - tv
+      - web
+      - article
+      - supplemental
+      - season
+      - episode
     type: string
   updated_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
 required:
-- _links
-- created_at
-- deleted
-- guid
-- identifiers
-- type
-- updated_at
-title: CreativeWork
-type: object
-x-examples: {}
+  - _links
+  - created_at
+  - deleted
+  - guid
+  - identifiers
+  - type
+  - updated_at

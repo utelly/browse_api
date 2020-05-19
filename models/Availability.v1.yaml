@@ -90,6 +90,10 @@ properties:
         type: array
         items:
           $ref: ./Service.v1.yaml
+      creative_works:
+        type: array
+        items:
+          $ref: ./CreativeWork.v1.yaml          
 required:
   - _links
   - created_at
