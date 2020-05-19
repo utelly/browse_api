@@ -259,6 +259,13 @@ paths:
               type: string
             type: array
           style: form
+        - schema:
+            type: array
+            items:
+              type: string            
+          in: query
+          name: embed
+          style: form
       responses:
         '200':
           content:

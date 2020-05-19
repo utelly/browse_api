@@ -1,31 +1,51 @@
 additionalProperties: false
 description: ''
+title: Availability
+type: object
 properties:
+  _embedded:
+    additionalProperties: false
+    properties:
+      creative_works:
+        items:
+          $ref: ./CreativeWork.v1.yaml
+        type: array
+      locations:
+        items:
+          $ref: ./Location.v1.yaml
+        type: array
+      services:
+        items:
+          $ref: ./Service.v1.yaml
+        type: array
+    type: object  
   _links:
     $ref: ./HalLinks.v1.yaml
   created_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   datetime_from:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   datetime_to:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
   deleted:
     type: boolean
   guid:
     type: string
   identifiers:
+    type: array
     items:
       $ref: ./identifier_field.v1.yaml
-    type: array
   targets:
+    type: array
     items:
       additionalProperties: false
+      type: object
       properties:
         currency:
           $ref: ./currency_field.v1.yaml
@@ -33,15 +53,15 @@ properties:
           $ref: ./metadata_field.v1.yaml
         ownership:
           enum:
-          - Rent
-          - Buy
+            - Rent
+            - Buy
           type: string
         platform:
           enum:
-          - web
-          - android
-          - ios
-          - tv
+            - web
+            - android
+            - ios
+            - tv
           type: string
         price:
           type: number
@@ -51,39 +71,35 @@ properties:
           type: string
         quality:
           enum:
-          - HD
-          - SD
-          - Full HD
-          - UHD
-          - 4K
-          - 8K
+            - HD
+            - SD
+            - Full HD
+            - UHD
+            - 4K
+            - 8K
           type: string
         url:
           type: string
       required:
-      - currency
-      - ownership
-      - platform
-      - price
-      - product
-      - provider
-      - quality
-      - url
-      - metadata
-      type: object
-    type: array
+        - currency
+        - metadata
+        - ownership
+        - platform
+        - price
+        - product
+        - provider
+        - quality
+        - url
   updated_at:
     format: date-time
-    pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
+    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
     type: string
 required:
-- _links
-- created_at
-- datetime_from
-- datetime_to
-- deleted
-- guid
-- identifiers
-- updated_at
-title: Availability
-type: object
+  - _links
+  - created_at
+  - datetime_from
+  - datetime_to
+  - deleted
+  - guid
+  - identifiers
+  - updated_at
