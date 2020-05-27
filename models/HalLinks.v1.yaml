@@ -1,6 +1,5 @@
 additionalProperties:
   $ref: ./hal_link_field.v1.yaml
-  additionalProperties: false
   type: object
 title: HalLinks
 type: object
