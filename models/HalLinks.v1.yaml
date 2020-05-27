@@ -2,11 +2,6 @@ additionalProperties:
   $ref: ./hal_link_field.v1.yaml
   additionalProperties: false
   type: object
-properties:
-  self:
-    $ref: ./hal_link_field.v1.yaml
-required:
-- self
 title: HalLinks
 type: object
 x-examples:
@@ -21,3 +16,10 @@ x-examples:
       href: /creative_works/33
     self:
       href: /creative_works/34
+properties:
+  self:
+    oneOf:
+      - type: array
+        items:
+          $ref: ./hal_link_field.v1.yaml
+      - $ref: ./hal_link_field.v1.yaml

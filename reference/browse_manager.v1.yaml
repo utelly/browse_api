@@ -262,7 +262,7 @@ paths:
         - schema:
             type: array
             items:
-              type: string            
+              type: string
           in: query
           name: embed
           style: form
@@ -390,8 +390,6 @@ paths:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
                             contributors:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/contributors
-                            genres:
-                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/genres
                             self:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46
                             tags:
