@@ -30,12 +30,16 @@ paths:
               type: string
             type: array
           style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
+        - in: query
           name: embed
+          schema:
+            items:
+              enum:
+                - creative_works
+                - services
+                - locations                
+              type: string
+            type: array
           style: form
       responses:
         '200':
@@ -259,12 +263,15 @@ paths:
               type: string
             type: array
           style: form
-        - schema:
-            type: array
-            items:
-              type: string
-          in: query
+        - in: query
           name: embed
+          schema:
+            items:
+              enum:
+                - creative_works
+                - people
+              type: string
+            type: array
           style: form
       responses:
         '200':
@@ -484,11 +491,8 @@ paths:
           schema:
             items:
               enum:
-                - genres
                 - tags
-                - availabilities
                 - content_ratings
-                - contributors
               type: string
             type: array
           style: form
