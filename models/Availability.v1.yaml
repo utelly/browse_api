@@ -80,20 +80,9 @@ properties:
     type: string
   _embedded:
     type: object
-    additionalProperties: false
     properties:
-      locations:
-        type: array
-        items:
-          $ref: ./Location.v1.yaml
-      services:
-        type: array
-        items:
-          $ref: ./Service.v1.yaml
-      creative_works:
-        type: array
-        items:
-          $ref: ./CreativeWork.v1.yaml          
+      '':
+        type: object
 required:
   - _links
   - created_at
