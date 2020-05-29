@@ -4,7 +4,7 @@ type: object
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
-  valuess:
+  values:
     type: array
     items:
       additionalProperties: false
@@ -37,7 +37,7 @@ properties:
     type: string
 required:
   - _links
-  - valuess
+  - values
   - created_at
   - deleted
   - guid
