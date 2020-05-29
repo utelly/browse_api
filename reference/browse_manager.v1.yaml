@@ -37,7 +37,7 @@ paths:
               enum:
                 - creative_works
                 - services
-                - locations                
+                - locations
               type: string
             type: array
           style: form
@@ -118,7 +118,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string               
+            type: string
         - in: query
           name: sort
           schema:
@@ -151,8 +151,8 @@ paths:
                         - _links:
                             self:
                               href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                          content_ratings:
-                            - content_rating: '12'
+                          values:
+                            - value: '12'
                               metadata:
                                 country: GB
                               organization: MPAA
@@ -224,8 +224,8 @@ paths:
                     _links:
                       self:
                         href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                    content_ratings:
-                      - content_rating: '12'
+                    values:
+                      - value: '12'
                         metadata:
                           country: GB
                         organization: MPAA
@@ -347,7 +347,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string               
+            type: string
         - in: query
           name: sort
           schema:
@@ -620,7 +620,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string               
+            type: string
         - in: query
           name: sort
           schema:
@@ -746,7 +746,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string               
+            type: string
         - in: query
           name: sort
           schema:
@@ -779,8 +779,8 @@ paths:
                         - _links:
                             self:
                               href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                          content_ratings:
-                            - content_rating: '12'
+                          values:
+                            - value: '12'
                               metadata:
                                 country: GB
                               organization: MPAA
@@ -860,7 +860,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string               
+            type: string
         - in: query
           name: sort
           schema:
@@ -979,7 +979,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string               
+            type: string
         - in: query
           name: sort
           schema:
@@ -1095,7 +1095,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string               
+            type: string
         - in: query
           name: sort
           schema:
@@ -1254,7 +1254,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string               
+            type: string
         - in: query
           name: sort
           schema:
@@ -1424,7 +1424,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string            
+            type: string
         - in: query
           name: sort
           schema:
@@ -1603,7 +1603,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string               
+            type: string
         - in: query
           name: sort
           schema:
@@ -1783,7 +1783,7 @@ paths:
         - in: query
           name: before_guid
           schema:
-            type: string               
+            type: string
         - in: query
           name: sort
           schema:
