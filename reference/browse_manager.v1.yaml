@@ -151,8 +151,8 @@ paths:
                         - _links:
                             self:
                               href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                          values:
-                            - value: '12'
+                          ratings:
+                            - rating: '12'
                               metadata:
                                 country: GB
                               organization: MPAA
@@ -224,8 +224,8 @@ paths:
                     _links:
                       self:
                         href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                    values:
-                      - value: '12'
+                    ratings:
+                      - rating: '12'
                         metadata:
                           country: GB
                         organization: MPAA
@@ -779,8 +779,8 @@ paths:
                         - _links:
                             self:
                               href: /content/content_ratings/bcb27a2c9ee74a5a86720c3b5828093c
-                          values:
-                            - value: '12'
+                          ratings:
+                            - rating: '12'
                               metadata:
                                 country: GB
                               organization: MPAA

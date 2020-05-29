@@ -4,20 +4,20 @@ type: object
 properties:
   _links:
     $ref: ./HalLinks.v1.yaml
-  values:
+  ratings:
     type: array
     items:
       additionalProperties: false
       type: object
       properties:
-        value:
+        rating:
           type: string
         metadata:
           $ref: ./metadata_field.v1.yaml
         organization:
           type: string
       required:
-        - value
+        - rating
         - organization
   created_at:
     format: date-time
@@ -37,7 +37,7 @@ properties:
     type: string
 required:
   - _links
-  - values
+  - ratings
   - created_at
   - deleted
   - guid
