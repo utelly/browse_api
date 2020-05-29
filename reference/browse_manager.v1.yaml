@@ -116,6 +116,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_guid
+          schema:
+            type: string               
+        - in: query
           name: sort
           schema:
             items:
@@ -340,6 +344,10 @@ paths:
           name: after_guid
           schema:
             type: string
+        - in: query
+          name: before_guid
+          schema:
+            type: string               
         - in: query
           name: sort
           schema:
@@ -610,6 +618,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_guid
+          schema:
+            type: string               
+        - in: query
           name: sort
           schema:
             items:
@@ -732,6 +744,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_guid
+          schema:
+            type: string               
+        - in: query
           name: sort
           schema:
             items:
@@ -841,6 +857,10 @@ paths:
           name: after_guid
           schema:
             type: string
+        - in: query
+          name: before_guid
+          schema:
+            type: string               
         - in: query
           name: sort
           schema:
@@ -957,6 +977,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_guid
+          schema:
+            type: string               
+        - in: query
           name: sort
           schema:
             items:
@@ -1068,6 +1092,10 @@ paths:
           name: after_guid
           schema:
             type: string
+        - in: query
+          name: before_guid
+          schema:
+            type: string               
         - in: query
           name: sort
           schema:
@@ -1223,6 +1251,10 @@ paths:
           name: after_guid
           schema:
             type: string
+        - in: query
+          name: before_guid
+          schema:
+            type: string               
         - in: query
           name: sort
           schema:
@@ -1389,6 +1421,10 @@ paths:
           name: after_guid
           schema:
             type: string
+        - in: query
+          name: before_guid
+          schema:
+            type: string            
         - in: query
           name: sort
           schema:
@@ -1565,6 +1601,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_guid
+          schema:
+            type: string               
+        - in: query
           name: sort
           schema:
             items:
@@ -1740,6 +1780,10 @@ paths:
           name: after_guid
           schema:
             type: string
+        - in: query
+          name: before_guid
+          schema:
+            type: string               
         - in: query
           name: sort
           schema:
