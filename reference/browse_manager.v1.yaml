@@ -1799,11 +1799,12 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties: false
-              properties:
-                filters:
-                  $ref: ../models/Filters.v1.yaml
-              type: object
+              oneOf:
+                - type: object
+                  properties:
+                    filters:
+                      $ref: ../models/Filters.v1.yaml
+                - type: 'null'
       responses:
         '200':
           content:
