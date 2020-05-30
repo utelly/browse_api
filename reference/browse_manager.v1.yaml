@@ -1795,16 +1795,6 @@ paths:
           name: filter_guid
           schema:
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              oneOf:
-                - type: object
-                  properties:
-                    filters:
-                      $ref: ../models/Filters.v1.yaml
-                - type: 'null'
       responses:
         '200':
           content:
@@ -1863,6 +1853,15 @@ paths:
       summary: List tags
       tags:
         - Tag management
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              nullable: true
+              properties:
+                filters:
+                  $ref: ../models/Filters.v1.yaml
   '/content/tags/{tag_guid}':
     get:
       description: ''
