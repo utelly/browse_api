@@ -359,7 +359,7 @@ paths:
         - in: query
           name: filters
           schema:
-            $ref: ../models/Filters.v1.yaml
+            type: string
       responses:
         '200':
           content:
