@@ -357,40 +357,9 @@ paths:
             type: array
           style: form
         - in: query
-          name: filter_guid
+          name: filters
           schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            examples:
-              '1':
-                value:
-                  filters:
-                    - operator: eq
-                      property: titles.title
-                      value: The Usual Suspects
-                    - operator: regex
-                      property: contributors.names.name
-                      value: 'kevin*'
-                    - operator: eq
-                      property: availabilities.services.names.name
-                      value: Netflix
-                    - operator: gte
-                      property: created_at
-                      value: '2020-04-03T23:01:06Z'
-                    - operator: in
-                      property: genres.genre.names.name
-                      value:
-                        - Action
-                        - Comedy
-            schema:
-              additionalProperties: false
-              nullable: true
-              properties:
-                filters:
-                  $ref: ../models/Filters.v1.yaml
-              type: object
+            $ref: ../models/Filters.v1.yaml
       responses:
         '200':
           content:
