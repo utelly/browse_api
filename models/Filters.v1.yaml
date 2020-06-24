@@ -1,78 +1,97 @@
 description: ''
 items:
   anyOf:
-  - properties:
-      operator:
-        enum:
-        - eq
-        type: string
-      property:
-        type: string
-      value:
-        type: string
-    required:
-    - operator
-    - property
-    - value
-  - properties:
-      operator:
-        enum:
-        - in
-        type: string
-      property:
-        type: string
-      value:
-        items:
+    - properties:
+        operator:
+          enum:
+            - eq
           type: string
-        type: array
-    required:
-    - operator
-    - property
-    - value
-  - properties:
-      operator:
-        enum:
-        - regex
-        type: string
-      property:
-        type: string
-      value:
-        example: Kevin*
-        type: string
-    required:
-    - operator
-    - property
-    - value
-  - properties:
-      operator:
-        enum:
-        - lte
-        - gte
-        type: string
-      property:
-        type: string
-      value:
-        type: number
-    required:
-    - operator
-    - property
-    - value
-  - properties:
-      operator:
-        enum:
-        - lte
-        - gte
-        type: string
-      property:
-        type: string
-      value:
-        format: date-time
-        pattern: (\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z
-        type: string
-    required:
-    - operator
-    - property
-    - value
+        property:
+          type: string
+        value:
+          type: string
+      required:
+        - operator
+        - property
+        - value
+    - properties:
+        operator:
+          enum:
+            - in
+          type: string
+        property:
+          type: string
+        value:
+          items:
+            type: string
+          type: array
+      required:
+        - operator
+        - property
+        - value
+    - properties:
+        operator:
+          enum:
+            - regex
+          type: string
+        property:
+          type: string
+        value:
+          example: 'Kevin*'
+          type: string
+      required:
+        - operator
+        - property
+        - value
+    - properties:
+        operator:
+          enum:
+            - lte
+            - gte
+          type: string
+        property:
+          type: string
+        value:
+          type: number
+      required:
+        - operator
+        - property
+        - value
+    - properties:
+        operator:
+          enum:
+            - lte
+            - gte
+          type: string
+        property:
+          type: string
+        value:
+          format: date-time
+          pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
+          type: string
+      required:
+        - operator
+        - property
+        - value
   type: object
 title: Filters
 type: array
+x-examples:
+  '1':
+    - operator: eq
+      property: titles.title
+      value: The Usual Suspects
+    - operator: regex
+      property: contributors.names.name
+      value: 'kevin*'
+    - operator: eq
+      property: availabilities.services.names.name
+      value: Netflix
+    - operator: gte
+      property: created_at
+      value: '2020-04-03T23:01:06Z'
+    - operator: in
+      property: genres.genre.names.name
+      value:
+        - Action
+        - Comedy
