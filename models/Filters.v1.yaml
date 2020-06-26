@@ -1,4 +1,25 @@
 description: ''
+title: Filters
+type: array
+x-examples:
+  '1':
+    - operator: eq
+      property: titles.title
+      value: The Usual Suspects
+    - operator: regex
+      property: contributors.names.name
+      value: 'kevin*'
+    - operator: eq
+      property: availabilities.services.names.name
+      value: Netflix
+    - operator: gte
+      property: created_at
+      value: '2020-04-03T23:01:06Z'
+    - operator: in
+      property: genres.genre.names.name
+      value:
+        - Action
+        - Comedy
 items:
   anyOf:
     - properties:
@@ -22,23 +43,23 @@ items:
         property:
           type: string
         value:
+          type: array
           items:
             type: string
-          type: array
       required:
         - operator
         - property
         - value
     - properties:
         operator:
-          enum:
-            - regex
           type: string
+          enum:
+            - startswith
         property:
           type: string
         value:
-          example: 'Kevin*'
           type: string
+          example: Kevin
       required:
         - operator
         - property
@@ -74,24 +95,3 @@ items:
         - property
         - value
   type: object
-title: Filters
-type: array
-x-examples:
-  '1':
-    - operator: eq
-      property: titles.title
-      value: The Usual Suspects
-    - operator: regex
-      property: contributors.names.name
-      value: 'kevin*'
-    - operator: eq
-      property: availabilities.services.names.name
-      value: Netflix
-    - operator: gte
-      property: created_at
-      value: '2020-04-03T23:01:06Z'
-    - operator: in
-      property: genres.genre.names.name
-      value:
-        - Action
-        - Comedy
