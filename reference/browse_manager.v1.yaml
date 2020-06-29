@@ -687,9 +687,9 @@ paths:
                   - _embedded
                   - _links
           description: OK
-      summary: Get availabilities from creative work
+      summary: Get episodes from creative work
       tags:
-        - Availability management
+        - Creative work management
   '/content/creative_works/{creative_work_guid}/seasons':
     get:
       description: ''
@@ -821,9 +821,9 @@ paths:
                   - _embedded
                   - _links
           description: OK
-      summary: Get availabilities from creative work
+      summary: Get seasons from creative work
       tags:
-        - Availability management
+        - Creative work management
   '/content/creative_works/{creative_work_guid}/availabilities':
     get:
       description: ''
