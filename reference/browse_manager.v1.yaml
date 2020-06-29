@@ -559,7 +559,7 @@ paths:
   '/content/creative_works/{creative_work_guid}/episodes':
     get:
       description: ''
-      operationId: v1.content.creative_work.get_list_from_creative_work
+      operationId: v1.content.creative_work.get_list_from_creative_work_episodes
       parameters:
         - in: query
           name: languages
@@ -699,7 +699,7 @@ paths:
   '/content/creative_works/{creative_work_guid}/seasons':
     get:
       description: ''
-      operationId: v1.content.creative_work.get_list_from_creative_work
+      operationId: v1.content.creative_work.get_list_from_creative_work_seasons
       parameters:
         - in: query
           name: languages
