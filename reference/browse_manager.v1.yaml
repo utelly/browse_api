@@ -368,6 +368,10 @@ paths:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
                             contributors:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46/contributors
+                            episodes:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/episodes
+                            seasons:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/seasons
                             self:
                               href: /content/creative_works/27c13eec19014084a0a3173061702b46
                             tags:
@@ -552,6 +556,286 @@ paths:
         required: true
         schema:
           type: string
+  '/content/creative_works/{creative_work_guid}/episodes':
+    get:
+      description: ''
+      operationId: v1.content.creative_work.get_children_from_creative_work_episodes
+      parameters:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: after_guid
+          schema:
+            type: string
+        - in: query
+          name: before_guid
+          schema:
+            type: string
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filters
+          description: json value of the Filters object
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                '1':
+                  value:
+                    _embedded:
+                      creative_works:
+                        - _links:
+                            availabilities:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
+                            content_ratings:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
+                            contributors:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/contributors
+                            episodes:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/episodes
+                            seasons:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/seasons
+                            self:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46
+                            tags:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
+                          artworks:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: poster
+                              url: 'https://mydomain.com/poster.jpg'
+                              width: 100
+                          created_at: '2020-01-01T00:00:10Z'
+                          deleted: false
+                          descriptions:
+                            - description: 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.'
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: full
+                          guid: 27c13eec19014084a0a3173061702b46
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          relationships:
+                            - href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
+                              rel: parent
+                          titles:
+                            - metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: official
+                              title: The Usual Suspects
+                          type: movie
+                          updated_at: '2020-01-01T00:00:10Z'
+                    _links:
+                      first:
+                        href: /content/creative_works
+                      last:
+                        href: '/content/creative_works?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50'
+                      next:
+                        href: '/content/creative_works?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50'
+                      prev:
+                        href: /content/creative_works
+                      self:
+                        href: '/content/creative_works?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50'
+              schema:
+                additionalProperties: false
+                type: object
+                properties:
+                  _embedded:
+                    additionalProperties: false
+                    type: object
+                    properties:
+                      creative_works:
+                        type: array
+                        items:
+                          $ref: ../models/CreativeWork.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - _embedded
+                  - _links
+          description: OK
+      summary: Get episodes from creative work
+      tags:
+        - Creative work management
+    parameters:
+      - schema:
+          type: string
+        name: creative_work_guid
+        in: path
+        required: true
+  '/content/creative_works/{creative_work_guid}/seasons':
+    get:
+      description: ''
+      operationId: v1.content.creative_work.get_children_from_creative_work_seasons
+      parameters:
+        - in: query
+          name: languages
+          schema:
+            items:
+              $ref: ../models/languages_field.v1.yaml
+            type: array
+          style: form
+        - in: query
+          name: fields
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: limit
+          schema:
+            maximum: 50
+            type: integer
+        - in: query
+          name: after_guid
+          schema:
+            type: string
+        - in: query
+          name: before_guid
+          schema:
+            type: string
+        - in: query
+          name: sort
+          schema:
+            items:
+              type: string
+            type: array
+          style: form
+        - in: query
+          name: filters
+          description: json value of the Filters object
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                '1':
+                  value:
+                    _embedded:
+                      creative_works:
+                        - _links:
+                            availabilities:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/availabilities
+                            content_ratings:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/content_ratings
+                            contributors:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/contributors
+                            episodes:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/episodes
+                            seasons:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/seasons
+                            self:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46
+                            tags:
+                              href: /content/creative_works/27c13eec19014084a0a3173061702b46/tags
+                          artworks:
+                            - height: 100
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: poster
+                              url: 'https://mydomain.com/poster.jpg'
+                              width: 100
+                          created_at: '2020-01-01T00:00:10Z'
+                          deleted: false
+                          descriptions:
+                            - description: 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.'
+                              metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: full
+                          guid: 27c13eec19014084a0a3173061702b46
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          relationships:
+                            - href: /content/creative_works/eac7cb1192264b088ccbad0874395ce5
+                              rel: parent
+                          titles:
+                            - metadata:
+                                country: GB
+                                language: en
+                                source: mysource
+                                type: official
+                              title: The Usual Suspects
+                          type: movie
+                          updated_at: '2020-01-01T00:00:10Z'
+                    _links:
+                      first:
+                        href: /content/creative_works
+                      last:
+                        href: '/content/creative_works?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50'
+                      next:
+                        href: '/content/creative_works?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50'
+                      prev:
+                        href: /content/creative_works
+                      self:
+                        href: '/content/creative_works?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50'
+              schema:
+                additionalProperties: false
+                type: object
+                properties:
+                  _embedded:
+                    additionalProperties: false
+                    type: object
+                    properties:
+                      creative_works:
+                        type: array
+                        items:
+                          $ref: ../models/CreativeWork.v1.yaml
+                  _links:
+                    $ref: ../models/HalLinks.v1.yaml
+                required:
+                  - _embedded
+                  - _links
+          description: OK
+      summary: Get seasons from creative work
+      tags:
+        - Creative work management
+    parameters:
+      - schema:
+          type: string
+        name: creative_work_guid
+        in: path
+        required: true
   '/content/creative_works/{creative_work_guid}/availabilities':
     get:
       description: ''
