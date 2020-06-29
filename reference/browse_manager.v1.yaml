@@ -690,6 +690,12 @@ paths:
       summary: Get episodes from creative work
       tags:
         - Creative work management
+    parameters:
+      - schema:
+          type: string
+        name: creative_work_guid
+        in: path
+        required: true
   '/content/creative_works/{creative_work_guid}/seasons':
     get:
       description: ''
@@ -824,6 +830,12 @@ paths:
       summary: Get seasons from creative work
       tags:
         - Creative work management
+    parameters:
+      - schema:
+          type: string
+        name: creative_work_guid
+        in: path
+        required: true
   '/content/creative_works/{creative_work_guid}/availabilities':
     get:
       description: ''
