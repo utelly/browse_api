@@ -1,4 +1,6 @@
 additionalProperties: false
+title: picture_field
+type: object
 properties:
   height:
     type: integer
@@ -9,9 +11,5 @@ properties:
   width:
     type: integer
 required:
-- metadata
-- url
-- width
-- height
-title: picture_field
-type: object
+  - metadata
+  - url
