@@ -68,6 +68,10 @@ properties:
     type: string
   _embedded:
     type: object
+  release_year:
+    type: integer
+  number:
+    type: integer
 required:
   - _links
   - created_at
