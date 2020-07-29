@@ -74,6 +74,38 @@ properties:
     type: integer
   duration:
     type: string
+  external_references:
+    type: array
+    items:
+      type: object
+      properties:
+        url:
+          type: string
+        organization:
+          type: string
+        identifier:
+          type: string
+        metadata:
+          $ref: ./metadata_field.v1.yaml
+  trailers:
+    type: array
+    items:
+      type: object
+      properties:
+        url:
+          type: string
+        name:
+          type: string
+        locale_video:
+          $ref: ./languages_field.v1.yaml
+        locale_subtitle:
+          $ref: ./languages_field.v1.yaml
+        duration:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
 required:
   - _links
   - created_at
