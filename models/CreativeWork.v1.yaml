@@ -72,6 +72,8 @@ properties:
     type: string
   number:
     type: integer
+  duration:
+    type: string
 required:
   - _links
   - created_at
