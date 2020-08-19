@@ -2156,11 +2156,11 @@ paths:
           schema:
             type: string
           description: json value of the Filters object
-  '/content/ratings/{rating_uid}':
+  '/content/ratings/{rating_guid}':
     parameters:
       - schema:
           type: string
-        name: rating_uid
+        name: rating_guid
         in: path
         required: true
     get:
