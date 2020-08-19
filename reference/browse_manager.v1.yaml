@@ -2093,7 +2093,7 @@ paths:
           type: string
   /content/ratings:
     get:
-      summary: Your GET endpoint
+      summary: List ratings
       tags: []
       responses:
         '200':
@@ -2115,6 +2115,38 @@ paths:
                 required:
                   - _embedded
                   - _links
+              examples:
+                '1':
+                  value:
+                    _embedded:
+                      ratings:
+                        - _links:
+                            self:
+                              href: /content/ratings/bcb27a2c9ee74a5a86720c3b5828093c
+                          ratings:
+                            - rating: '8.9'
+                              type: user_rating
+                              metadata:
+                                type: rating
+                              organization: IMDB
+                          created_at: '2020-01-01T00:00:00Z'
+                          deleted: false
+                          guid: bcb27a2c9ee74a5a86720c3b5828093c
+                          identifiers:
+                            - id: '1'
+                              source: mysource
+                          updated_at: '2020-01-01T00:00:00Z'
+                    _links:
+                      first:
+                        href: /content/ratings
+                      last:
+                        href: '/content/ratings?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50'
+                      next:
+                        href: '/content/ratings?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50'
+                      prev:
+                        href: /content/ratings
+                      self:
+                        href: '/content/ratings?after_guid=8703dd1ced974ecea01116f2c0a5a282&limit=50'
       operationId: v1.content.rating.get_list
       parameters:
         - in: query
@@ -2164,7 +2196,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Get a tag
+      summary: Get a rating
       tags: []
       responses:
         '200':
@@ -2173,6 +2205,26 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Rating.v1.yaml
+              examples:
+                '1':
+                  value:
+                    _links:
+                      self:
+                        href: /content/ratings/bcb27a2c9ee74a5a86720c3b5828093c
+                    ratings:
+                      - rating: '8.9'
+                        type: user_rating
+                        metadata:
+                          country: GB
+                          type: rating
+                        organization: IMDB
+                    created_at: '2020-01-01T00:00:00Z'
+                    deleted: false
+                    guid: bcb27a2c9ee74a5a86720c3b5828093c
+                    identifiers:
+                      - id: '1'
+                        source: mysource
+                    updated_at: '2020-01-01T00:00:00Z'
       operationId: v1.content.rating.get_one
       parameters:
         - in: query
