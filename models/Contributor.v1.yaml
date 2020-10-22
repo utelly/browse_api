@@ -19,7 +19,7 @@ properties:
         - metadata
   created_at:
     format: date-time
-    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
+    pattern: '(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z'
     type: string
   deleted:
     type: boolean
@@ -44,10 +44,19 @@ properties:
         - role
   updated_at:
     format: date-time
-    pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
+    pattern: '(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z'
     type: string
   s:
     type: string
+  sequences:
+    type: array
+    items:
+      type: object
+      properties:
+        sequence:
+          type: integer
+        metadata:
+          $ref: ./metadata_field.v1.yaml
 required:
   - _links
   - created_at
