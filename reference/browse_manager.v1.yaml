@@ -120,6 +120,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string            
+        - in: query
           name: sort
           schema:
             items:
@@ -344,6 +348,10 @@ paths:
           name: before_guid
           schema:
             type: string
+        - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
         - in: query
           name: sort
           schema:
@@ -597,6 +605,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
+        - in: query
           name: sort
           schema:
             items:
@@ -740,6 +752,10 @@ paths:
           name: before_guid
           schema:
             type: string
+        - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
         - in: query
           name: sort
           schema:
@@ -885,6 +901,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
+        - in: query
           name: sort
           schema:
             items:
@@ -1007,6 +1027,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
+        - in: query
           name: sort
           schema:
             items:
@@ -1116,6 +1140,10 @@ paths:
           name: before_guid
           schema:
             type: string
+        - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
         - in: query
           name: sort
           schema:
@@ -1232,6 +1260,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
+        - in: query
           name: sort
           schema:
             items:
@@ -1343,6 +1375,10 @@ paths:
           name: before_guid
           schema:
             type: string
+        - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
         - in: query
           name: sort
           schema:
@@ -1498,6 +1534,10 @@ paths:
           name: before_guid
           schema:
             type: string
+        - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
         - in: query
           name: sort
           schema:
@@ -1664,6 +1704,10 @@ paths:
           name: before_guid
           schema:
             type: string
+        - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
         - in: query
           name: sort
           schema:
@@ -1840,6 +1884,10 @@ paths:
           schema:
             type: string
         - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
+        - in: query
           name: sort
           schema:
             items:
@@ -2014,6 +2062,10 @@ paths:
           name: before_guid
           schema:
             type: string
+        - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
         - in: query
           name: sort
           schema:
@@ -2228,6 +2280,10 @@ paths:
           name: before_guid
           schema:
             type: string
+        - in: query
+          name: before_or_eq_guid
+          schema:
+            type: string  
         - in: query
           name: sort
           schema:
