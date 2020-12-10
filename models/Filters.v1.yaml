@@ -58,15 +58,13 @@ items:
         property:
           type: string
           enum:
-            - titles.title          
+            - titles.title
         value:
-          type: array
-          items:
-            type: string
+          type: string
       required:
         - operator
         - property
-        - value        
+        - value
     - properties:
         operator:
           type: string
