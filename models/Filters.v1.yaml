@@ -8,7 +8,7 @@ x-examples:
       value: The Usual Suspects
     - operator: regex
       property: contributors.names.name
-      value: 'kevin*'
+      value: kevin*
     - operator: eq
       property: availabilities.services.names.name
       value: Netflix
@@ -24,9 +24,9 @@ items:
   anyOf:
     - properties:
         operator:
+          type: string
           enum:
             - eq
-          type: string
         property:
           type: string
         value:
@@ -50,6 +50,23 @@ items:
         - operator
         - property
         - value
+    - properties:
+        operator:
+          enum:
+            - contains
+          type: string
+        property:
+          type: string
+          enum:
+            - titles.title          
+        value:
+          type: array
+          items:
+            type: string
+      required:
+        - operator
+        - property
+        - value        
     - properties:
         operator:
           type: string
@@ -88,7 +105,7 @@ items:
           type: string
         value:
           format: date-time
-          pattern: "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})Z"
+          pattern: '(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})Z'
           type: string
       required:
         - operator
